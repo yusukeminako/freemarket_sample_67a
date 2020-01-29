@@ -9,10 +9,11 @@
 |first_name|string|null: false|
 |last_name|string|null: false|
 |first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
 |birthday_aaaa_id|integer|null: false|
 |birthday_bb_id|integer|null: false|
 |birthday_cc_id|integer|null: false|
-|phone_num|string|null: false|
+|phone_num|integer|null: false|
 |authentication_num|integer|null: false|
 |content|text||
 
@@ -37,9 +38,8 @@ has_ancestry
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false,foreign_key: true|
-|customer_id|string||
-|sub_sub|string||
-|card_id|integer|string,foreign_key: true|
+|customer_id|references|null: false,foreign_key: true|　　#stringから変更
+|card_id|references|foreign_key: true|                   #integerから変更
 
 ### Association
 belongs_to :user
@@ -48,12 +48,12 @@ belongs_to :user
 ## Address
 |Column|Type|Options|
 |------|----|-------|
-|zip_code|string|null: false|
-|user_id|string|null: false,foreign_key: true| 
-|prefecture_id|string|null: false,foreign_key: true|  
+|zip_code|integer|null: false|
+|user_id|references|null: false,foreign_key: true| 
+|prefecture_id|references|null: false,foreign_key: true|        #stringから変更
 |city|string|null: false|
 |address1|string|
-|address2|string|
+|address2|integer|
 
 ### Association
 belongs_to :user
@@ -66,7 +66,7 @@ belongs_to :user
 |user_id|references|null: false,foreign_key: true|
 |name|string|null: false|
 |description|text||
-|category|references|null: false|
+|category_id|references|null: false,foreign_key: true|   #_idに変更
 |condition|integer|null: false|
 |size|integer|null: false|
 |delivery_charge|integer|null:false|
