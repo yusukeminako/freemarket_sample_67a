@@ -26,12 +26,11 @@ has_many :items
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|sub|integer||
-|sub_sub|string||
-|brand|integer||
+|ancestry|string|null: false|
 
 ### Association
 has_many :items
+has_ancestry
 
 
 ## card
@@ -43,13 +42,14 @@ has_many :items
 |card_id|integer|string|
 
 ### Association
-belong_to :user
+belongs_to :user
 
 
 ## Address
 |Column|Type|Options|
 |------|----|-------|
 |zip_code1|string|null: false|
+|user_id|string|null: false|
 |prefecture_id|string|null: false|
 |city|string|null: false|
 |address1|string|
@@ -63,19 +63,31 @@ belongs_to :user
 ## Items
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false|
+|user_id|references|null: false|
 |name|string|null: false|
 |description|text||
 |category|references|null: false|
 |condition|references|null: false|
 |size|references|null: false|
-|brand|string||
-|delivery_charge|references|null:false|
-|delivery_way|references|null:false|
+|delivery_charge|integer|null:false|
+|delivery_way||null:false|
 |prefecture|references|null: false
 |delivery_days|references|null: false|
 |price|integer|null:false|
-|status|references|null:false|
+|status|integer|null:false|   #enumを使用
 
 ### Association
 belongs_to :user
+belongs_to :category
+belongs_to :brand
+
+
+
+## Brand
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|list|integer||
+
+### Association
+has_many :items
