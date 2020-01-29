@@ -36,10 +36,10 @@ has_ancestry
 ## card
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false|
+|user_id|references|null: false,foreign_key: true|
 |customer_id|string||
 |sub_sub|string||
-|card_id|integer|string|
+|card_id|integer|string,foreign_key: true|
 
 ### Association
 belongs_to :user
@@ -48,9 +48,9 @@ belongs_to :user
 ## Address
 |Column|Type|Options|
 |------|----|-------|
-|zip_code1|string|null: false|
-|user_id|string|null: false|
-|prefecture_id|string|null: false|
+|zip_code|string|null: false|
+|user_id|string|null: false,foreign_key: true| 
+|prefecture_id|string|null: false,foreign_key: true|  
 |city|string|null: false|
 |address1|string|
 |address2|string|
@@ -63,16 +63,16 @@ belongs_to :user
 ## Items
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false|
+|user_id|references|null: false,foreign_key: true|
 |name|string|null: false|
 |description|text||
 |category|references|null: false|
-|condition|references|null: false|
-|size|references|null: false|
+|condition|integer|null: false|
+|size|integer|null: false|
 |delivery_charge|integer|null:false|
-|delivery_way||null:false|
-|prefecture|references|null: false
-|delivery_days|references|null: false|
+|delivery_way|string|null:false|
+|prefecture|integer|null: false|
+|delivery_days|integer|null: false|
 |price|integer|null:false|
 |status|integer|null:false|   #enumを使用
 
