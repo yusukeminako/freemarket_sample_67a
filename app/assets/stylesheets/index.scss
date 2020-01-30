@@ -1,0 +1,67 @@
+.sign {
+
+  .top {
+    height: 128px;
+    background-color: green;
+    position: relative;
+    &__merucari {
+      height: 49px;
+      width: 185px;
+      background-color: red;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .main {
+    height: 384px;
+    background-color: blue;
+    &__sign-up {
+      height: 97px;
+      width: 700px;
+      background-color: red;
+      margin: auto;
+      font-size: 22px;
+      line-height: 1.5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__block {
+      height: 287px;
+      width: 700px;
+      background-color: green;
+      margin: auto;
+      
+        &__1 {
+          height: 50px;
+          width: 343px;
+          background-color: black;
+          margin: auto;;
+        }
+        &__2 {
+          height: 50px;
+          width: 343px;
+          background-color: gray;
+          
+          margin: 16px 0 0;
+        }
+        &__3 {
+          height: 50px;
+          width: 343px;
+          background-color: yellow;
+          margin: 16px 0 0;
+        }
+    }
+  }
+
+  .bottom {
+    height: 220px;
+    background-color: red;
+  }
+}
