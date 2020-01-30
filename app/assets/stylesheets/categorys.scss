@@ -12,15 +12,15 @@
     }
     &__list--nav {
       padding: 20px 0;
-      /*&__root:hover {
-        background-color: $red;
-        color: $white;
+      &__root:hover {
+        background-color: #f00;
+        color: #F4F5F7;
       }
       &__root {
         font-size: 16px;
         line-height: 40px;
-        background-color: $white;
-        color: $black;
+        background-color: #F4F5F7;
+        color: #000000;
         text-decoration-line: none;
         display: inline-block;
         border-radius: 4px;
@@ -35,22 +35,22 @@
       padding-bottom: 50px;
       .invisual {
         &__title {
-          background-color: $red;
+          background-color: #f00;
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
           padding: 7px 30px 0 30px;
           height: 40px;
-          a {
-            text-decoration: none;
+            
             h3 {
-              color: $white;
+              color: #F4F5F7;
               font-size: 22px;
               font-weight: 700;
+              text-decoration: none;
+              margin:0px;
             }
-          }
         }
         &__list {
-          background-color: $white;
+          background-color: #F4F5F7;
           padding: 24px 30px 10px 30px;
           .all {
             display: block;
@@ -59,7 +59,7 @@
             font-size: 16px;
             text-decoration: none;
             p {
-              color: $liteblue;
+              color: #b2cde4;
             }
           }
           &__sub-category-name {
@@ -70,7 +70,7 @@
               font-weight: 700;
               a {
                 text-decoration: none;
-                color: $black;
+                color: #000000;
                 font-weight: 700;
               }
               .child_box {
@@ -81,12 +81,12 @@
                   &__all {
                     font-weight: 300;
                     text-decoration: none;
-                    color: $liteblue;
+                    color: #b2cde4;
                   }
                 }
                 a {
                   text-decoration: none;
-                  color: $liteblue;
+                  color: #b2cde4;
                   font-weight: 100;
                   font-size: 15px;
                 }
@@ -94,7 +94,7 @@
             }
           }
         }
-      }*/
+      }
     }
   }
 }
