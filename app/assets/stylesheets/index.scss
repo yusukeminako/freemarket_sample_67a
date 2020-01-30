@@ -1,13 +1,12 @@
 .sign {
+  background-color:rgb(245, 245, 245);
 
   .top {
     height: 128px;
-    background-color: green;
     position: relative;
-    &__merucari {
+    &__mercari {
       height: 49px;
       width: 185px;
-      background-color: red;
       position: absolute;
       margin: auto;
       top: 0;
@@ -19,7 +18,6 @@
 
   .main {
     height: 384px;
-    background-color: blue;
     &__sign-up {
       height: 97px;
       width: 700px;
@@ -42,26 +40,59 @@
           height: 50px;
           width: 343px;
           background-color: black;
-          margin: auto;;
+          margin: auto;
+          padding-top: 40px;
         }
         &__2 {
           height: 50px;
           width: 343px;
           background-color: gray;
-          
-          margin: 16px 0 0;
+          margin: auto;
+          margin-top: 16px;
         }
         &__3 {
           height: 50px;
           width: 343px;
           background-color: yellow;
-          margin: 16px 0 0;
+          margin: auto;
+          margin-top: 16px;
         }
     }
   }
 
   .bottom {
     height: 220px;
-    background-color: red;
+    width: 456px;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    padding: 88px 0;
+    text-align: center;
+    background-color:rgb(245, 245, 245);
+
+    
+    &__texts {
+      height: 12px;
+      width: 456px;
+      display: flex;
+      justify-content: space-around;
+      font-size: 12px;
+      &__left {
+        color: blanchedalmond;
+      }
+      &__center {
+      color: blanchedalmond;
+      }
+      &__right {
+        color: blanchedalmond;
+      }
+    }
+
+    &__end {
+    font-size: 13px;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    color: rgb(51, 51, 51);
+    }
   }
 }
