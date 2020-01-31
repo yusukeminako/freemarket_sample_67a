@@ -39,32 +39,50 @@
       background-color: #fff;
       margin: auto;
       border-top: 1px solid #f5f5f5;
+      font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+      text-align: center;
       
         &__1 {
           height: 50px;
           width: 343px;
+          color: #fff;
           background-color: #ea352d;
           margin: auto;
           margin-top: 40px;
           border-radius: 4px;
+          position: relative;
+          line-height: 50px;
+          font-size: 14px;
 
         }
         &__2 {
           height: 50px;
           width: 343px;
+          color: #fff;
           background: #385185;
           margin: auto;
           margin-top: 16px;
           border-radius: 4px;
+          position: relative;
+          line-height: 50px;
+          font-size: 14px;
+          .eee {
+            height: 30px;
+            width: 30px;
+          }
         }
         &__3 {
           height: 50px;
           width: 343px;
+          color: #333;
           background-color: #fff;
           border: #979797 solid 1px;
           margin: auto;
           margin-top: 16px;
           border-radius: 4px;
+          position: relative;
+          line-height: 50px;
+          font-size: 14px;
         }
     }
   }
@@ -91,13 +109,26 @@
       font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ';
       color: #333;
       margin: 40px;
+      &__left {
+        
+      }
+      &__center {
+
+      }
+      &__right {
+
+      }
     }
 
     &__end {
     font-size: 13px;
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     color: rgb(51, 51, 51);
-    margin-top: 10px;
+    // margin-top: 10px;
+    //   .eee {
+    //     height: 30px;
+    //     width: 30px;
+    //   }
     }
   }
 }
