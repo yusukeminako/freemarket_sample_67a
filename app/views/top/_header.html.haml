@@ -1,0 +1,17 @@
+.body
+  .header
+    .header__inner
+      .header__inner__main
+        %h1.icon
+          link_to  "/"
+            %img.img{:src => "/assets/logo.png"}/
+        .searchbox
+          %form.searchbox__form{"accept-charset" => "UTF-8", :action => "#", :method => "get"}
+            %input.searchbox__form__input{:name => "utf8", :type => "hidden", :value => "✓"}/
+            %input#searchInput.searchbox__form__input__input{:name => "key", :placeholder => "キーワードから探す"}/
+            %form.button_to{:action => "/?type=submit", :method => "post"}
+              %button.button{:type => "submit"}
+                .searchBox__icon
+                  %img.image{:src => "/assets/icon-search 1.png"}/
+              %input{:name => "authenticity_token", :type => "hidden", :value => "QAz4einUPnY046conLdP2Wq4+IwQBUwjG3eSaPs4U+9Qf1OwcvvNBdbuBZh8fdK+PRvTUa7cVcUntics4bC15w=="}/
+          %ul.resultLists

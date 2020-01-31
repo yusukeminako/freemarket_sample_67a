@@ -1,0 +1,91 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.body {
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+
+  .header {
+    display: block;
+    padding: 0 60px;
+  
+    &__inner {
+      max-width: 1040px;
+      width: 100%;
+      min-height: 82px;
+      margin: 0 auto;
+      padding: 15px 0 0;
+
+    
+      &__main {
+        position: relative;
+        display: flex;
+        align-items: center;
+      
+        .icon{
+          padding-bottom: 10px;
+          margin-right: 30px;
+          border-radius: 4px;
+        }
+          .icon a{
+            padding-bottom: 10px;
+            margin-right: 30px;
+            border-radius: 4px;
+          }
+            .img{
+              width: 100%;
+              vertical-align: bottom;
+            }
+          .searchbox {
+            margin-left: auto;
+            width: 100%;
+      
+            &__form {
+              width: 100%;
+              display: flex;
+              margin-bottom: 5px
+            }
+
+              .searchbox__form__input{
+                width: calc(100% - 26px);
+                height: 36px;
+                padding: 0 0 0 5px;
+              }
+
+              .searchbox__form__input__input {
+                width: 36px;
+                border: 0;
+                cursor: pointer;
+                background-color: #3CCACE;
+                padding: 8px;
+              }
+          }
+          .resultLists{
+            display: flex;
+            position: absolute;
+            right: 0;
+            top: 36px;
+            z-index: 2;
+          }
+      .aaa{
+        font-size: 14px;
+        display: flex;
+        margin-bottom: 10px;
+      }
+            
+            .button {
+              width: 100%;
+             vertical-align: bottom;
+            }
+            .searchbox__icon {
+              
+
+            }
+          }
+      
+    }
+  }
+}
+ 
+
