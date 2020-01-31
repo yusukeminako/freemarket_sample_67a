@@ -23,7 +23,70 @@
     &__content {
       background-color: #fff;
       border-top: 1px solid #f5f5f5;
+      font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ';
       padding: 40px 40px 64px;
+      height: 808px;
+      width: 343px;
+      margin: auto;
+
+      &__1 {
+        height: 70px;
+        width: 343px;
+        &__name {
+          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+          font-weight: 600;
+          color: #333;
+          display: inline;
+        }
+        &__req {
+          display: inline;
+          background: #ea352d;
+          color: #fff;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          font-size: 12px;
+          border-radius: 2px;
+          vertical-align: top;
+        }
+        &__input {
+          height: 33px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+          margin: 8px 0 0;
+          min-height: 1.5em;
+          outline: 0;
+          font-family: inherit;
+          -webkit-appearance: none;
+          
+        }
+      }
+
+      &__2 {
+        margin-top: 32px;
+      }
+
+      &__3 {
+        margin-top: 32px;
+        height: 129px;
+        width: 343px;
+
+        &__note {
+          
+        }
+      }
+    }
+    &__bottoms {
+      height: 261px;
+      width: 343px;
+      background-color: blue;
+      margin: auto;
+      font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+      color: #333;
+      
     }
   }
   .foot {
