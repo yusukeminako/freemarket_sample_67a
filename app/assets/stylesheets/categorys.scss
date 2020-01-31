@@ -13,14 +13,14 @@
     &__list--nav {
       padding: 20px 0;
       &__root:hover {
-        background-color: #f00;
-        color: #F4F5F7;
+        background-color: red;
+        color: white;
       }
       &__root {
         font-size: 16px;
-        line-height: 40px;
-        background-color: #F4F5F7;
-        color: #000000;
+        line-height: 15px;
+        background-color: white;
+        color: black;
         text-decoration-line: none;
         display: inline-block;
         border-radius: 4px;
@@ -35,22 +35,23 @@
       padding-bottom: 50px;
       .invisual {
         &__title {
-          background-color: #f00;
+          background-color: red;
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
           padding: 7px 30px 0 30px;
           height: 40px;
-            
+          line-height: 0px;
+          a {
+            text-decoration: none;
             h3 {
-              color: #F4F5F7;
+              color: white;
               font-size: 22px;
               font-weight: 700;
-              text-decoration: none;
-              margin:0px;
             }
+          }
         }
         &__list {
-          background-color: #F4F5F7;
+          background-color: white;
           padding: 24px 30px 10px 30px;
           .all {
             display: block;
@@ -59,7 +60,7 @@
             font-size: 16px;
             text-decoration: none;
             p {
-              color: #b2cde4;
+              color: #0099e8;
             }
           }
           &__sub-category-name {
@@ -70,7 +71,7 @@
               font-weight: 700;
               a {
                 text-decoration: none;
-                color: #000000;
+                color: black;
                 font-weight: 700;
               }
               .child_box {
@@ -81,12 +82,12 @@
                   &__all {
                     font-weight: 300;
                     text-decoration: none;
-                    color: #b2cde4;
+                    color: #0099e8;
                   }
                 }
                 a {
                   text-decoration: none;
-                  color: #b2cde4;
+                  color: #0099e8;
                   font-weight: 100;
                   font-size: 15px;
                 }
