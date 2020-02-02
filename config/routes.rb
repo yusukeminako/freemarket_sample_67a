@@ -3,5 +3,4 @@ Rails.application.routes.draw do
   root to: "posts#index"
 end
 
-  resources "categorys", only: [:index]
-end
+
