@@ -1,6 +1,6 @@
 .done {
-  height: 582px;
-
+  
+  
   &__contents {
     height: 582px;
     width: 700px;
@@ -46,6 +46,11 @@
           letter-spacing: 1.5px;
         }
       }
+    }
+    
+    &--done-end {
+      height: 250px;
+      width: 700px;
     }
   }
 }
