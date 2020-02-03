@@ -1,0 +1,114 @@
+.log-seco {
+  background: #f5f5f5;
+
+  &__seco {
+    height: 986px;
+    width: 700px;
+    margin: auto;
+    background-color: #fff;
+
+    &__10 {
+      font-size: 22px;
+      padding: 32px;
+      border-bottom: 1px solid #f5f5f5;
+      text-align: center;
+      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+      font-weight: bold;
+    }
+
+    &__11 {
+      height: 282px;
+      border-top: 1px solid #f5f5f5;
+      padding: 40px;
+
+      &__11a {
+        height: 242px;
+        width: 320px;
+        margin: auto;
+
+        &__11aa {
+          font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+          font-size: 14px;
+          color: rgb(51, 51, 51);
+        }
+
+        &__11ab {
+          height: 70px;
+          width: 320px;
+          margin: 40px 0 0;
+
+          &__num1 {
+            font-weight: 600px;
+            font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+          }
+
+          &__num2 {
+            height: 27px;
+            margin-top: 8px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            color: #ccc;
+          }
+
+          &__num3 {
+            height: 48px;
+            margin-top: 40px;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            line-height: 48px;
+            font-size: 14px;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    &__12 {
+      border-top: 1px solid #f5f5f5;
+      padding-top: 40px;
+      height: 418px;
+      width: 700px;
+      &__12a {
+        height: 420px;
+        width: 320px;
+        margin: auto;
+
+        &__12ab {
+          font-weight: 600;
+          color: rgb(51, 51, 51);
+          font-size: 13px;
+        }
+
+        &__12ac {
+          margin-top: 34px;
+
+          &__num4 {
+            font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+            font-size: 14px;
+          }
+
+          &__num5 {
+            height: 50px;
+            background: #aaa;
+            border: 1px solid #aaa;
+            color: #fff;
+            margin-top: 16px;
+            line-height: 48px;
+            font-size: 14px;
+            text-align: center;
+          }
+        }
+
+        &__12ad {
+          font-size: 14px;
+          margin-top: 34px;
+        }
+      }
+    }
+  }
+}
