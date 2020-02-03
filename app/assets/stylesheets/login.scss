@@ -1,0 +1,118 @@
+.log {
+  height: 100%;
+  background-color:rgb(245, 245, 245);
+
+  &__login {
+    height: 731px;
+    width: 456px;
+    background-color: #fff;
+    margin: auto;
+    
+    &__aca2 {
+      padding: 40px 64px;
+      width: 328px;
+      border-bottom: 1px solid #eee;
+
+      &__aca {
+        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        font-size: 14px; 
+        width: 328px; 
+        text-align: center;
+      }
+
+      &__acount {
+        height: 40px;
+        width: 328px;
+        color: #fff;
+        border: 1px solid #0099e8;
+        background: #0099e8;
+        margin: auto;
+        font-size: 14px;
+        text-align: center;
+        line-height: 3;
+        margin-top: 8px;
+        
+      }
+    }
+
+    &__face {
+      height: 50px;
+      width: 328px;
+      color: #fff;
+      background: #385185;
+      margin: auto;
+      line-height: 50px;
+      font-size: 12px;
+      text-align: center;
+      border-top: 1px solid #eee;
+      margin-top: 35px;
+    }
+
+    &__goo {
+      height: 50px;
+      width: 328px;
+      border: #979797 solid 1px;
+      color: #333;
+      background: #fff;
+      margin: auto;
+      line-height: 50px;
+      font-size: 12px;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    &__bottoms {
+      
+      &__meado {
+        height: 48px;
+        width: 328px;
+        border: #979797 solid 1px;
+        color: #333;
+        background: #fff;
+        margin: auto;
+        line-height: 50px;
+        font-size: 14px;
+        margin-top: 60px;
+        border-radius: 4px;
+      }
+
+      &__paswa {
+        height: 48px;
+        width: 328px;
+        border: #979797 solid 1px;
+        color: #333;
+        background: #fff;
+        margin: auto;
+        line-height: 50px;
+        font-size: 14px;
+        margin-top: 24px;
+        border-radius: 4px;
+      }
+      
+      &__robo {
+        margin-top: 24px;
+        margin-left: 63px;
+      }
+
+      &__rog-in {
+        height: 48px;
+        width: 343px;
+        margin-top: 32px;
+        background-color: #ea352d;
+        color: #fff;
+        text-align: center;
+        line-height: 3.5;
+        margin: auto;
+        font-size: 13.5px;
+        margin-top: 24px;
+      }
+
+      &__wasure {
+        margin-top: 40px;
+        color: #0099e8;
+        margin-left: 60px;
+        font-size: 13px;
+      }
+    }
+  }
+}
