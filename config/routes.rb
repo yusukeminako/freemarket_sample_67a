@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
+  # devise_for :users
+  root 'test#sign_up_last'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "posts#index"
-  resources "categorys", only: [:index]
-  resources "test", only: [:index]
-  
 end
-
-
