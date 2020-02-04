@@ -1,4 +1,6 @@
 class TestController < ApplicationController
-def index
-end
+  def index
+  end
+  def login
+  end
 end
