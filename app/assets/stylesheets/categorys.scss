@@ -99,3 +99,310 @@
     }
   }
 }
+
+/* create.haml.html*/
+.container-mypage {
+  display:flex;
+  justify-content: space-around;
+  width: 1020px;
+  margin: 40px auto 0;
+  &__content {
+   width: 700px;
+   margin-top: 35px;
+    &-usericon {
+      height:200px;
+      position: relative;
+      background-image: image-url("../assets/kirakira.jpg");
+      padding-top: 70px;
+      background-repeat: no-repeat;
+      img {
+        border-radius: 50%; 
+        margin-left: 320px;
+        height: 60px;
+        width: 60px;
+      }
+      .user {
+        font-weight: bold;
+        height: 30px;
+        text-align: center;
+        a{
+          color: black;
+        }
+      }
+      .user-number {
+        width: 500px;
+        font-weight: 545;
+        padding-left: 290px;
+        .user-number-evaluation {
+          width:70px;
+          height: 16px;
+          float: left;
+        }
+        .user-number-exhibitin {
+          width:70px;
+          height: 16px;
+          display: inline-block
+        }
+      }
+    }
+    .news{
+      margin: 0;
+      &-tab{
+        background-color:#eee;
+        display:flex;
+        &-active{
+          font-size: 22px;
+          font-weight:600px;
+          width: 50%;
+          text-align:center;
+          background-color: white;
+          height: 74px;
+          line-height: 330%;
+          border: none;
+          cursor: pointer;
+          &__notice{
+            display: inline-block;
+            width: 100%;
+            border-top: 2px solid red;
+            font-size: 16px;
+            &:hover{
+              color:gray;
+            }
+          }
+        }
+        &-activelist{
+          background-color: #eee;
+          font-size: 22px;
+          font-weight:600px;
+          width: 50%;
+          text-align:center;
+          line-height: 330%;
+          border: none;
+          cursor: pointer;
+          &__notice{
+            font-size:16px;
+            &:hover{
+              color: gray;
+            }
+          }
+        }
+      }
+    }
+  }
+    .new{
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      .news{
+        display: none;
+        height: 236px;
+        width:700px;
+        background-image: image-url("mypage.yarukotolist.png");
+        &-contents-image{
+          height: 200px;
+          width:600px;
+          background-size: 80px;
+        }
+      }
+      &-content{
+        display: block;
+        &-message{
+          border: 1px solid #eee;
+          min-height: 70px;
+          padding: 10px;
+          color:#333;
+          background-color: white;
+          display: flex;
+          position: relative;
+          //&:hover{
+            //background-color: #eee;
+          //}
+          img{
+            width: 50px;
+            height: 50px;
+          }
+          .fa.fa-chevron-right{
+            margin-right: 40px;
+            float: right;
+            position: absolute;
+            top:50%;
+            right: 16px;
+          }
+          &__text{
+            margin: 0 40px 0 68px;
+          }
+        }
+        &-message__all{
+          border: 0;
+          &_buttom{
+            display:block;
+            height: 56px;
+            margin: 0 auto;
+            background-color: #eee;
+            color: black;
+            line-height: 56px;
+            text-align: center;
+            &:hover{
+              background-color:#fafafa;
+            } 
+          }  
+        }
+      }
+      .content-buy{
+        margin: 40px 0 0;
+        /*background:$header-background;*/
+        border: 1px solid #eee;
+        &-head{
+          padding: 0 16px;
+          background-color: #fafafa;
+          font-size:16px;
+          line-height:72px;
+          font-weight: bold;
+        }
+        &-tab{
+          border:0px;
+          background: #eee;
+          height: 72px;
+          display: flex;
+          &-new{
+            
+          font-size: 16px;
+          font-weight:600;
+          width:50%;
+          text-align: center;
+          
+          line-height: 5;
+            &__latest{
+              &:hover{
+                color:silver;
+              }
+            }
+          }
+          &-low{
+            border-top:2px solid red;
+            background-color:white;
+            width: 50%;
+            font-size: 16px;
+            font-weight: 600px;
+            line-height: 5;
+            text-align: center;
+            &__past{
+              font-weight: bold;
+             &:hover{
+                color: silver;
+             }
+            }
+          }
+        }
+        .list-content-transaction {
+          img {
+            height: 55px;
+            width: 55px;
+            margin: 15px 0 0 15px;
+            float: left;
+          }
+          .listing-buy {
+            height: 200px;
+            margin: 0;
+            position: relative;
+            img {
+              width: 300px;
+              height: auto;
+              position: absolute;
+              top: 8px;
+              left: 180px
+            }
+            &-buttom{
+             width: 500px;;
+              background-repeat: no-repeat;
+              margin-left: 150px;
+             background-size: 70%;
+             }  
+          }
+        }
+      }
+    }
+
+      /*side_bar.html.haml*/
+
+
+
+
+    .l-side {
+    width: 280px;
+    margin: 25px 90px 0 0;
+      &-bar {
+        margin: 0;
+        background-repeat: no-repeat;
+        &-list {
+          display: block;
+          margin: 10px 0 1em 0;
+          &-item.active {
+            background: white;
+            width: 280px;
+            height: 47px;
+            a{
+              text-decoration: none;
+              color: black;
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              padding-left: 18px;
+              padding-top: 18px;
+            }
+            .fa.fa-chevron-right {
+              float: right;
+            }
+          }
+          &-item {
+            width: 280px;
+            position: relative;
+            display: block;
+            background-color: blue;
+            padding: 5px;
+            background: white;
+            font-size: 14px;
+            color: black;
+            border-top: 1px solid #eee;
+            height: 47px;
+            &:hover {
+              background-color: #eee;
+            }
+            &:hover .fa.fa-chevron-right {
+              color: black;
+              transform: translateX(5px);
+              transition: 0.3s;
+            }
+            .fa.fa-chevron-right {
+              float: right;
+              color:#ccc;
+            }
+            a {
+              text-decoration: none;
+              color: black;
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              padding-left: 18px;
+              padding-top: 18px;
+            }
+          }      
+        }
+        .side-nav-head {
+          width: 100px;
+          height: 40px;
+          display: table-cell;
+          vertical-align: bottom;
+          font-weight: bold;
+          font-size: 16px;
+          text-align: left;
+        }
+      }
+    }
+  }
