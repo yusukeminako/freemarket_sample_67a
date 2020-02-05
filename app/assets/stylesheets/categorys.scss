@@ -323,86 +323,8 @@
       }
     }
 
-      /*side_bar.html.haml*/
 
 
 
-
-    .l-side {
-    width: 280px;
-    margin: 25px 70px 0 0;
-      &-bar {
-        margin: 0;
-        background-repeat: no-repeat;
-        &-list {
-          display: block;
-          margin: 10px 0 1em 0;
-          &-item.active {
-            background: white;
-            width: 280px;
-            height: 47px;
-            a{
-              text-decoration: none;
-              color: black;
-              display: block;
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              padding-left: 18px;
-              padding-top: 18px;
-            }
-            .fa.fa-chevron-right {
-              float: right;
-            }
-          }
-          &-item {
-            width: 280px;
-            position: relative;
-            display: block;
-            background-color: blue;
-            padding: 5px;
-            background: white;
-            font-size: 14px;
-            color: black;
-            border-top: 1px solid #eee;
-            height: 47px;
-            &:hover {
-              background-color: #eee;
-            }
-            &:hover .fa.fa-chevron-right {
-              color: black;
-              transform: translateX(5px);
-              transition: 0.3s;
-            }
-            .fa.fa-chevron-right {
-              float: right;
-              color:#ccc;
-            }
-            a {
-              text-decoration: none;
-              color: black;
-              display: block;
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              padding-left: 18px;
-              padding-top: 18px;
-            }
-          }      
-        }
-        .side-nav-head {
-          width: 100px;
-          height: 40px;
-          display: table-cell;
-          vertical-align: bottom;
-          font-weight: bold;
-          font-size: 16px;
-          text-align: left;
-        }
-      }
-    }
+   
   }

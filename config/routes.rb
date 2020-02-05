@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources "test", only: [:index]
   resources "categorys", only: [:index]
   resources "users", only: [:index, :new]
-  resources "cards", only: [:index]
   resources :card, only: [:index, :new, :show] do
     collection do
       post 'show', to: 'card#show'
