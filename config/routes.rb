@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
+  get 'card/new'
+  get 'card/show'
   root to: "posts#index"
   resources "test", only: [:index]
   resources "categorys", only: [:index]
   resources "users", only: [:index, :new]
-  #get 'categorys/create', to: 'categorys#create'
-  #get 'categorys/new', to: 'categorys#new'
+  resources "cards", only: [:index]
+  resources :card, only: [:index, :new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
 end
 
