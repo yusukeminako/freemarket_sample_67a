@@ -4,16 +4,16 @@
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
-|email|string|null: false|
+|email||null: false|
 |password|string|null: false|
 |first_name|string|null: false|
 |last_name|string|null: false|
 |first_name_kana|string|null: false|
 |last_name_kana|string|null: false|
-|birthday_aaaa_id|integer|null: false|
-|birthday_bb_id|integer|null: false|
-|birthday_cc_id|integer|null: false|
-|phone_num|integer|null: false|
+|birthday_year_id|integer|null: false|
+|birthday_month_id|integer|null: false|
+|birthday_day_id|integer|null: false|
+|phone_num|integer|null: false,unique: true|
 |authentication_num|integer|null: false|
 |content|text||
 
@@ -38,8 +38,8 @@ has_ancestry
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false,foreign_key: true|
-|customer_id|references|null: false,foreign_key: true|　　#stringから変更
-|card_id|references|foreign_key: true|                   #integerから変更
+|customer_id|references|null: false,foreign_key: true|
+|card_id|references|foreign_key: true|                 
 
 ### Association
 belongs_to :user
@@ -50,10 +50,12 @@ belongs_to :user
 |------|----|-------|
 |zip_code|integer|null: false|
 |user_id|references|null: false,foreign_key: true| 
-|prefecture_id|references|null: false,foreign_key: true|        #stringから変更
+|prefecture_id|references|null: false,foreign_key: true|        
 |city|string|null: false|
 |address1|string|
 |address2|integer|
+|address3|string|
+|landline|integer|
 
 ### Association
 belongs_to :user
@@ -66,7 +68,7 @@ belongs_to :user
 |user_id|references|null: false,foreign_key: true|
 |name|string|null: false|
 |description|text||
-|category_id|references|null: false,foreign_key: true|   #_idに変更
+|category_id|references|null: false,foreign_key: true|   
 |condition|integer|null: false|
 |size|integer|null: false|
 |delivery_charge|integer|null:false|
@@ -74,7 +76,7 @@ belongs_to :user
 |prefecture|integer|null: false|
 |delivery_days|integer|null: false|
 |price|integer|null:false|
-|status|integer|null:false|   #enumを使用
+|status|integer|null:false|   
 
 ### Association
 belongs_to :user
