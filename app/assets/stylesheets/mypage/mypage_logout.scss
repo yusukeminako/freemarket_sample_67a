@@ -1,0 +1,30 @@
+.mypate_container {
+  width: 100%;
+  margin: 40px auto;
+  .left-container {
+    width: 1020px;
+    margin: 0 auto;
+    .side-bar {
+      float: left;
+    }
+    .left-content {
+      width: 700px;
+      background-color: white;
+      float: right;
+      // ここからサイドバーの各要素CSSを入れる
+      .log-out {
+        padding: 64px;
+        text-align: center;
+        &__button {
+          border: red solid 1px;
+          background-color: red;
+          color: white;
+          width: 320px;
+          height: 50px;
+          font-size: 14px;
+
+        }
+      }
+    }  
+  }
+}
