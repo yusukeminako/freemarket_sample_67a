@@ -72,6 +72,14 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'haml-rails'
 gem 'erb2haml'
+# カテゴリテーブルの階層を実現するgem
+gem 'ancestry'
+#クレジットカード機能を実装を実現するPAYJP導入
+gem 'payjp'
+# jquery導入
+gem "jquery-rails"
+gem 'devise'
+gem 'dotenv-rails'
 gem "font-awesome-sass"
 gem 'ancestry'
 gem 'carrierwave'
