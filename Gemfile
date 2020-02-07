@@ -81,3 +81,6 @@ gem "jquery-rails"
 gem 'devise'
 gem 'dotenv-rails'
 gem "font-awesome-sass"
+gem 'ancestry'
+gem 'carrierwave'
+gem 'fog-aws'
