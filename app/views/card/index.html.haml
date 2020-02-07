@@ -1,0 +1,17 @@
+.wrapper
+  .container-mypage
+    = render "users/side_bar"
+    
+    .user-card__content
+      %h2 支払い方法
+      .user-card__content__inner
+        .user-card__content__inner--text
+          %h3 クレジットカード一覧
+        .user-card__content__inner--btn
+          = link_to new_card_path,class: "user-card__content__inner--btn--add" do
+            %i.fas.fa-credit-card
+            クレジットカードを追加する
+        .user-card__content__inner--help
+          = link_to "#" do
+            %span 支払い方法について
+            %i.fas.fa-chevron-right

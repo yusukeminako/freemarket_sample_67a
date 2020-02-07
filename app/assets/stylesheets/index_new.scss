@@ -1,0 +1,126 @@
+.sign {
+  background-color:rgb(245, 245, 245);
+  height: 789px;
+  width: 100%;
+  .top {
+    height: 128px;
+    position: relative;
+    &__mercari {
+      height: 49px;
+      width: 185px;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .main {
+    height: 384px;
+    &__sign-up {
+      height: 97px;
+      width: 700px;
+      background-color: #fff;
+      margin: auto;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 1.5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    }
+
+    &__block {
+      height: 287px;
+      width: 700px;
+      background-color: #fff;
+      margin: auto;
+      border-top: 1px solid #f5f5f5;
+      font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+      text-align: center;
+      
+        &__1 {
+          height: 50px;
+          width: 343px;
+          color: #fff;
+          background-color: #ea352d;
+          margin: auto;
+          margin-top: 40px;
+          border-radius: 4px;
+          position: relative;
+          line-height: 50px;
+          font-size: 14px;
+
+        }
+        &__2 {
+          height: 50px;
+          width: 343px;
+          color: #fff;
+          background: #385185;
+          margin: auto;
+          margin-top: 16px;
+          border-radius: 4px;
+          position: relative;
+          line-height: 50px;
+          font-size: 14px;
+          .eee {
+            height: 30px;
+            width: 30px;
+          }
+        }
+        &__3 {
+          height: 50px;
+          width: 343px;
+          color: #333;
+          background-color: #fff;
+          border: #979797 solid 1px;
+          margin: auto;
+          margin-top: 16px;
+          border-radius: 4px;
+          position: relative;
+          line-height: 50px;
+          font-size: 14px;
+        }
+    }
+  }
+
+  .bottom {
+    height: 220px;
+    width: 456px;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    padding: 0px 0;
+    margin-top: 50px;
+    text-align: center;
+    background-color:rgb(245, 245, 245);
+
+    
+    &__texts {
+      height: 12px;
+      width: 456px;
+      display: flex;
+      justify-content: space-around;
+      font-size: 12px;
+      font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ';
+      color: #333;
+      margin: 40px;
+      &__left {
+      }
+      &__center {
+      }
+      &__right {
+      }
+    }
+
+    &__end {
+    font-size: 13px;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    color: rgb(51, 51, 51);
+    }
+  }
+}
