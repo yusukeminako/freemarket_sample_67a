@@ -30,9 +30,6 @@
         background: #fff;
         line-height: 1.5;
         font-size: 16px;
-        //&:focus {
-         // @include input-focus;
-        //}
       }
       &--cards {
         display: flex;
@@ -106,9 +103,6 @@
         border: 1px solid #ccc;
         line-height: 48px;
         font-size: 16px;
-        //&:focus {
-          //@include input-focus;
-        //}
       }
     }
     &--help {
