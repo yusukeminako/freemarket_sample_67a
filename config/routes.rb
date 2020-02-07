@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+root to: "posts#index"
   get 'card/new'
   get 'card/show'
   root to: "posts#index"
-  resources "test", only: [:index]
+  resources "test", only: [:index, :new]
   resources "categorys", only: [:index]
   resources "users", only: [:index, :new]
   resources :card, only: [:index, :new, :show] do
@@ -13,4 +14,3 @@ Rails.application.routes.draw do
     end
   end
 end
-
