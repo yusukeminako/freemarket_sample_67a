@@ -1,0 +1,312 @@
+.semiheader{
+  height: 45px;
+  background: #f5f5f5;
+}
+.product-detail {
+  background: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+
+  & a {
+    color: #0098E8;
+    text-decoration: none;
+
+    // &:hover {
+    //   @include link_hover;
+    // }
+  }
+  // .a-non {
+  //   @include a-no-change;
+  //   &:hover {
+  //     @include a-no-change-hover;
+  //   }
+  // }
+  // & .clearfix::after {
+  //   @include clearfix;
+  // }
+
+  &__top {
+    background-color: white;
+    width: 700px;
+    margin: 0 auto 0;
+    padding: 24px 40px 40px;
+
+    &__product-name {
+      font-size: 24px;
+      text-align: center;
+      line-height: 1.4em;
+      font-weight: bold;
+      h1 {
+        font-weight: bold;
+      }
+    }
+    &__item {
+      width: 620px;
+      height: 420px;
+      margin-top: 16px;
+      display:flex;
+
+      &-image {
+        float: left;
+        position: relative;
+
+        &--sold-out {
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 120px 120px 0 0;
+          border-color: red transparent transparent transparent;
+          position: absolute;
+          top:0;
+          left:0;
+        }
+        &--sold-text {
+          position: absolute;
+          top: 25px;
+          left:0;
+          font-size: 28px;
+          color: white;
+          letter-spacing: 2px;
+          font-weight: 600;
+          transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+        }
+        &-main {
+          width: 300px;
+          height: 300px;
+          
+          &--photo {
+            position: absolute;
+            &:not(:first-of-type) {
+              display: none;
+            }
+          }
+          & img {
+            object-fit: contain;
+          }
+        }
+        &-list {
+          width: 300px;
+          height: 120px;
+          float: left;
+
+          &__inner {
+            width: 20%;
+            height: 60px;
+            float: left;
+            
+
+            & img {
+              object-fit: cover;
+            }
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      &-table {
+        float: right;
+        width: 300px;
+        height: 420px;
+        border: solid 1px #f5f5f5;
+
+        .col {
+          min-width: 117px;
+          padding: 8px;
+          background-color: #fafafa;
+          border: solid 1px #f5f5f5;
+          font-weight: normal;
+        }
+        .item {
+          min-width: 182px;
+          padding: 8px;
+          border: solid 1px #f5f5f5;
+        }
+        &__seller {
+          height: 70px;
+          &-item {
+            &__name {
+              height: 16px;
+            }
+            .face-icon {
+              height: 25px;
+              display: flex;
+              &--block {
+                margin: 8px 0 0 18px;
+                &:first-child {
+                  margin: 8px 0 0 0;
+                }
+                .fas {
+                  font-size: 16px;
+                  vertical-align: text-bottom;
+                }
+                .fa-laugh {
+                  color: #ef5185;
+                }
+                .fa-meh {
+                  color: #fba933;
+                }
+                .fa-frown {
+                  color: #6ab5d8;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &__price-line {
+      width: 620px;
+      height: 50px;
+      margin-top: 24px;
+      text-align: center;
+      &--price {
+        font-size: 50px;
+        margin-right: 16px;
+        font-weight: 600;
+      }
+      &--taxin {
+        font-size: 10px;
+      }
+      &--postage {
+        font-size: 16px;
+      }
+    }
+    &__buy-btn {
+      display: block;
+      height: 60px;
+      line-height: 60px;
+      margin-top: 16px;
+       background-color: red;
+       color: white!important;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      // &:hover {
+      //   @include a-no-change-hover;
+      // }
+    }
+    &__sold-out{
+      display: block;
+      height: 60px;
+      line-height: 60px;
+      margin-top: 16px;
+      background-color: #888;
+      color: white!important;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      &:hover {
+        cursor: no-drop;
+      }
+    }
+    &__description {
+      margin-top: 56px; 
+      line-height: 1.5;
+      font-size: 18px;
+    }
+    &__foot {
+      margin-top: 16px;
+      height: 33px;
+      &__buttons {
+        float: left;
+        display: flex;
+        &--like {
+          min-width: 125px;
+          background-color: #f5f5f5;
+          border: 1px solid #f5f5f5;
+          padding: 8px 16px;
+          border-radius: 40px;
+          .fa-heart {
+            color: #ccc;
+            font-size: 15px;
+          }
+          span {
+            font-size: 14px;
+            margin: 1px 0 0 6px;
+            color:#333333
+          }
+        }
+        &--report {
+          min-width: 180px;
+          height: 33px;
+          margin-left: 16px;
+          padding: 8px 16px;
+          background-color: #f5f5f5;
+          border: 1px solid #f5f5f5;
+          border-radius: 40px;
+          .fa-flag {
+            font-size: 14px;
+            color:#333333
+
+          }
+          span {
+            font-size: 14px;
+            margin: 1px 0 0 6px;
+            color:#333333;
+          }
+        }
+      }
+      &--safety {
+        min-width: 228px;
+        height: 33px;
+        margin-top: 8px;
+        float: right;
+        & span {
+          font-weight: 100;
+          margin: 1px 0 0 6px;
+        }
+        & a:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+ 
+  &__bottom {
+    &__navi {
+      width: 700px;
+      margin: 24px auto 0;
+      &--left {
+        width: 45%;
+        float: left;
+      }
+      &--right {
+        right: 0;
+        width: 45%;
+        text-align: right;
+        float: right;
+      }
+    }
+    &__info {
+      width: 700px;
+      height: 138px;
+      margin: 24px auto 48px;
+      padding: 70px 0 24px;
+      background-color: white;
+      & ul {
+        text-align: center;
+        & li {
+          display: inline-block;
+          margin: 0 4px;
+          height: 26px;
+          width: 46px;
+        }
+      }
+    }
+  }
+}
+
+// © 2020 GitHub, Inc.
+// Terms
+// Privacy
+// Security
+// Status
+// Help
+// Contact GitHub
+// Pricing
+// API
+// Training
+// Blog
+// About

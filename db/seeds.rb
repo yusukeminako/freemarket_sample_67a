@@ -148,7 +148,8 @@ ticket_other.children.create([{name: "ショッピング"}, {name: "レストラ
 # 自動車の子カテゴリ
 mobil_car = mobil.children.create(name: "自動車本体")
 mobil_carpart = mobil.children.create(name: "自動車アクセサリー")
-mobil_bike = mobil.children.create(name: "オートバイ車体") mobil_other = mobil.children.create(name: "その他") # 自動車の孫カテゴリ
+mobil_bike = mobil.children.create(name: "オートバイ車体")
+mobil_other = mobil.children.create(name: "その他") # 自動車の孫カテゴリ
 mobil_car.children.create([{name: "国内自動車本体"}, {name: "外国自動車本体"}, {name: "タイヤ/ホイールセット"}, {name: "タイヤ"}, {name: "ホイール"}, {name: "その他"}])
 mobil_carpart.children.create([{name: "車内アクセサリー"}, {name: "カーナビ"}, {name: "カーオーディオ"}, {name: "車外アクセサリー"}, {name: "メンテナンス用品"}, {name: "チャイルドシート"}, {name: "ドライブレコーダー"}, {name: "レーダー探知機"}, {name: "カタログ/マニュアル"}, {name: "セキュリティ"}, {name: "ETC"}, {name: "その他"}])
 mobil_bike.children.create([{name: "国内車本体"}, {name: "外国車本体"}, {name: "タイヤ"}, {name: "マフラー"}, {name: "エンジン、冷却装置"}, {name: "外国オートバイ用パーツ"}, {name: "その他"}])
