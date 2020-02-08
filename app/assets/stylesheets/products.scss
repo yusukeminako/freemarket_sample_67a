@@ -10,19 +10,19 @@
     color: #0098E8;
     text-decoration: none;
 
-    // &:hover {
-    //   @include link_hover;
-    // }
+    &:hover {
+      @include link_hover;
+    }
   }
-  // .a-non {
-  //   @include a-no-change;
-  //   &:hover {
-  //     @include a-no-change-hover;
-  //   }
-  // }
-  // & .clearfix::after {
-  //   @include clearfix;
-  // }
+  .a-non {
+    @include a-no-change;
+    &:hover {
+      @include a-no-change-hover;
+    }
+  }
+  & .clearfix::after {
+    @include clearfix;
+  }
 
   &__top {
     background-color: white;
@@ -183,9 +183,9 @@
       text-align: center;
       font-size: 24px;
       font-weight: bold;
-      // &:hover {
-      //   @include a-no-change-hover;
-      // }
+      &:hover {
+        @include a-no-change-hover;
+      }
     }
     &__sold-out{
       display: block;
@@ -297,16 +297,3 @@
     }
   }
 }
-
-// © 2020 GitHub, Inc.
-// Terms
-// Privacy
-// Security
-// Status
-// Help
-// Contact GitHub
-// Pricing
-// API
-// Training
-// Blog
-// About
