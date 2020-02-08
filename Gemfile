@@ -84,3 +84,4 @@ gem "font-awesome-sass"
 gem 'ancestry'
 gem 'carrierwave'
 gem 'fog-aws'
+gem 'mini_magick'
