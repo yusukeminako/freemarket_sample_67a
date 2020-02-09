@@ -44,11 +44,9 @@
       height: 420px;
       margin-top: 16px;
       display:flex;
-
       &-image {
         float: left;
         position: relative;
-
         &--sold-out {
           width: 0;
           height: 0;
@@ -73,8 +71,7 @@
         }
         &-main {
           width: 300px;
-          height: 300px;
-          
+          height: 300px;          
           &--photo {
             position: absolute;
             &:not(:first-of-type) {
@@ -89,13 +86,10 @@
           width: 300px;
           height: 120px;
           float: left;
-
           &__inner {
             width: 20%;
             height: 60px;
             float: left;
-            
-
             & img {
               object-fit: cover;
             }
@@ -207,7 +201,7 @@
       font-size: 18px;
     }
     &__foot {
-      margin-top: 16px;
+      margin-top: 103px;
       height: 33px;
       &__buttons {
         float: left;
@@ -239,7 +233,6 @@
           .fa-flag {
             font-size: 14px;
             color:#333333
-
           }
           span {
             font-size: 14px;
@@ -259,39 +252,6 @@
         }
         & a:hover {
           text-decoration: none;
-        }
-      }
-    }
-  }
- 
-  &__bottom {
-    &__navi {
-      width: 700px;
-      margin: 24px auto 0;
-      &--left {
-        width: 45%;
-        float: left;
-      }
-      &--right {
-        right: 0;
-        width: 45%;
-        text-align: right;
-        float: right;
-      }
-    }
-    &__info {
-      width: 700px;
-      height: 138px;
-      margin: 24px auto 48px;
-      padding: 70px 0 24px;
-      background-color: white;
-      & ul {
-        text-align: center;
-        & li {
-          display: inline-block;
-          margin: 0 4px;
-          height: 26px;
-          width: 46px;
         }
       }
     }

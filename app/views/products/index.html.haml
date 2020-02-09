@@ -17,7 +17,7 @@
         %tr.product-detail__top__item-table__seller
           %th.product-detail__top__item-table__seller-col.col 出品者
           %th.product-detail__top__item-table__seller-item.item 
-            = link_to "#", show_profile_users_path(@seller), class: 'product-detail__top__item-table__seller-item__name'
+            = link_to "#", class: 'product-detail__top__item-table__seller-item__name'
             .face-icon
               .face-icon--block
                 %i.fas.fa-laugh
@@ -32,15 +32,15 @@
           %th.product-detail__top__item-table__cat-col.col カテゴリー
           %th.product-detail__top__item-table__cat-item.item
             .product-detail__top__item-table__cat-item__name1
-            {@cat_parent.name}
+            あああ
             %br
             .product-detail__top__item-table__cat-item__name2
               %i.fas.fa-chevron-right
-              {@cat_child.name}
+            いい
             %br
             .product-detail__top__item-table__cat-item__name3
               %i.fas.fa-chevron-right
-              {@cat_grand_child.name}
+              うう
           %tr.product-detail__top__item-table__brand
             %th.product-detail__top__item-table__brand-col.col ブランド
             %th.product-detail__top__item-table__brand-item.item
@@ -60,12 +60,12 @@
         %tr.product-detail__top__item-table__area
           %th.product-detail__top__item-table__area-col.col 配送元地域
           %th.product-detail__top__item-table__area-item.item
-            = link_to "#{@product.area.name}", area_path(@product.area), class: 'product-detail__top__item-table__area-item__name'
+            = link_to "#", class: 'product-detail__top__item-table__area-item__name'
         %tr.product-detail__top__item-table__scheduled_sending_date
           %th.product-detail__top__item-table__scheduled_sending_date-col.col 発送日の目安
           %th.product-detail__top__item-table__scheduled_sending_date-item.item #{@scheduled_sending_date}
     .product-detail__top__price-line
-      %span.product-detail__top__price-line--price ¥ #{converting_to_jpy(@product.price)}
+      %span.product-detail__top__price-line--price
       %span.product-detail__top__price-line--taxin (税込)
       - if @postage_burden == 0
         %span.product-detail__top__price-line--postage 送料込み
@@ -73,7 +73,6 @@
         %p 購入画面へ進む
     .product-detail__top__description
       %p
-        = simple_format(@product.description)
     .product-detail__top__foot.clearfix
       .product-detail__top__foot__buttons
         .product-detail__top__foot__buttons--like
@@ -91,33 +90,6 @@
           %span あんしん・あんぜんへの取り組み
 
 
-  //ここからコメント欄より下の部分
-  %section.product-detail__bottom
-    %ul.product-detail__bottom__navi.clearfix
-      - if @product.previous
-        %li.product-detail__bottom__navi--left
-          = link_to "m#{@previous_product.id}" do
-            %i.fas.fa-chevron-left
-            #{@previous_product.name}
-      - if @product.next
-        %li.product-detail__bottom__navi--right
-          = link_to "m#{@next_product.id}" do
-            #{@next_product.name}
-            %i.fas.fa-chevron-right
-    
-    .product-detail__bottom__info
-      %ul
-        %li
-          = link_to '#' do
-            = image_tag('icon-facebook.png', size: '44x44')
-        %li
-          = link_to '#' do
-            = image_tag('icon-twitter.png', size: '44x44')
-        %li
-          = link_to '#' do
-            = image_tag('icon-line.png', size: '44x44')
-        %li
-          = link_to '#' do
-            = image_tag('icon-pin.png', size: '44x44')
+  
   .semifooter
     = render "shared/footer"
