@@ -82,12 +82,12 @@ Devise.setup do |config|
   # to behave the same regardless if the e-mail provided was right or wrong.
   # Does not affect registerable.
   # config.paranoid = true
-
+  
   # By default Devise will store the user in session. You can skip storage for
   # particular strategies by setting this option.
   # Notice that if you are skipping storage for all authentication paths, you
   # may want to disable generating routes to Devise's sessions controller by
-  # passing skip: :sessions to `devise_for` in your config/routes.rb
+  # passing skip: :s to `devise_for` in your config/routes.rb
   config.skip_session_storage = [:http_auth]
 
   # By default, Devise cleans up the CSRF token on authentication to

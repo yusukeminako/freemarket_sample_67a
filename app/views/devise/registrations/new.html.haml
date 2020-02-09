@@ -1,0 +1,39 @@
+%h2 Sign up
+あああ
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .main-content__content__1__input
+    = f.text_field :nickname, placeholder: '例) ニックネーム'
+  .main-content__content__5__box__hidari
+    = f.text_field :last_name, placeholder: '例) 小泉'
+  .main-content__content__5__box__migi
+    = f.text_field :first_name, placeholder: '例) 純一郎'
+  .main-content__content__5__box__hidari
+    = f.text_field :last_name_kana, placeholder: '例) コイヅミ'
+  .main-content__content__5__box__migi
+    = f.text_field :first_name_kana, placeholder: '例) ジュン'
+  .main-content__content__7__sita__year
+    = f.collection_select( :birthdate_year, Year.all, :id, :year, prompt: "---")
+  .main-content__content__7__sita__monse
+    = f.collection_select( :birthdate_month, Month.all, :id, :month, prompt: "---")
+  .main-content__content__7__sita__day
+    = f.collection_select( :birthdate_day, Day.all, :id, :day, prompt: "---")
+  .main-content__content__1__input
+    = f.email_field :email, placeholder: 'PC・携帯どちらでも可'
+  .middle__inbox__boxs__c__e
+    = f.text_field :phone_number, placeholder: '携帯電話の番号を入力'
+  .field
+    = f.label :password
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length} characters minimum)
+    %br/
+    = f.password_field :password, autocomplete: "new-password"
+  .field
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "new-password"
+  .actions
+    = f.submit "次へ"
+= render "devise/shared/links"
+
