@@ -24,7 +24,7 @@
 
       &__add3 {
         width: 343px;
-        margin: auto;
+        margin: 0 auto 10px;
         &__add4 {
           font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
           font-weight: 600;
@@ -45,48 +45,6 @@
 
         &__add6 {
           .ad1 {
-            height: 50px;
-            width: 100%;
-            padding: 10px 16px 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            background: #fff;
-            line-height: 1.5;
-            font-size: 16px;
-            margin: 8px 0 0;
-            min-height: 1.5em;
-            outline: 0;
-            font-family: inherit;
-            -webkit-appearance: none;
-            color: #888;
-            line-height: 33px;
-          }
-        }
-      }
-      &__add33 {
-        width: 343px;
-        margin: auto;
-        margin-top: 24px;
-        &__add44 {
-          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-          font-weight: 600;
-          color: #333;
-          display: inline;
-        }
-
-        &__add55 {
-          display: inline;
-          background: #ea352d;
-          color: #fff;
-          margin: 0 0 0 8px;
-          padding: 2px 4px;
-          font-size: 12px;
-          border-radius: 2px;
-          vertical-align: top;
-        }
-
-        &__add66 {
-          .ad11 {
             height: 50px;
             width: 100%;
             padding: 10px 16px 8px;
@@ -208,10 +166,6 @@
             border-radius: 2px;
             vertical-align: top;
           }
-        }
-
-        &__444a {
-
         }
       }
 

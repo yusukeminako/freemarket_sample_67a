@@ -13,27 +13,27 @@
             必須
           .ad__ad__add2__add3__add6
             = f.text_field :nickname, placeholder: '例) 小泉純一郎', class: "ad1"
-        .ad__ad__add2__add33
-          .ad__ad__add2__add33__add44
+        .ad__ad__add2__add3
+          .ad__ad__add2__add3__add4
             メールアドレス
-          .ad__ad__add2__add33__add55
+          .ad__ad__add2__add3__add5
             必須
-          .ad__ad__add2__add33__add66
-            = f.email_field :email, placeholder: 'PC・携帯どちらでも可', class: "ad11"
-        .ad__ad__add2__add33
-          .ad__ad__add2__add33__add44
+          .ad__ad__add2__add3__add6
+            = f.email_field :email, placeholder: 'PC・携帯どちらでも可', class: "ad1"
+        .ad__ad__add2__add3
+          .ad__ad__add2__add3__add4
             パスワード
-          .ad__ad__add2__add33__add55
+          .ad__ad__add2__add3__add5
             必須
-          .ad__ad__add2__add33__add66
-            = f.password_field :password, autocomplete: 'ad11'
-        .ad__ad__add2__add33
-          .ad__ad__add2__add33__add44
+          .ad__ad__add2__add3__add6
+            = f.password_field :password, autocomplete: 'ad1', class: "ad1"
+        .ad__ad__add2__add3
+          .ad__ad__add2__add3__add4
             パスワード（再確認）
-          .ad__ad__add2__add33__add55
+          .ad__ad__add2__add3__add5
             必須
-          .ad__ad__add2__add33__add66
-            = f.password_field :password_confirmation, autocomplete: "ad11"
+          .ad__ad__add2__add3__add6
+            = f.password_field :password_confirmation, autocomplete: "ad1", class: "ad1"
         .ad__ad__add2__add333
           .ad__ad__add2__add333__330
             本人確認
@@ -74,11 +74,13 @@
               = f.collection_select( :birthdate_month, Month.all, :id, :month, prompt: "---")
             .ad__ad__add2__add33333__444a__444ab
               = f.collection_select( :birthdate_day, Day.all, :id, :day, prompt: "---")
+        .middle__inbox__boxs__c__e
+          = f.text_field :phone_number, placeholder: '携帯電話の番号を入力'
         .hon
           ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         .next-end
           = f.submit "登録"
-      = render "devise/shared/links"
+      -# = render "devise/shared/links", class: "sss"
 
         
 
