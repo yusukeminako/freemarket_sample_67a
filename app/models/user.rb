@@ -9,5 +9,5 @@ class User < ApplicationRecord
   belongs_to_active_hash :day
   belongs_to_active_hash :month
   end
-
+  
 end
