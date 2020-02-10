@@ -19,6 +19,11 @@ ActiveRecord::Schema.define(version: 2020_02_06_103957) do
     t.string "address1", null: false
     t.string "address2", null: false
     t.integer "landline"
+  end
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "customer_id"
+    t.string "card_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
