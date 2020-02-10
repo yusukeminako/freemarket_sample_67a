@@ -72,6 +72,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'haml-rails'
 gem 'erb2haml'
+# モデルの記述を呼び出せるgem(year,month,day)
+gem 'active_hash'
 # カテゴリテーブルの階層を実現するgem
 gem 'ancestry'
 #クレジットカード機能を実装を実現するPAYJP導入

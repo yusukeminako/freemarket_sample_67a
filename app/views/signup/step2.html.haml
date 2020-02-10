@@ -1,0 +1,23 @@
+=form_for @user, url: done_signup_index_path,method: :get do |f|
+  .sign
+    .top
+      .top__mercari
+        = image_tag "login.svg"
+    .middle
+      .middle__inbox
+        .middle__inbox__phone
+          電話番号の確認
+        .middle__inbox__boxs
+          .middle__inbox__boxs__c
+            .middle__inbox__boxs__c__d
+              携帯電話の番号
+            .middle__inbox__boxs__c__e
+              = f.text_field :phone_number, placeholder: '携帯電話の番号を入力'
+          .sms
+            本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+          .red
+            = f.submit '完了' 
+          .tyui
+            ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+          .phone-right
+            電話番号の確認が必要な理由＞
