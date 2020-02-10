@@ -1,0 +1,238 @@
+.ad {
+  background: rgb(245, 245, 245);
+  height: 1500px;
+
+  &__ad {
+    width: 700px;
+    height: 1500px;
+    background-color: #fff;
+    margin: auto;
+
+    &__add {
+      width: 700px;
+      line-height: 1.5;
+      text-align: center;
+      font-size: 22px;
+      padding: 32px;
+      font-weight: bold;
+      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    }
+
+    &__add2 {
+      border-top: 1px solid #f5f5f5;
+      padding: 40px 40px 64px;
+
+      &__add3 {
+        width: 343px;
+        margin: auto;
+        &__add4 {
+          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+          font-weight: 600;
+          color: #333;
+          display: inline;
+        }
+
+        &__add5 {
+          display: inline;
+          background: #ea352d;
+          color: #fff;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          font-size: 12px;
+          border-radius: 2px;
+          vertical-align: top;
+        }
+
+        &__add6 {
+          .ad1 {
+            height: 50px;
+            width: 100%;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            margin: 8px 0 0;
+            min-height: 1.5em;
+            outline: 0;
+            font-family: inherit;
+            -webkit-appearance: none;
+            color: #888;
+            line-height: 33px;
+          }
+        }
+      }
+      &__add33 {
+        width: 343px;
+        margin: auto;
+        margin-top: 24px;
+        &__add44 {
+          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+          font-weight: 600;
+          color: #333;
+          display: inline;
+        }
+
+        &__add55 {
+          display: inline;
+          background: #ea352d;
+          color: #fff;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          font-size: 12px;
+          border-radius: 2px;
+          vertical-align: top;
+        }
+
+        &__add66 {
+          .ad11 {
+            height: 50px;
+            width: 100%;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            margin: 8px 0 0;
+            min-height: 1.5em;
+            outline: 0;
+            font-family: inherit;
+            -webkit-appearance: none;
+            color: #888;
+            line-height: 33px;
+          }
+        }
+      }
+      &__add333 {
+        margin-top: 32px;
+        width: 343px;
+        margin: auto;
+        margin-top: 24px;
+        &__330 {
+          font-size: 16px;
+          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+          font-weight: bold;
+        }
+        &__331 {
+          margin: 8px 0 0;
+          font-size: 14px;
+          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+          color: #333;
+          line-height: 1.5;
+        }
+      }
+
+      &__add3333 {
+        width: 343px;
+        margin: auto;
+        margin-top: 32px;
+        font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+        height: 70px;
+        
+
+        &__2020 {
+          display: flex;
+
+          &__2020a {
+            font-weight: bold;
+          }
+
+          &__2020b {
+            background: #ea352d;
+            color: #fff;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            font-size: 12px;
+            border-radius: 2px;
+            vertical-align: top;
+          }
+        }
+
+        &__2021 {
+          display: flex;
+          margin-top: 10px;
+
+          &__2021a {
+            .ad12 {
+            height: 50px;
+            color: #888;
+            margin-right: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            padding: 10px 16px 8px;
+            line-height: 2;
+            font-size: 16px;
+            font-family: inherit;
+            width: calc(50% - 6px);
+            }
+          }
+
+          &__2021b {
+            .ad12 {
+            height: 50px;
+            color: #888;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 2;
+            font-size: 16px;
+            font-family: inherit;
+            width: calc(50% - 6px);
+            }
+          }
+        }
+      }
+
+      &__add33333 {
+        height: 70px;
+        width: 343px;
+        margin: auto;
+        margin-top: 32px;
+        &__333a {
+          display: flex;
+          margin-top: 8px;
+          &__333b {
+            height: 26px;
+            width: 76px;
+          }
+          &__333c {
+            height: 26px;
+            background: #ea352d;
+            color: #fff;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            font-size: 12px;
+            border-radius: 2px;
+            vertical-align: top;
+          }
+        }
+
+        &__444a {
+
+        }
+      }
+
+      .hon {
+        width: 343px;
+        margin: auto;
+        font-size: 14px;
+        margin-top: 40px;
+        color: #888;
+      }
+
+      .next-end {
+        height: 50px;
+        width: 343px;
+        margin: auto;
+        margin-top: 32px;
+        background-color: #ea352d;
+        color: #fff;
+        text-align: center;
+        line-height: 3;
+      }
+    }
+  }
+}
