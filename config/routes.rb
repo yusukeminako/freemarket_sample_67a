@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources "signup", only: [:new]
 root to: "posts#index"
-resources "products", only: [:index]
+resources "products", only: [:index, :new]
   resources "card", only: [:new, :show]
   resources "test", only: [:index, :new]
   resources "categorys", only: [:index]
