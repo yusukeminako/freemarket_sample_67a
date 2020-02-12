@@ -61,7 +61,7 @@ belongs_to :user
 
 
 
-## Items
+## Products
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false,foreign_key: true|
@@ -81,7 +81,7 @@ belongs_to :user
 belongs_to :user
 belongs_to :category
 belongs_to :brand
-
+has_many :images
 
 
 ## Brand
@@ -92,6 +92,17 @@ belongs_to :brand
 
 ### Association
 has_many :items
+
+
+
+## Images
+|Column|Type|Options|
+|products|references|null: false|
+|image|text|null: false|
+
+### Association
+belongs_to :product
+
 
 <!-- lgtm次第消します -->
 <!-- 新規登録
