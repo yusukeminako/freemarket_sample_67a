@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 root to: "posts#index"
-resources "products", only: [:index]
+resources "products", only: [:index, :new]
   resources "card", only: [:new, :show]
   resources "test", only: [:index, :new]
   resources "categorys", only: [:index]
