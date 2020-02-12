@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_051917) do
-  
+ActiveRecord::Schema.define(version: 2020_02_11_082539) do
+
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "zip_code", null: false
     t.string "prefecture", null: false
@@ -38,13 +38,15 @@ ActiveRecord::Schema.define(version: 2020_02_10_051917) do
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "image", null: false
+    t.text "src", null: false
+    t.bigint "products_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["products_id"], name: "index_images_on_products_id"
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id_id"
+    t.bigint "user_id"
     t.string "name"
     t.text "condition"
     t.text "description"
@@ -56,7 +58,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_051917) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
-    t.index ["user_id_id"], name: "index_products_on_user_id_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -70,7 +72,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_051917) do
     t.integer "birthdate_year", null: false
     t.integer "birthdate_month", null: false
     t.integer "birthdate_day", null: false
-    t.integer "phone_number", null: false
+    t.string "phone_number", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -78,4 +80,5 @@ ActiveRecord::Schema.define(version: 2020_02_10_051917) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "images", "products", column: "products_id"
 end
