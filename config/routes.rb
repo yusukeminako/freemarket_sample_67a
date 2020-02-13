@@ -4,8 +4,8 @@ root to: "posts#index"
 resources "products", only: [:index, :new]
   resources "card", only: [:new, :show]
   resources "categorys", only: [:index]
-  resources "users", only: [:index, :new]
-  resources "signup", only: [:new]
+  resources "users", only: [:new]
+  resources "signup", only: [:index, :create]
   resources :card, only: [:index, :new, :show] do
     collection do
       get 'show', to: 'card#show'

@@ -169,6 +169,8 @@ other_other.children.create([{name: "オフィス用品一般"}, {name: "オフ�
 # サンプル画像保存
 Image.create!(src:File.open("./public/images/product1.png"))
 Image.create!(src:File.open("./public/images/dino.jpg"))
+Image.create!(src:File.open("./public/images/saitama.jpg"))
+Image.create!(src:File.open("./public/images/lion.jpg"))
 
 
 #商品サンプル

@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   def index
-    @product = Product.find(2)
-    @image=Image.find(2)
+    @product = Product.find(3)
   end
 end
