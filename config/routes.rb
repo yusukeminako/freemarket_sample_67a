@@ -6,6 +6,7 @@ resources "products", only: [:index, :new]
   resources "categorys", only: [:index]
   resources "users", only: [:index, :new]
   resources "signup", only: [:new]
+  resources "purchases", only:[:show]
   resources :card, only: [:index, :new, :show] do
     collection do
       get 'show', to: 'card#show'

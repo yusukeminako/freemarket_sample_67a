@@ -1,0 +1,47 @@
+%main.main
+  %section.main__container
+    %h2.tema 購入内容の確認
+    %section.check
+      .check__content-inner
+        .check__item__box
+          %h3.check__item__image
+            %img.lazyload
+              = image_tag "47989489_8_d_215.jpg", size:"70x110"
+          .check__item__detail
+            %p.check__item__detail__name ダウンベスト
+            %p.check__price
+              %span.plice ¥1,500
+              %span.shipping-fee （税込）送料込み
+    %section.buycontent
+      .buycontent__inner
+        %form.buy-form{action: "#", method: "POST", novalidate: "novalidate"}
+          %ul.buy-price-table
+            %li.buy-price-row.buy-you-pay.bold
+              .buy-price-cell-label 支払い金額
+              .buy-price-cell
+                %span.span{"data-buy-pay" => "1500"} ¥1,500
+          %ul.buyaccordion
+            %li.byaccordion__parent
+              .checkbox-default.buy-use-point
+                %input{disabled: "disabled", type: "checkbox"}/
+                %i.icon-check
+                %label.label ポイントを使用 (所持ポイント: P0)
+          %section.buycontentoo{"data-buy" => "pay-method"}
+            .buycontentoo__inner
+              %h3.paymethod 支払い方法
+              %a{href: "#"}
+                %p.buy-user-info-text
+                  %i.fas.fa-plus-circle
+                  %span.register 登録してください
+                  
+          %section.buycontentoo
+            .buycontentoo__inner
+              %h3.adress 配送先
+              %a{href: "#"}
+                %p.buy-user-info-text.a
+                  %i.fas.fa-plus-circle
+                  %span.register 登録してください
+          %section.buy-content.buy-user-info
+            %button.buybtn{disabled: "disabled", type: "submit"} 購入する
+            %input#user_info_is_not_complete{type: "hidden"}/
+      %section
