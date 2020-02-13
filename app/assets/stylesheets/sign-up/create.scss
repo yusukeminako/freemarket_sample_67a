@@ -1,6 +1,7 @@
 .done {
-  
-  
+  height: 800px;
+  padding-top: 110px;
+  background-color: #00FFFF;
   &__contents {
     height: 582px;
     width: 700px;
@@ -37,13 +38,18 @@
         }
 
         &__start {
-          background-color: #ea352d;
-          border: 1px solid #ea352d;
+          background-color: #3CCACE;
+          border: 1px solid #3CCACE;
           color: white;
           margin-top: 32px;
           font-size: 16px;
           line-height: 48px;
           letter-spacing: 1.5px;
+
+          .ss {
+            color: white;
+            text-decoration: none;
+          }
         }
       }
     }
