@@ -1,7 +1,30 @@
+
+
+-# .product_price
+-#   .product_price-group
+-#     .product_header
+-#       価格
+-#     .product_require
+-#       必須 
+-#   .product_price-form
+-#     ¥
+-#     %input#price_calc.price_form-box{placeholder: "例) 300", type: "number"}/
+
+-#   .product_price-fee
+-#     販売手数料(10%)
+-#     .right_bar
+
+-#   .product_profit
+-#     販売利益
+-#     = f.number_field :price, style: "display: none", id: "price"
+-#     .right_bar_2
+
 .listing__wrapper
-  = render "products/header"
+  .listing__header
+    .listing__header-logo
+      = image_tag src="fmarket_logo_red.svg", alt:"merukari" , height: "50px", width: "185px"
   .listing__contents
-    = form_for @product do |f|
+    = form_for @item do |f|
       %h2.listing__contents__info
         商品の情報を入力
       .listing__contents__image
@@ -16,7 +39,7 @@
             %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
               %pre.label-box__text-visible クリックしてファイルをアップロード
           .hidden-content
-          -#  = f.fields_for :images do |i|
+            = f.fields_for :images do |i|
               = i.file_field :image, class: "hidden-field"
               %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
               %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
@@ -28,7 +51,7 @@
           %span.required 必須
           %br/
           =f.text_field :name, class: "name", placeholder: "商品名(必須40文字まで）"
-          - if @product.errors[:name].any?
+          - if @item.errors[:name].any?
             .error-message
               %p 入力してください
         .group
@@ -36,7 +59,7 @@
           %span.required 必須
           %br/
           =f.text_area :description, class: "text", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
-          -if @product.errors[:description].any?
+          -if @item.errors[:description].any?
             .error-message
               %p 入力してください
       .listing__contents__detail
@@ -48,15 +71,15 @@
             .select
               =f.collection_select :category_id, Category.all, :id, :name, prompt: "---", class: "category"
               %br/
-              - if @product.errors[:category_id].any?
+              - if @item.errors[:category_id].any?
                 .error-message
                   %p 選択してください
           .group
             %label 商品の状態
             %span.required 必須
             .select
-              =f.select :condition, ["新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], prompt: "---"
-              - if @product.errors[:condition].any?
+              =f.select :status, ["新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], prompt: "---"
+              - if @item.errors[:status].any?
                 .error-message
                   %p 選択してください
       .listing__contents__deliver
@@ -68,24 +91,24 @@
             .select
               =f.select :shipping_burden, ["送料込み（出品者負担)", "着払い（購入者負担)"], prompt: "---"
               %br/
-              - if @product.errors[:shipping_burden].any?
+              - if @item.errors[:shipping_burden].any?
                 .error-message
                   %p 選択してください
           .group
             %label 発送元の地域
             %span.required 必須
             .select-1
-              -# =f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: "prefecture"
+              =f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: "prefecture"
               %br/
-              -# - if @product.errors[:prefecture_id].any?
-                -# .error-message
+              - if @item.errors[:prefecture_id].any?
+                .error-message
                   %p 選択してください
           .group
             %label 発送までの日数
             %span.required 必須
             .select
               =f.select :shipping_date, ["1~2日で発送", "2~3日で発送", "4~7日で発送"], prompt: "---"
-              - if @product.errors[:shipping_date].any?
+              - if @item.errors[:shipping_date].any?
                 .error-message
                   %p 選択してください
       .listing__contents__price
@@ -97,31 +120,17 @@
                 価格
                 %span.required-2 必須
               .group__right
-                ￥
-                =f.text_field :price_id, placeholder: "例）300", value: "", class: "price"
-                - if @product.errors[:price_id].any?
-                  .error-message
-                  %p 300以上9999999以下で入力してください
-            
-            .product_price-fee-box
-              .product_price-fee
-                .product_price-feegroup__left
-                  販売手数料(10%)
-                .right_bar
-
-            .product_profit
-              .product_profit
-                .product_profit__left
-                  販売利益
-                .right_bar_2
-              
-
-
+                .input
+                  ￥
+                =f.text_field :price, class: "price", placeholder: "例）300"
+          - if @item.errors[:price].any?
+            .error-message
+              %p 300以上9999999以下で入力してください
       .listing__contents__confirms
         .listing__contents__confirms-confirm
           %p 
             =link_to '禁止されている出品', '#'
-            
+            、
             =link_to '行為', '#'
             を必ずご確認ご確認ください。
           %p 
@@ -142,4 +151,6 @@
           %li プライバシーポリシー
           %li メルカリ利用規約
           %li 特定商取引に関する表記
-      = render "products/footer"
+      .listing__footer__logo
+        = image_tag src="/images/logo_gray.svg", alt:"merukari"
+      %p © Mercari, Inc.

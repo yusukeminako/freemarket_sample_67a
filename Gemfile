@@ -86,3 +86,6 @@ gem "font-awesome-sass"
 gem 'ancestry'
 gem 'carrierwave'
 gem 'fog-aws'
+gem 'pry-rails'
+gem 'pry-byebug'
+gem 'pry-doc'

@@ -1,0 +1,183 @@
+// Place all the styles related to the purchases controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main {
+  padding: 24px 16px;
+  display: block;
+  background: #f5f5f5;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+
+  a {
+    text-decoration: none;
+  }  
+
+  &__container  {
+    width: 700px;
+    margin: 0 auto;
+    background: #fff;
+  }
+  .tema {
+    border-bottom : solid 1px #f5f5f5;
+    font-size: 22px;
+    padding: 32px;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .check {
+    border-bottom : solid 1px #f5f5f5;
+    text-align: center;
+    padding: 32px 16px;
+  
+    &__content-inner {
+      width:500px;
+      height:100px;
+      margin: 0 auto;
+    }
+    &__item__box {
+      display: flex;
+
+      &__item__image {
+        min-width: 80px;
+      }
+      .check__item__detail {
+        margin-left: 16px;
+
+        .check__item__detail__name{
+          font-size: 14px;
+          margin: 0;
+          padding: 0 0 8px;
+          line-height: 1.5;
+          text-align: left;
+          font-weight: lighter
+        }
+        .check__price {
+          margin: 0;
+          text-align: left;
+          font-size: 15px;
+          font-weight: 600;
+        }
+        .shipping-fee {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .buycontent {
+    padding-bottom: 48px;
+  
+    &__inner {
+      max-width: 343px;
+      margin: 0 auto;
+      
+  
+      .buy-price-table {
+        padding-top:40px;
+        margin: 0;
+        border-collapse: collapse;
+        width: 100%;
+        display: flex;
+        
+
+        li{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+
+          .buy-price-cell-label {
+            font-weight: 600;
+            font-size: 18px;
+          }
+          .span {
+            font-weight: 600;
+            font-size: 30px;
+          }
+        }
+      }
+      .buyaccordion {
+        color: #888;
+
+        .checkbox-default.buy-use-point{
+          border-bottom : solid 1px #f5f5f5;
+          text-align: left;
+          padding-top: 10px;
+          padding-bottom :30px;
+
+          .disabled {
+            color: #ccc;
+            background: #ccc;
+          }
+          
+          .icon-check {
+            color: #ccc;
+            background: #ccc;
+            
+          }
+          .label {
+            cursor: default;
+            padding-left: 50px;
+            padding-bottom: 20px;
+            padding-left: 2px;
+            font-size: 14px;
+          }
+        }
+      }
+      .buycontentoo {
+      
+
+        &__inner {
+          font-size: 100%;
+          font-weight: 600;
+          font-size: 14px;
+          padding-top: 40px;
+          border-bottom : solid 1px #f5f5f5;
+
+          .paymethod {
+            padding-bottom: 10px;
+            font-weight: bold;
+          }
+          .buy-user-info-text {
+            text-align: left;
+            font-size: 14px;
+            color: #0099e8;
+            padding-bottom: 40px;
+            border-bottom : solid 1px #f5f5f5; 
+          }
+
+          .register {
+            text-decoration: none;
+            font-weight: lighter;
+            text-decoration: none;
+            .a {
+              text-decoration: none;
+            }
+            
+          }
+
+          .adress {
+            padding-bottom: 10px;
+            font-weight: bold;
+          }
+        }
+      }
+      .buy-content.buy-user-info {
+        padding-bottom: 0;
+
+        .buybtn {
+          border: 1px solid #888;
+          background: #888;
+          color: #fff;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          border-bottom : solid 1px #f5f5f5;
+          margin-top: 30px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

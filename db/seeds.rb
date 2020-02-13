@@ -170,6 +170,5 @@ other_other.children.create([{name: "オフィス用品一般"}, {name: "オフ�
 Image.create!(src:File.open("./public/images/product1.png"))
 Image.create!(src:File.open("./public/images/dino.jpg"))
 Image.create!(src:File.open("./public/images/product2.jpg"))
-
 #商品サンプル
 Product.create!(name: '恐竜',condition: '絶好調',description: '絶滅しているため希少価値が凄い',price: '120')

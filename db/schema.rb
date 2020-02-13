@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_033957) do
-
+ActiveRecord::Schema.define(version: 2020_02_12_081119) do
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "zip_code", null: false
     t.string "prefecture", null: false
@@ -37,6 +36,14 @@ ActiveRecord::Schema.define(version: 2020_02_10_033957) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "src", null: false
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_images_on_product_id"
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name"
@@ -53,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_033957) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
+
     t.index ["buyer_id"], name: "index_products_on_buyer_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["prefecture_id"], name: "index_products_on_prefecture_id"
@@ -79,4 +87,5 @@ ActiveRecord::Schema.define(version: 2020_02_10_033957) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "images", "products"
 end
