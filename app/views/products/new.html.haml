@@ -97,17 +97,31 @@
                 価格
                 %span.required-2 必須
               .group__right
-                .input
-                  ￥
-                =f.text_field :price_id, class: "price", placeholder: "例）300"
+                ￥
+                =f.text_field :price_id, placeholder: "例）300", value: "", class: "price"
                 - if @product.errors[:price_id].any?
                   .error-message
                   %p 300以上9999999以下で入力してください
+            
+            .product_price-fee-box
+              .product_price-fee
+                .product_price-feegroup__left
+                  販売手数料(10%)
+                .right_bar
+
+            .product_profit
+              .product_profit
+                .product_profit__left
+                  販売利益
+                .right_bar_2
+              
+
+
       .listing__contents__confirms
         .listing__contents__confirms-confirm
           %p 
             =link_to '禁止されている出品', '#'
-            、
+            
             =link_to '行為', '#'
             を必ずご確認ご確認ください。
           %p 
