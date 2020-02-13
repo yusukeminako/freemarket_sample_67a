@@ -29,7 +29,7 @@
           %section.buycontentoo{"data-buy" => "pay-method"}
             .buycontentoo__inner
               %h3.paymethod 支払い方法
-              %a{href: "#"}
+              = link_to '#' do
                 %p.buy-user-info-text
                   %i.fas.fa-plus-circle
                   %span.register 登録してください
@@ -37,11 +37,11 @@
           %section.buycontentoo
             .buycontentoo__inner
               %h3.adress 配送先
-              %a{href: "#"}
+              = link_to '#' do
                 %p.buy-user-info-text.a
                   %i.fas.fa-plus-circle
                   %span.register 登録してください
           %section.buy-content.buy-user-info
             %button.buybtn{disabled: "disabled", type: "submit"} 購入する
             %input#user_info_is_not_complete{type: "hidden"}/
-      %section
+  %section
