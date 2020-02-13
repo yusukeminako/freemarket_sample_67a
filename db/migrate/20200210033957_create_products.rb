@@ -1,15 +1,18 @@
 class CreateProducts < ActiveRecord::Migration[5.2]
   def change
     create_table :products do |t|
-      t.references :user_id
+      t.references :user
       t.string :name
       t.text :condition
       t.text :description
-      t.integer :category_id
+      t.references :category
       t.references :brand
-      t.integer :price
-      t.integer :buyer_id
+      t.references :price
+      t.references :buyer
       t.integer :size
+      t.references :prefecture
+      t.integer :shipping_burden
+      t.integer :shipping_date
       t.timestamps
     end
   end

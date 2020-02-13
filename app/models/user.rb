@@ -4,10 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :validatable, password_length: 7..128 
-  extend ActiveHash::Associations::ActiveRecordExtensions do
+  extend ActiveHash::Associations::ActiveRecordExtensions 
   belongs_to_active_hash :year
   belongs_to_active_hash :day
   belongs_to_active_hash :month
-  end
   
 end
