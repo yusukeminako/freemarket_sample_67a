@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
 root to: "posts#index"
-resources "products", only: [:index, :new]
+  resources "products", only: [:index, :new]
   resources "card", only: [:new, :show]
   resources "categorys", only: [:index]
   resources "users", only: [:new]
   resources "signup", only: [:index, :create]
+  resources "purchases", only:[:show]
   resources :card, only: [:index, :new, :show] do
     collection do
       get 'show', to: 'card#show'

@@ -167,11 +167,10 @@ other_drink.children.create([{name: "コーヒー"}, {name: "ソフトドリン�
 other_other.children.create([{name: "オフィス用品一般"}, {name: "オフィス家具"}, {name: "店舗用品"}, {name: "OA機器"}, {name: "ラッピング/包装"}, {name: "その他"}])
 
 # サンプル画像保存
-Image.create!(src:File.open("./public/images/product1.png"))
 Image.create!(src:File.open("./public/images/dino.jpg"))
 Image.create!(src:File.open("./public/images/saitama.jpg"))
 Image.create!(src:File.open("./public/images/lion.jpg"))
-
+Image.create!(src:File.open("./public/images/product2.jpg"))
 
 #商品サンプル
 Product.create!(name: '恐竜',condition: '絶好調',description: '絶滅しているため希少価値が凄い',price: '120')

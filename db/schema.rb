@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2020_02_12_081119) do
-
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "zip_code", null: false
     t.string "prefecture", null: false
@@ -46,18 +45,15 @@ ActiveRecord::Schema.define(version: 2020_02_12_081119) do
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
+    t.bigint "user_id_id"
     t.string "name"
     t.text "condition"
     t.text "description"
-    t.bigint "category_id"
+    t.integer "category_id"
     t.bigint "brand_id"
-    t.bigint "price_id"
-    t.bigint "buyer_id"
+    t.integer "price"
+    t.integer "buyer_id"
     t.integer "size"
-    t.bigint "prefecture_id"
-    t.integer "shipping_burden"
-    t.integer "shipping_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
