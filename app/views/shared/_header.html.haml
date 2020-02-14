@@ -21,9 +21,12 @@
         %li.listsLeft__item
           = link_to 'ブランド', '#', id: 'brandBtn'
       %ul.listsRight
+      - if user_signed_in?
+        %li.listsRight__item.listsRight__item--new
+          = link_to 'ログアウト', destroy_user_session_path,method: :delete
+      - else
         %li.listsRight__item.listsRight__item--login
           = link_to 'ログイン', user_session_path
         %li.listsRight__item.listsRight__item--new
           =link_to '新規登録', signup_index_path
-        %li.listsRight__item.listsRight__item--new
-          = link_to 'ログアウト', destroy_user_session_path,method: :delete
+        
