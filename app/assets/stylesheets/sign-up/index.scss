@@ -6,7 +6,7 @@
     height: 384px;
     width: 700px;
     margin: auto;
-    padding-top: 150px;
+    padding-top: 180px;
     background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
 
     &__sign-up {
@@ -77,42 +77,5 @@
           font-size: 14px;
         }
     }
-  }
-}
-
-.bottom {
-  height: 220px;
-  width: 456px;
-  margin: 0 auto;
-  position: absolute;
-  right: 0;
-  left: 0;
-  padding: 0px 0;
-  margin-top: 50px;
-  text-align: center;
-  background-color:rgb(245, 245, 245);
-
-  
-  &__texts {
-    height: 12px;
-    width: 456px;
-    display: flex;
-    justify-content: space-around;
-    font-size: 12px;
-    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ';
-    color: #333;
-    margin: 40px;
-    &__left {
-    }
-    &__center {
-    }
-    &__right {
-    }
-  }
-
-  &__end {
-  font-size: 13px;
-  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-  color: rgb(51, 51, 51);
   }
 }
