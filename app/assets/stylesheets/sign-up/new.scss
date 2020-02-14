@@ -112,9 +112,10 @@
         &__2021 {
           display: flex;
           margin-top: 10px;
-
+         
           .ad12 {
-          height: 50px;
+          height: 48px;
+          width: 167.5px;
           color: #888;
           border-radius: 4px;
           border: 1px solid #ccc;
@@ -122,6 +123,7 @@
           font-size: 16px;
           font-family: inherit;
           margin-right: 8px;
+          padding-left: 8px;
           }
         }
       }
@@ -150,6 +152,7 @@
           }
         }
       }
+     
       &__444a {
         height: 70px;
         width: 343px;
@@ -161,20 +164,25 @@
           width: 100px;
           margin-top: 10px;
         
-          .addadd {
-            height: 60px;
-            width: 100px;
+          select {
+            height: 48px;
+            width: 76px;
+            padding-right: 10px;
           }
         }
       }
+      
       &__444b {
         height: 70px;
         width: 343px;
         margin: auto;
+        padding-top: 25px;
+
         .numnum {
-          height: 70px;
+          height: 60px;
           width: 343px;
           border-radius: 2px;
+          padding-left: 15px;
         }
       }
 

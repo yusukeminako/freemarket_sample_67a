@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   end
   resources "card", only: [:new, :show]
   resources "categorys", only: [:index]
-  resources "users", only: [:index, :new]
-  resources "signup", only: [:new]
+  resources "users", only: [:new]
+  resources "signup", only: [:index, :create]
   resources "purchases", only:[:show]
   resources :card, only: [:index, :new, :show] do
     collection do

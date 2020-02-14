@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 2020_02_12_081119) do
     t.index ["prefecture_id"], name: "index_products_on_prefecture_id"
     t.index ["price_id"], name: "index_products_on_price_id"
     t.index ["user_id"], name: "index_products_on_user_id"
-    t.index ["user_id_id"], name: "index_products_on_user_id_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

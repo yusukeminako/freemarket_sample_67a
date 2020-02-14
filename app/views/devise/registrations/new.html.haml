@@ -1,5 +1,6 @@
+= render "products/header"
 .ad_all
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+= form_for(resource, as: resource_name, url: signup_index_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
   .ad
     .ad__ad
@@ -70,14 +71,16 @@
         .ad__ad__add2__444a
           .ad__ad__add2__444a__444ab
             = f.collection_select( :birthdate_year, Year.all, :id, :year, prompt: "---",class: "addadd")
+            年
           .ad__ad__add2__444a__444ab
             = f.collection_select( :birthdate_month, Month.all, :id, :month, prompt: "---",class: "addadd")
+            月
           .ad__ad__add2__444a__444ab
             = f.collection_select( :birthdate_day, Day.all, :id, :day, prompt: "---",class: "addadd")
+            日
         .ad__ad__add2__444b
           = f.text_field :phone_number, placeholder: '携帯電話の番号を入力', class: "numnum"
         .hon
           ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         .next-end
           = f.submit "登録", class: "next-end__end-end"
-      -# = render "devise/shared/links", class: "sss"
