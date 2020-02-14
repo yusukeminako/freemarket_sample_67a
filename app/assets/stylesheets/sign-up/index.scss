@@ -1,13 +1,10 @@
 .topman {
-  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-  height: 800px;
-  
+  height: 384px;
+  background-color: whitesmoke;
   .main {
     height: 384px;
     width: 700px;
     margin: auto;
-    padding-top: 180px;
-    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
 
     &__sign-up {
       height: 97px;
