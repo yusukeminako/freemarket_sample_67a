@@ -76,11 +76,8 @@
             %label 発送元の地域
             %span.required 必須
             .select-1
-              -# =f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: "prefecture"
+              =f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: "prefecture"
               %br/
-              -# - if @product.errors[:prefecture_id].any?
-                -# .error-message
-                  %p 選択してください
           .group
             %label 発送までの日数
             %span.required 必須
