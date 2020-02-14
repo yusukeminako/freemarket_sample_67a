@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 2020_02_12_081119) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
-
     t.index ["buyer_id"], name: "index_products_on_buyer_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["prefecture_id"], name: "index_products_on_prefecture_id"
