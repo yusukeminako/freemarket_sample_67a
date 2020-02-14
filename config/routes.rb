@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   end
   resources "card", only: [:new, :show]
   resources "categorys", only: [:index]
-  resources "users", only: [:index, :new]
+  resources 'users', only: [:show]
+  get '/logout', to: "users#logout"
   resources "signup", only: [:new]
   resources "purchases", only:[:show]
   resources :card, only: [:index, :new, :show] do

@@ -1,3 +1,4 @@
+= render "shared/header"
 .wrapper
   .container-mypage
     = render "users/side_bar"
@@ -71,3 +72,6 @@
             .listing-buy
               = image_tag "mypage.buy.jpg" , class: "listing-buy-completed"
           %ul.list-content-transaction-active__now
+
+= render "shared/footer"
+= render "shared/purchasebtn"
