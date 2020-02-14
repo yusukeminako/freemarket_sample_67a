@@ -165,11 +165,10 @@
       }
     }
     &__detail{
-      padding: 40px;
+      padding: 40px 37px 0;
       border-top: 1px solid #eee;
       display: flex;
       justify-content: space-between;
-      height: 260px;
       h3{
         font-size: 14px;
         color: #888;
@@ -374,6 +373,7 @@
   font-weight: 600;
   line-height: 50px;
 }
+// 販売利益、販売手数料
 .right_bar{
   margin-left: 147px;
   margin-top: 17px;
@@ -381,4 +381,24 @@
 .right_bar_2{
   margin-left: 289px;
     margin-top: 13px;
+}
+// 商品カテゴリ部分のscss
+.listing-select-wrapper__box {
+  width: 400px;
+  height: 48px;                                  
+  select {
+    width: 400px;
+    height: 48px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+    background-color: #fff;
+    outline:none;
+  }
+}
+.listing-select-wrapper{
+  margin-bottom: 10px;
+}
+.listing-select-wrapper__added{
+  margin-bottom: 10px;
 }
