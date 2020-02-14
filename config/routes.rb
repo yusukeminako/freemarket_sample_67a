@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "posts#index"
+  root 'posts#index'
   resources "products", only: [:index, :new] do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
