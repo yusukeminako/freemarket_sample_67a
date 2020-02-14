@@ -1,0 +1,24 @@
+= render "products/header"
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .log
+    .log__login
+      .log__login__log1
+        .log__login__log1__log11
+          アカウントをお持ちでない方はこちら
+        .log__login__log1__log12
+          = link_to '新規会員登録', new_user_registration_path, class: "azza"
+      .log__login__log2
+        .log__login__log2__log21
+          Facebookでログイン
+        .log__login__log2__log22
+          Googleでログイン
+      .log__login__log3
+        .log__login__log3__log31
+          .log__login__log3__log31__log32
+            = f.email_field :email, placeholder: 'メールアドレス', class: "ma-mail"
+          .log__login__log3__log31__log33
+            = f.password_field :password, placeholder: 'パスワード', class: "pass-pass"
+          .log__login__log3__log31__log35
+            = f.submit "ログイン", class: "sosos"
+          .log__login__log3__log31__log36
+            パスワードをお忘れの方
