@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2020_02_12_081119) do
+
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "zip_code", null: false
     t.string "prefecture", null: false
@@ -45,19 +46,26 @@ ActiveRecord::Schema.define(version: 2020_02_12_081119) do
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id_id"
+    t.bigint "user_id"
     t.string "name"
     t.text "condition"
     t.text "description"
-    t.integer "category_id"
+    t.bigint "category_id"
     t.bigint "brand_id"
     t.integer "price"
     t.integer "buyer_id"
     t.integer "size"
+    t.bigint "prefecture_id"
+    t.integer "shipping_burden"
+    t.integer "shipping_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
-    t.index ["user_id_id"], name: "index_products_on_user_id_id"
+    t.index ["buyer_id"], name: "index_products_on_buyer_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["prefecture_id"], name: "index_products_on_prefecture_id"
+    t.index ["price_id"], name: "index_products_on_price_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
