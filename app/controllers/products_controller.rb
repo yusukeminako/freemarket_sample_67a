@@ -2,8 +2,13 @@ class ProductsController < ApplicationController
   def index
   end
 
+  def edit
+    
+  end
+
   def new
     @product = Product.new
+    @images = @product.images.build
     @category_parent_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
