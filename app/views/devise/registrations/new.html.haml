@@ -1,6 +1,6 @@
 = render "products/header"
 .ad_all
-= form_for(resource, as: resource_name, url: signup_index_path(resource_name)) do |f|
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
   .ad
     .ad__ad
