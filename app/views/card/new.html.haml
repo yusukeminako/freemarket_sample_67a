@@ -1,3 +1,4 @@
+= render "shared/header"
 .wrapper
   .container-mypage
     = render "users/side_bar"
@@ -30,7 +31,7 @@
             .card__form__content--expired--month
               .card__form__content--expired--month__bpx
                 .card__form__content--expired--month__select-box
-                  %select{name: "exp_month", class: "select--item",id: "card_month"}
+                  %select{name: "exp_month", class: "select--item",id: "exp_month"}
                     %option{value: "1"}01
                     %option{value: "2"}02
                     %option{value: "3"}03
@@ -46,8 +47,7 @@
                 %span 月
               .card__form__content--expired--year
                 .card__form__content--expired--year__select-box
-                  %select{name: "exp_year", class: "select--item",id: "card_year"}
-                    %option{value: "2019"}19
+                  %select{name: "exp_year", class: "select--item",id: "exp_year"}
                     %option{value: "2020"}20
                     %option{value: "2021"}21
                     %option{value: "2022"}22
@@ -58,14 +58,18 @@
                     %option{value: "2027"}27
                     %option{value: "2028"}28
                     %option{value: "2029"}29
+                    %option{value: "2030"}30
                 %span 年
           .card__form__content--security
             = label_tag "security", "セキュリティコード"
             %span 必須
-            = text_field_tag "security","",id:"card_cvc",class:"security",name: "cvc",placeholder: "カード背面4桁もしくは3桁の番号",value: ""
+            = text_field_tag "security","",id:"cvc",class:"security",name: "cvc",placeholder: "カード背面4桁もしくは3桁の番号",value: ""
           .card__form__content--help.form_space
             %i.fas.fa-question-circle
             カード裏面の番号とは？
           .card__form__content--btn
-            %button{type: "submit",class: "btn-red",id:"submit_btn"}
+            #card_token
+            %button{type: "submit",class: "btn-red",id:"token_submit"}
               追加する
+= render "shared/footer"
+= render "shared/purchasebtn"
