@@ -143,6 +143,7 @@ img {
           color: #333;
           line-height: 38px;
           padding: 0 0 0 16px;
+          list-style: none;
           a {
             display: flex;
             align-items: center;
@@ -167,6 +168,7 @@ img {
     background-repeat: no-repeat;
     background-position: top center;
     position: relative;
+    
     padding: 0 60px;
     display: flex;
     align-items: center;
@@ -386,7 +388,6 @@ img {
         .productList {
           width: 220px;
           display: inline-block;
-          float: left;
           
           a {
             background-color: #fff;

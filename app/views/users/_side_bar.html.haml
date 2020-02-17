@@ -2,7 +2,7 @@
   %nav.l-side-bar
     %ul.l-side-bar-list
       %li.l-side-bar-list-item.active
-        = link_to "マイページ", "/mypage"
+        = link_to "マイページ", "/users/:id"
         %i.fa.fa-chevron-right
       %li.l-side-bar-list-item
         = link_to "お知らせ", "/mypage"
@@ -60,7 +60,7 @@
         = link_to "発送元・お届け先住所変更", "/mypage"
         %i.fa.fa-chevron-right
       %li.l-side-bar-list-item
-        = link_to "お支払い方法", "/mypage"
+        = link_to "お支払い方法", "/card"
         %i.fa.fa-chevron-right
       %li.l-side-bar-list-item
         = link_to "メール/パスワード", "/mypage"
@@ -72,5 +72,5 @@
         = link_to "電話番号の確認", "/mypage"
         %i.fa.fa-chevron-right
       %li.l-side-bar-list-item
-        = link_to "ログアウト", new_user_path
+        = link_to "ログアウト", logout_path
         %i.fa.fa-chevron-right
