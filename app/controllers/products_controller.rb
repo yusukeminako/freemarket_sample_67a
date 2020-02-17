@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
 
   def create 
     @product = Product.new(product_params)    
-    if @product.save!
+    if @product.save
       redirect_to root_path
     else
       render :new
@@ -43,10 +43,6 @@ class ProductsController < ApplicationController
   end
 
   private
-
-  def set_item
-    @product = Product.find(params[:id])
-  end
 
   def product_params
     params.require(:product).permit(
