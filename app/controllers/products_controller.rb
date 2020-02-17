@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  # before_action :set_product
+  # before_action :set_product 詳細情報の時に使います
 
   def index
   end
@@ -64,7 +64,7 @@ class ProductsController < ApplicationController
   end
 
   # def set_product
-  #   @product = Product.find(params[:id])
+  #   @product = Product.find(params[:id]) 詳細情報の時に使います
   # end
 
 end
