@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   resources "posts", only: [:index]
 
   resources :card, only: [:index]
-  
   resources :card, only: [:new, :show] do
     collection do
       get 'show', to: 'card#show'
@@ -37,14 +36,5 @@ Rails.application.routes.draw do
   resources "signup", only: [:index, :create]
 
   resources "purchases", only:[:index, :show]
-
-  resources :card, only: [:index, :new, :show] do
-    collection do
-      get 'show', to: 'card#show'
-      post 'pay', to: 'card#pay'
-      post 'delete', to: 'card#destroy'
-    end
-  end
-
 
 end
