@@ -91,7 +91,7 @@
           %h3.title 新規投稿商品
       .productLists
         .productList
-          = link_to '/products/3' do
+          -#= link_to purchase_path(product.id) do
             %figure.productList--img
               -# = image_tag @product.images[0].src.url
             .productList--body
@@ -104,7 +104,7 @@
                     0
                 %p (税込)
         .productList
-          = link_to '/products/2' do
+          -# = link_to purchase_path(product.id) do
             %figure.productList--img
               -# = image_tag @product.images[1].src.url
             .productList--body
@@ -117,7 +117,7 @@
                     0
                 %p (税込)
         .productList
-          = link_to '/products/1' do
+          -# = link_to purchase_path(product.id) do
             %figure.productList--img
               -# = image_tag @product.images[2].src.url
             .productList--body
@@ -137,7 +137,7 @@
           %h3.title アーカイバ
       .productLists
         .productList
-          = link_to '/products/3' do
+          = link_to purchase_path(2)  do
             %figure.productList--img
               = image_tag src='https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png'
             .productList--body
@@ -150,7 +150,7 @@
                     0
                 %p (税込)
         .productList
-          = link_to '/products/2' do
+          = link_to purchase_path(2)  do
             %figure.productList--img
               = image_tag src='https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png'
             .productList--body
@@ -163,7 +163,7 @@
                     0
                 %p (税込)
         .productList
-          = link_to '/products/1' do
+          = link_to purchase_path(2) do
             %figure.productList--img
               = image_tag src='https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png'
             .productList--body

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -6,6 +7,11 @@ Rails.application.routes.draw do
     get 'complete', to: 'users/registrations#complete' 
   end
 
+  resources "purchases", only:[:index,:new,:show] do
+    member do
+      get 'confirm'
+    end
+  end
   root 'posts#index'
 
   resources "posts", only: [:index]
@@ -34,7 +40,5 @@ Rails.application.routes.draw do
   get '/logout', to: "users#logout"
 
   resources "signup", only: [:index, :create]
-
-  resources "purchases", only:[:index, :show]
 
 end

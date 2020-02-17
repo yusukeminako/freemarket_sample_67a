@@ -1,9 +1,7 @@
-= render "shared/header"
 .mypate_container
   .left-container
     .left-content
       .log-out
-        = link_to 'ログアウト', destroy_user_session_path,method: :delete ,class: "log-out__button"
+        = button_to users_path, method: :index ,class: "log-out__button" do
+          ログアウト
     = render "users/side_bar"
-= render "shared/footer"
-= render "shared/purchasebtn"
