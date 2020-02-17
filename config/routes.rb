@@ -6,7 +6,13 @@ resources "products", only: [:index, :new]
   resources "categorys", only: [:index]
   resources "users", only: [:index, :new]
   resources "signup", only: [:new]
-  resources "purchases", only:[:show]
+
+  resources "purchases", only:[:index,:new,:show] do
+    member do
+      get 'confirm'
+    end
+  end
+
   resources :card, only: [:index, :new, :show] do
     collection do
       get 'show', to: 'card#show'
@@ -14,4 +20,5 @@ resources "products", only: [:index, :new]
       post 'delete', to: 'card#destroy'
     end
   end
+
 end
