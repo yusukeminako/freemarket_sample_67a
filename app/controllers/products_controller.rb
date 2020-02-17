@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  # before_action :set_product
 
   def index
   end
@@ -62,8 +63,8 @@ class ProductsController < ApplicationController
     ).merge(user_id: current_user.id)
   end
 
-  def set_product
-    @product = Product.find(params[:id])
-  end
+  # def set_product
+  #   @product = Product.find(params[:id])
+  # end
 
 end
