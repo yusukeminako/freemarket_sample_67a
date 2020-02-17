@@ -27,4 +27,7 @@ class PurchasesController < ApplicationController
   end
   def new
   end
+
+  def confirm
+  end
 end
