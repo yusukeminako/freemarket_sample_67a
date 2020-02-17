@@ -1,0 +1,143 @@
+.listing__wrapper
+  = render "products/header"
+  .listing__contents
+    = form_for @product do |f|
+      %h2.listing__contents__info
+        商品の情報を入力
+      .listing__contents__image
+        %h3.listing__contents__image__head
+          編集画像
+          %span.required-1
+            必須
+        %p 最大5枚までアップロードできます
+        .drop__box__container
+          .prev-content
+          .label-content
+            %label{for: "product_images_attributes_0_src", class: "label-box", id: "label-box--0"}
+              %pre.labekal-box__text-visible クリックしてファイルをアップロード
+          .hidden-content
+            = f.fields_for :images do |i|
+              = i.file_field :src, class: "hidden-field"
+              %input{class:"hidden-field", type: "file", name: "product[images_attributes][1][src]", id: "product_images_attributes_1_src" }
+              %input{class:"hidden-field", type: "file", name: "product[images_attributes][2][src]", id: "product_images_attributes_2_src" }
+              %input{class:"hidden-field", type: "file", name: "product[images_attributes][3][src]", id: "product_images_attributes_3_src" }
+              %input{class:"hidden-field", type: "file", name: "product[images_attributes][4][src]", id: "product_images_attributes_4_src" }
+      .listing__contents__name
+        .group
+          %label 商品名 
+          %span.required 必須
+          %br/
+          =f.text_field :name, class: "name", placeholder: "商品名(必須40文字まで）"
+          - if @product.errors[:name].any?
+            .error-message
+              %p 入力してください
+        .group
+          %label 商品の説明
+          %span.required 必須
+          %br/
+          =f.text_area :description, class: "text", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+          -if @product.errors[:description].any?
+            .error-message
+              %p 入力してください
+      .listing__contents__detail
+        %h3 商品の詳細
+        .form-box
+          .listing-product-detail__category
+            = f.label 'カテゴリー', class: 'listing-default__label'
+            %span.required 必須
+            .listing-select-wrapper
+              .listing-select-wrapper__box
+                //親カテゴリーのセレクトボックスの生成
+                = select_tag(:category_id, options_for_select(@category_parent_array),class: 'listing-select-wrapper__box--select', id: 'parent_category')        
+          .group
+            %label 商品の状態
+            %span.required 必須
+            %br/
+            .select
+              =f.select :condition, ["新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], prompt: "---"
+              - if @product.errors[:condition].any?
+                .error-message
+                  %p 選択してください    
+
+
+      .listing__contents__deliver
+        %h3 配送について
+        .form-box
+          .group
+            %label 配送料の負担
+            %span.required 必須
+            .select
+              =f.select :shipping_burden, ["送料込み（出品者負担)", "着払い（購入者負担)"], prompt: "---"
+              %br/
+              - if @product.errors[:shipping_burden].any?
+                .error-message
+                  %p 選択してください
+          .group
+            %label 発送元の地域
+            %span.required 必須
+            .select-1
+              =f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: "prefecture"
+              %br/
+          .group
+            %label 発送までの日数
+            %span.required 必須
+            .select
+              =f.select :shipping_date, ["1~2日で発送", "2~3日で発送", "4~7日で発送"], prompt: "---"
+              - if @product.errors[:shipping_date].any?
+                .error-message
+                  %p 選択してください
+      .listing__contents__price
+        %h3 販売価格(300~9,999,999)
+        %ul.price-box
+          %li.prices
+            .group
+              .group__left
+                価格
+                %span.required-2 必須
+              .group__right
+                ￥
+                =f.text_field :price_id, placeholder: "例）300", value: "", class: "price"
+                - if @product.errors[:price_id].any?
+                  .error-message
+                  %p 300以上9999999以下で入力してください
+            
+            .product_price-fee-box
+              .product_price-fee
+                .product_price-feegroup__left
+                  販売手数料(10%)
+                .right_bar
+
+            .product_profit
+              .product_profit
+                .product_profit__left
+                  販売利益
+                .right_bar_2
+              
+
+
+      .listing__contents__confirms
+        .listing__contents__confirms-confirm
+          %p 
+            =link_to '禁止されている出品', '#'
+            
+            =link_to '行為', '#'
+            を必ずご確認ご確認ください。
+          %p 
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            =link_to '偽ブランドの販売', '#' 
+            は犯罪あり処罰される可能性があります。
+          %p 
+            また、出品をもちまして
+            =link_to '加盟販売店規約', '#'
+            に同意したことになります。
+        =f.submit '編集する', class: "submit"
+        .back-btn
+          =link_to 'もどる', root_path
+        
+    .listing__footer
+      .nav
+        %ul
+          %li プライバシーポリシー
+          %li フリマ利用規約
+          %li 特定商取引に関する表記
+    = render "products/footer"
