@@ -9,5 +9,6 @@ class User < ApplicationRecord
   belongs_to_active_hash :year
   belongs_to_active_hash :day
   belongs_to_active_hash :month
+  has_many :cards
   
 end

@@ -10,14 +10,23 @@ Rails.application.routes.draw do
 
   resources "posts", only: [:index]
 
+  resources :card, only: [:index]
+  
+  resources :card, only: [:new, :show] do
+    collection do
+      get 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
+
   resources "products", only: [:index, :new, :create] do
+
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
-
-  resources "card", only: [:new, :show]
 
   resources "categorys", only: [:index]
 
@@ -27,7 +36,7 @@ Rails.application.routes.draw do
 
   resources "signup", only: [:index, :create]
 
-  resources "purchases", only:[:show]
+  resources "purchases", only:[:index, :show]
 
   resources :card, only: [:index, :new, :show] do
     collection do
@@ -36,5 +45,6 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#destroy'
     end
   end
+
 
 end
