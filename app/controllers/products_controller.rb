@@ -2,7 +2,11 @@ class ProductsController < ApplicationController
   before_action :set_item, only: [:show, :purchase, :pay]
   # before_action :set_product 詳細情報の時に使います
 
-  def index
+  def index 
+    # @products = Product.all
+    # @images = Image.all
+    @products = Product.all.order('created_at DESC').limit(3).to_a
+    @images = Image.all
   end
 
   def new
@@ -67,5 +71,10 @@ class ProductsController < ApplicationController
   # def set_product
   #   @product = Product.find(params[:id]) 詳細情報の時に使います
   # end
+
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+  end
 
 end
