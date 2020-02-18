@@ -51,6 +51,7 @@ class ProductsController < ApplicationController
   end
 
   def update 
+    binding.pry
     if @product.update(product_params)
       redirect_to root_path
     else
@@ -83,7 +84,7 @@ class ProductsController < ApplicationController
       :shipping_burden, 
       :shipping_date,
       images_attributes: [:src]
-    ).merge(user_id: current_user.id)
+    ).merge(user_id: "2")
   end
 
   def set_product

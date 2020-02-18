@@ -65,7 +65,7 @@
             .listing-select-wrapper#grandchildren_wrapper     
               .listing-select-wrapper__box
                 //親カテゴリーのセレクトボックスの生成
-                = select_tag(:category_id, options_for_select(@category_grandchild_array, selected: @grandchild.name),class: 'listing-select-wrapper__box--select', id: 'grandchild_category')   
+                = f.select(:category_id, options_for_select(@category_grandchild_array, selected: @grandchild.name),class: 'listing-select-wrapper__box--select', id: 'grandchild_category')   
 
           .group
             %label 商品の状態
