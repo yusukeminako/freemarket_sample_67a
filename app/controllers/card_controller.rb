@@ -1,6 +1,6 @@
 class CardController < ApplicationController
-
   require "payjp"
+  before_action :set_card, only: [:show,:delete]
 
   def new
     card = Card.where(user_id: current_user.id)
@@ -8,8 +8,6 @@ class CardController < ApplicationController
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
-    # Payjp.api_key = 'sk_test_a39015b671b16ab78d5d5e79'
-    # Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
     if params['payjp-token'].blank?
       redirect_to action: "new"
@@ -30,29 +28,31 @@ class CardController < ApplicationController
   end
 
   def delete #PayjpとCardデータベースを削除します
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
+    if @card.blank?
     else
-      # Payjp.api_key = 'sk_test_a39015b671b16ab78d5d5e79'
-      # Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
-      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
-      card.delete
+      @card.delete
     end
       redirect_to action: "index"
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
+    if @card.blank?
       redirect_to action: "new" 
     else
-      # Payjp.api_key = 'sk_test_a39015b671b16ab78d5d5e79'
-      # Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
+    end
+  end
+
+  private
+
+  def set_card
+    if user_signed_in?
+      @card = current_user.cards.first
     end
   end
 end
