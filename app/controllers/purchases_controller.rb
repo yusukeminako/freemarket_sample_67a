@@ -27,6 +27,9 @@ class PurchasesController < ApplicationController
     amount: '1500', #支払金額を入力（itemテーブル等に紐づけても良い） @product.price
     customer: card.customer_id, #顧客ID
     currency: 'jpy', #日本円
+    # amount: {13500} #支払金額を入力（itemテーブル等に紐づけても良い）
+    # customer: {card.customer_id} #顧客ID
+    # currency: {'jpy'}, #日本円
   )
   redirect_to done_purchases_path #完了画面に移動
   # redirect_to done_product_purchase_index_path(product_id: @product.id) #完了画面に移動

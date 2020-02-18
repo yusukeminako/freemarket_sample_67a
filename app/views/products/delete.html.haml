@@ -70,8 +70,8 @@
       %span.product-detail__top__price-line--taxin (税込)
       - if @postage_burden == 0
         %span.product-detail__top__price-line--postage 送料込み
-      = link_to '/purchases/:id/confirm',class: 'product-detail__top__buy-btn',id: 'product-detail__top__buy-btn' do
-        %p 購入画面へ進む
+      = link_to "/products/#{product.id}", method: :delete,class: 'product-detail__top__buy-btn',id: 'product-detail__top__buy-btn' do
+        %p 削除
     .product-detail__top__description
       %p
     .product-detail__top__foot.clearfix
