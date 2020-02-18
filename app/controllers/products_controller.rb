@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :set_item, only: [:show, :purchase, :pay]
   def index
   end
 
@@ -21,4 +22,4 @@ class ProductsController < ApplicationController
   end
 end
 
-
+ 
