@@ -90,21 +90,28 @@
         = link_to '#' do
           %h3.title 新規投稿商品
       .productLists
-        -@products.each do |product| 
+        - @products.each do |product| 
           .productList
-            -# = link_to purchase_path(@product.id) do
+            = link_to root_path do
               %figure.productList--img
-                = image_tag @product.images[0].src.url
+                - @images.each do |image|
+                  - if product.id == image.product_id
+                    = image_tag "#{image.src}" 
+                    - break
               .productList--body
                 %h3.name 
                   = product.name
                 .details
                   %ul
-                    %li 30000円
+                    %li 
+                    = "#{product.price}円"
                     %li
                       = icon('fa', 'star', class: 'likeIcon')
                       0
                   %p (税込)
+
+          
+          
           .productList
             -# = link_to purchase_path(@product.id) do
               %figure.productList--img
