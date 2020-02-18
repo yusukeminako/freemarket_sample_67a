@@ -6,15 +6,15 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'complete', to: 'users/registrations#complete' 
   end
-
+  root "products#index"
   resources "purchases", only:[:index,:new,:show] do
     member do
       get 'confirm'
     end
   end
-  root 'posts#index'
+  
 
-  resources "posts", only: [:index]
+  
 
   resources :card, only: [:index]
   resources :card, only: [:new, :show] do
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources "products", only: [:index, :new, :create] do
+  resources "products", only: [:index, :new, :create, :destroy] do
 
     collection do
       get 'get_category_children', defaults: { format: 'json' }
