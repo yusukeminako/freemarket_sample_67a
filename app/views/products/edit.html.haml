@@ -12,7 +12,16 @@
         %p 最大5枚までアップロードできます
         .drop__box__container
           .prev-content
-          .label-content
+            - @images.each_with_index do |img, idx|
+              .preview-box{:id => "preview-box__#{idx}"}
+                .upper-box
+                  %img{:alt => "preview", src: img.src.url}
+                .lower-box
+                  .update-box
+                    %label.edit_btn 編集
+                  .delete-box{:id => "delete_btn_#{idx}"}
+                    %span 削除
+          .label-content{width: "366"}
             %label{for: "product_images_attributes_0_src", class: "label-box", id: "label-box--0"}
               %pre.labekal-box__text-visible クリックしてファイルをアップロード
           .hidden-content
@@ -48,7 +57,16 @@
             .listing-select-wrapper
               .listing-select-wrapper__box
                 //親カテゴリーのセレクトボックスの生成
-                = select_tag(:category_id, options_for_select(@category_parent_array),class: 'listing-select-wrapper__box--select', id: 'parent_category')        
+                = select_tag(:category_id, options_for_select(@category_parent_array, selected: @parent.name),class: 'listing-select-wrapper__box--select', id: 'parent_category')   
+            .listing-select-wrapper#children_wrapper   
+              .listing-select-wrapper__box
+                //親カテゴリーのセレクトボックスの生成
+                = select_tag(:category_id, options_for_select(@category_child_array, selected: @child.name),class: 'listing-select-wrapper__box--select', id: 'child_category')   
+            .listing-select-wrapper#grandchildren_wrapper     
+              .listing-select-wrapper__box
+                //親カテゴリーのセレクトボックスの生成
+                = select_tag(:category_id, options_for_select(@category_grandchild_array, selected: @grandchild.name),class: 'listing-select-wrapper__box--select', id: 'grandchild_category')   
+
           .group
             %label 商品の状態
             %span.required 必須
@@ -96,7 +114,7 @@
                 %span.required-2 必須
               .group__right
                 ￥
-                =f.text_field :price_id, placeholder: "例）300", value: "", class: "price"
+                =f.text_field :price_id, placeholder: "例）300",value: @product.price_id, class: "price"
                 - if @product.errors[:price_id].any?
                   .error-message
                   %p 300以上9999999以下で入力してください
@@ -112,24 +130,8 @@
                 .product_profit__left
                   販売利益
                 .right_bar_2
-              
-
 
       .listing__contents__confirms
-        .listing__contents__confirms-confirm
-          %p 
-            =link_to '禁止されている出品', '#'
-            
-            =link_to '行為', '#'
-            を必ずご確認ご確認ください。
-          %p 
-            またブランド品でシリアルナンバー等がある場合はご記載ください。
-            =link_to '偽ブランドの販売', '#' 
-            は犯罪あり処罰される可能性があります。
-          %p 
-            また、出品をもちまして
-            =link_to '加盟販売店規約', '#'
-            に同意したことになります。
         =f.submit '編集する', class: "submit"
         .back-btn
           =link_to 'もどる', root_path

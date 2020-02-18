@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  # before_action :set_product 詳細情報の時に使います
+  before_action :set_product, only: [:edit, :update]
 
   def index
   end
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def create 
+  def create
     @product = Product.new(product_params)    
     if @product.save
       redirect_to root_path
@@ -27,13 +27,36 @@ class ProductsController < ApplicationController
     end
   end
 
-  # def update 商品詳細の時に使います
-  #   if @product.update(product_params)
-  #     redirect_to root_path
-  #   else
-  #     render :edit
-  #   end
-  # end  
+  def edit
+    @images = Image.where(product_id: @product.id)
+
+    @grandchild = Category.find(@product.category_id)
+    @child = @grandchild.parent
+    @parent = @grandchild.parent.parent
+
+    @category_grandchild_array = ["---"]
+    Category.where(ancestry: @grandchild.ancestry).each do |grandchild|
+      @category_grandchild_array << grandchild.name
+    end
+
+    @category_child_array = ["---"]
+    Category.where(ancestry: @child.ancestry).each do |child|
+      @category_child_array << child.name
+    end
+
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+  end
+
+  def update 
+    if @product.update(product_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end  
 
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
@@ -63,8 +86,8 @@ class ProductsController < ApplicationController
     ).merge(user_id: current_user.id)
   end
 
-  # def set_product
-  #   @product = Product.find(params[:id]) 詳細情報の時に使います
-  # end
+  def set_product
+    @product = Product.find(params[:id]) 
+  end
 
 end
