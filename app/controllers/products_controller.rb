@@ -48,10 +48,12 @@ class ProductsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
     end
+    @category = Category.find(@product.category_id)
+    @child_categories = Category.where('ancestry = ?', "#{@category.parent.ancestry}")
+    @grand_child = Category.where('ancestry = ?', "#{@category.ancestry}")
   end
 
   def update 
-    binding.pry
     if @product.update(product_params)
       redirect_to root_path
     else
@@ -70,7 +72,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(
+      params.require(:product).permit(
       :user_id, 
       :name, 
       :condition, 
@@ -83,7 +85,7 @@ class ProductsController < ApplicationController
       :prefecture_id, 
       :shipping_burden, 
       :shipping_date,
-      images_attributes: [:src]
+      images_attributes: [:src, :_destroy, :id]
     ).merge(user_id: "2")
   end
 

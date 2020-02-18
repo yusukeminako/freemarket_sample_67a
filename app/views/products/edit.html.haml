@@ -65,8 +65,13 @@
             .listing-select-wrapper#grandchildren_wrapper     
               .listing-select-wrapper__box
                 //親カテゴリーのセレクトボックスの生成
-                = f.select(:category_id, options_for_select(@category_grandchild_array, selected: @grandchild.name),class: 'listing-select-wrapper__box--select', id: 'grandchild_category')   
-
+                -# = f.select(:category_id, options_for_select(@category_grandchild_array, selected: @grandchild.name), class: 'listing-select-wrapper__box--select', id: 'grandchild_category')
+                -# %select{class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
+                -#   - @grandchild.siblings.each do |grand|
+                -#     %option{value: "#{grand.id}"} #{grand.name}
+                #grandchildren_wrapper.listing-select-wrapper__added
+                  .listing-select-wrapper__box
+                    = f.collection_select(:category_id, @grand_child, :id, :name, {prompt: "---"}, {id: "grand_child"})
           .group
             %label 商品の状態
             %span.required 必須
