@@ -7,7 +7,7 @@
         .check__item__box
           %h3.check__item__image
             %img.lazyload
-              -# = image_tag "dino.jpg", size:"70x110"
+              = image_tag "dino.jpg", size:"70x110"
           .check__item__detail
             %p.check__item__detail__name ダイナソー
             %p.check__price
@@ -42,6 +42,7 @@
                 %p.buy-user-info-text.a
                   %i.fas.fa-plus-circle
                   %span.register 登録してください
+
             %input#user_info_is_not_complete{type: "hidden"}/
   %section.buy-content.buy-user-info
     = form_with(url: "/purchases/pay", method: :post, local: true) do
