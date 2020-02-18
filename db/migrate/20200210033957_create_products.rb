@@ -7,7 +7,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.text :description
       t.references :category
       t.references :brand
-      t.references :price
+      t.integer :price
       t.references :buyer
       t.integer :size
       t.references :prefecture
