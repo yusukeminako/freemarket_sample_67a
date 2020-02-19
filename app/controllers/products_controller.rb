@@ -111,7 +111,7 @@ class ProductsController < ApplicationController
       :shipping_burden, 
       :shipping_date,
       images_attributes: [:src, :_destroy, :id]
-    ).merge(user_id: "2")
+    ).merge(user_id: current_user.id)
   end
 
   def set_product
@@ -121,10 +121,6 @@ class ProductsController < ApplicationController
   def destroy
     product = Product.find(params[:id])
     product.destroy
-  end
-
-end
-    ).merge(user_id: current_user.id)
   end
 
   # def set_product

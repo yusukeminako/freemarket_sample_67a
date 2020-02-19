@@ -92,7 +92,7 @@
       .productLists
         - @products.each do |product| 
           .productList
-            = link_to root do
+            = link_to root_path do
               %figure.productList--img
                 - @images.each do |image|
                   - if product.id == image.product_id

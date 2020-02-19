@@ -25,8 +25,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources "products", only: [:index, :new, :create, :edit, :update, :destroy] do
-
   resources "products", only: [:index, :new, :create, :edit, :update, :show, :destroy] do
 
     collection do
@@ -58,5 +56,4 @@ Rails.application.routes.draw do
     #   get 'done', to: 'purchases#done'
     # end
   end
-
 end
