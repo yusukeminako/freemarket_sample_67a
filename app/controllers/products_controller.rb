@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :set_item, only: [:show, :purchase, :pay]
   # before_action :set_product 詳細情報の時に使います
 
   def index 
