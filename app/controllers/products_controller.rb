@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update]
 
-  def index
+  def index 
+    # @products = Product.all
+    # @images = Image.all
+    @products = Product.all.order('created_at DESC').limit(3).to_a
+    @images = Image.all
   end
 
   def new
@@ -91,6 +95,11 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id]) 
+  end
+
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
   end
 
 end

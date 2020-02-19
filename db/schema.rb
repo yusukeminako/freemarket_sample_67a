@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_081119) do
     t.text "description"
     t.bigint "category_id"
     t.bigint "brand_id"
-    t.bigint "price_id"
+    t.integer "price"
     t.bigint "buyer_id"
     t.integer "size"
     t.bigint "prefecture_id"
@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(version: 2020_02_12_081119) do
     t.index ["buyer_id"], name: "index_products_on_buyer_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["prefecture_id"], name: "index_products_on_prefecture_id"
-    t.index ["price_id"], name: "index_products_on_price_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 

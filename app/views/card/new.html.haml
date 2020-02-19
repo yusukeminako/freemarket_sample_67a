@@ -63,7 +63,7 @@
           .card__form__content--security
             = label_tag "security", "セキュリティコード"
             %span 必須
-            = text_field_tag "security","",id:"cvc",class:"security",name: "cvc",placeholder: "カード背面4桁もしくは3桁の番号",value: ""
+            = text_field_tag "security","",id:"cvc",class:"security",name: "cvc",placeholder: "カード背面4桁もしくは3桁の番号",maxlength: "3", value: ""
           .card__form__content--help.form_space
             %i.fas.fa-question-circle
             カード裏面の番号とは？

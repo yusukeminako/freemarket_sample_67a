@@ -1,9 +1,3 @@
-%section.buy-content.buy-user-info
-  = form_with(url: "/purchases/pay", method: :post, local: true) do
-    %button.payjp-button{type: "submit","data-key" => 'pk_test_860ad7005e25946e1fd66f93', src: "https://checkout.pay.jp"}
-      購入する
-
-
 = render "shared/header"  
 .semiheader
 .product-detail
@@ -11,14 +5,15 @@
   //ここから商品詳細
   %section.product-detail__top
     .product-detail__top__product-name
-      ダウンベスト
+      ダイナソー
+      
     .product-detail__top__item
       .product-detail__top__item-image
         .product-detail__top__item-image-main
-          = image_tag "down front.jpg" , size: '300x300', class: "product-detail__top__item-image-main--photo"
+          = image_tag "dino.jpg" , size: '300x300', class: "product-detail__top__item-image-main--photo"
         .product-detail__top__item-image-list
           .product-detail__top__item-image-list__inner
-            = image_tag "down back.jpg", size: '130x130'
+            = image_tag "dino.jpg", size: '130x130'
       %table.product-detail__top__item-table
         %tr.product-detail__top__item-table__seller
           %th.product-detail__top__item-table__seller-col.col 出品者
@@ -75,13 +70,8 @@
       %span.product-detail__top__price-line--taxin (税込)
       - if @postage_burden == 0
         %span.product-detail__top__price-line--postage 送料込み
-        %section.buy-content.buy-user-info
-    = form_with(url: "/purchases/pay", method: :post, local: true) do
-      %button.payjp-button{type: "submit","data-key" => 'pk_test_860ad7005e25946e1fd66f93', src: "https://checkout.pay.jp"}
-        カードで購入する
-
-      
-        
+      = link_to "/products/#{product.id}", method: :delete,class: 'product-detail__top__buy-btn',id: 'product-detail__top__buy-btn' do
+        %p 削除
     .product-detail__top__description
       %p
     .product-detail__top__foot.clearfix
@@ -99,64 +89,6 @@
         = link_to '#' do
           %i.fas.fa-lock
           %span あんしん・あんぜんへの取り組み
-
-
   
   .semifooter
     = render "shared/footer"
-
-
-
-
-%main.main
-
-  %section.buy-content.buy-user-info
-    = form_with(url: "/purchases/pay", method: :post, local: true) do
-      %button.payjp-button{type: "submit","data-key" => 'pk_test_860ad7005e25946e1fd66f93', src: "https://checkout.pay.jp"}
-        購入する
-
-  %section.main__container
-    %h2.tema 購入内容の確認
-    %section.check
-      .check__content-inner
-        .check__item__box
-          %h3.check__item__image
-            %img.lazyload
-              = image_tag "47989489_8_d_215.jpg", size:"70x110"
-          .check__item__detail
-            %p.check__item__detail__name ダウンベスト
-            %p.check__price
-              %span.plice ¥1,500
-              %span.shipping-fee （税込）送料込み
-    %section.buycontent
-      .buycontent__inner
-        %form.buy-form{action: "#", method: "POST", novalidate: "novalidate"}
-          %ul.buy-price-table
-            %li.buy-price-row.buy-you-pay.bold
-              .buy-price-cell-label 支払い金額
-              .buy-price-cell
-                %span.span{"data-buy-pay" => "1500"} ¥1,500
-          %ul.buyaccordion
-            %li.byaccordion__parent
-              .checkbox-default.buy-use-point
-                %input{disabled: "disabled", type: "checkbox"}/
-                %i.icon-check
-                %label.label ポイントを使用 (所持ポイント: P0)
-          %section.buycontentoo{"data-buy" => "pay-method"}
-            .buycontentoo__inner
-              %h3.paymethod 支払い方法
-              = link_to '#' do
-                %p.buy-user-info-text
-                  %i.fas.fa-plus-circle
-                  %span.register 登録してください
-                  
-          %section.buycontentoo
-            .buycontentoo__inner
-              %h3.adress 配送先
-              = link_to '#' do
-                %p.buy-user-info-text.a
-                  %i.fas.fa-plus-circle
-                  %span.register 登録してください
-
-            %input#user_info_is_not_complete{type: "hidden"}/
-  %section
