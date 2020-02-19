@@ -77,13 +77,6 @@ class ProductsController < ApplicationController
       redirect_to product_path
     end
   end
-  # def update 商品詳細の時に使います
-  #   if @product.update(product_params)
-  #     redirect_to root_path
-  #   else
-  #     render :edit
-  #   end
-  # end  
 
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
@@ -118,17 +111,8 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id]) 
   end
 
-  def destroy
-    product = Product.find(params[:id])
-    product.destroy
-  end
-
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
 
-  # def set_product
-  #   @product = Product.find(params[:id]) 詳細情報の時に使います
-  # end
- 
 end
