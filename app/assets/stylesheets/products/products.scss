@@ -357,6 +357,10 @@
 }
 .product_price-fee{
   display:flex;
+  border-top: ridge aliceblue;
+  border-bottom: ridge aliceblue;
+  margin-top: 20px;
+  padding-bottom: 20px;
 }
 .product_price-feegroup__left{
   width: 50%;
@@ -401,4 +405,22 @@
 }
 .listing-select-wrapper__added{
   margin-bottom: 10px;
+}
+
+//削除scss//
+.product-detail__change-box--delete-btn {
+  background: aqua;
+  color: black;
+}
+
+.product-detail__top__description {
+  margin-top: 56px;
+  font-size: 18px;
+  background: aqua;
+  text-align: center;
+  line-height: 50px;
+}
+
+.en {
+  align-self: center;
 }
