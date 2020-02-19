@@ -32,6 +32,18 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    if @product.destroy
+      redirect_to delete_product_path
+    else
+      redirect_to product_path
+    end
+  end
   # def update 商品詳細の時に使います
   #   if @product.update(product_params)
   #     redirect_to root_path
@@ -48,6 +60,7 @@ class ProductsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
+
   private
 
   def product_params
@@ -58,23 +71,18 @@ class ProductsController < ApplicationController
       :description, 
       :category_id, 
       :brand_id, 
-      :price_id, 
+      :price, 
       :buyer_id, 
       :size, 
       :prefecture_id, 
       :shipping_burden, 
       :shipping_date,
-      images_attributes: [:src]
+      images_attributes: [:src, :_destroy, :id]
     ).merge(user_id: current_user.id)
   end
 
   # def set_product
   #   @product = Product.find(params[:id]) 詳細情報の時に使います
   # end
-
-  def destroy
-    product = Product.find(params[:id])
-    product.destroy
-  end
-
+ 
 end

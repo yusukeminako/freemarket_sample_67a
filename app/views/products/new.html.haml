@@ -95,7 +95,8 @@
                 価格
                 %span.required-2 必須
               .group__right
-                ￥
+                .en
+                  ￥
                 =f.text_field :price_id, placeholder: "例）300", value: "", class: "price"
                 - if @product.errors[:price_id].any?
                   .error-message
