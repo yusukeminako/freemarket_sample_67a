@@ -1,11 +1,9 @@
 .topman {
-  height: 384px;
   background-color: whitesmoke;
+  height: 85vh;
   .main {
-    height: 384px;
     width: 700px;
     margin: auto;
-
     &__sign-up {
       height: 97px;
       width: 700px;
@@ -20,59 +18,73 @@
     }
 
     &__block {
-      height: 287px;
+      padding-bottom: 30px;
       width: 700px;
       background-color: #fff;
       border-top: 1px solid #f5f5f5;
       font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
       text-align: center;
       
-        &__1 {
-          height: 50px;
-          width: 343px;
-          color: #fff;
-          background-color: #3CCACE;
-          margin: auto;
-          margin-top: 40px;
-          border-radius: 4px;
-          position: relative;
-          line-height: 50px;
-          font-size: 14px;
-          
-          .aa {
-          text-decoration: none;
-          color: white;
-          }
+      &__1 {
+        height: 50px;
+        width: 343px;
+        color: #fff;
+        background-color: #3CCACE;
+        margin: auto;
+        margin-top: 40px;
+        border-radius: 4px;
+        position: relative;
+        line-height: 50px;
+        font-size: 14px;
+        .aa {
+        text-decoration: none;
+        color: white;
         }
-        &__2 {
-          height: 50px;
-          width: 343px;
-          color: #fff;
-          background: #385185;
-          margin: auto;
-          margin-top: 16px;
-          border-radius: 4px;
-          position: relative;
-          line-height: 50px;
-          font-size: 14px;
-          .eee {
-            height: 30px;
-            width: 30px;
-          }
+      }
+      &__2 {
+        height: 50px;
+        width: 343px;
+        color: #fff;
+        background: #385185;
+        margin: auto;
+        margin-top: 16px;
+        border-radius: 4px;
+        position: relative;
+        line-height: 50px;
+        font-size: 14px;
+        .eee {
+          height: 30px;
+          width: 30px;
         }
-        &__3 {
-          height: 50px;
-          width: 343px;
-          color: #333;
-          background-color: #fff;
-          border: #979797 solid 1px;
-          margin: auto;
-          margin-top: 16px;
-          border-radius: 4px;
-          position: relative;
-          line-height: 50px;
-          font-size: 14px;
-        }
+      }
+      &__3 {
+        height: 50px;
+        width: 343px;
+        color: #333;
+        background-color: #fff;
+        border: #979797 solid 1px;
+        margin: auto;
+        margin-top: 16px;
+        border-radius: 4px;
+        position: relative;
+        line-height: 50px;
+        font-size: 14px;
+      }
     }
+  }
+}
+.listing__footer{
+  background-color: whitesmoke;
+  padding-top: 50px;
+  ul{
+    width:500px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto ;
+  }
+  .listing__footer__logo{
+    background-color: whitesmoke;
+    margin-top: 10px;
+    text-align: center;
   }
 }

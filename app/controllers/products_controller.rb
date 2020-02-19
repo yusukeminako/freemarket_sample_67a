@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_item, only: [:show, :purchase, :pay]
-  # before_action :set_product 詳細情報の時に使います
+  before_action :set_product, only: [:edit, :update]
 
   def index 
     # @products = Product.all
@@ -23,7 +22,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def create 
+  def create
     @product = Product.new(product_params)    
     if @product.save
       redirect_to root_path
@@ -32,6 +31,40 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    @images = Image.where(product_id: @product.id)
+
+    @grandchild = Category.find(@product.category_id)
+    @child = @grandchild.parent
+    @parent = @grandchild.parent.parent
+
+    @category_grandchild_array = ["---"]
+    Category.where(ancestry: @grandchild.ancestry).each do |grandchild|
+      @category_grandchild_array << grandchild.name
+    end
+
+    @category_child_array = ["---"]
+    Category.where(ancestry: @child.ancestry).each do |child|
+      @category_child_array << child.name
+    end
+
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+    @category = Category.find(@product.category_id)
+    @child_categories = Category.where('ancestry = ?', "#{@category.parent.ancestry}")
+    @grand_child = Category.where('ancestry = ?', "#{@category.ancestry}")
+  end
+
+  def update 
+    if @product.update(product_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end  
+  
   def show
 
   end
@@ -64,7 +97,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(
+      params.require(:product).permit(
       :user_id, 
       :name, 
       :condition, 
@@ -78,6 +111,19 @@ class ProductsController < ApplicationController
       :shipping_burden, 
       :shipping_date,
       images_attributes: [:src, :_destroy, :id]
+    ).merge(user_id: "2")
+  end
+
+  def set_product
+    @product = Product.find(params[:id]) 
+  end
+
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+  end
+
+end
     ).merge(user_id: current_user.id)
   end
 

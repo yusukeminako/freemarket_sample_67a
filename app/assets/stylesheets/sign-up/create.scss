@@ -1,9 +1,6 @@
 .done {
-  height: 582px;
   background-color: whitesmoke;
-  
   &__contents {
-    height: 582px;
     width: 700px;
     margin: auto;
     background-color: #fff;
@@ -33,6 +30,7 @@
         }
 
         &__done-end {
+          padding: 10px;
           font-size: 16px;
           line-height: 1.5;
         }
