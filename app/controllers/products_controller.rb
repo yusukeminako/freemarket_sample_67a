@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :set_item, only: [:show, :purchase, :pay]
   # before_action :set_product 詳細情報の時に使います
 
   def index 
@@ -83,6 +84,5 @@ class ProductsController < ApplicationController
   # def set_product
   #   @product = Product.find(params[:id]) 詳細情報の時に使います
   # end
-
  
 end

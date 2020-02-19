@@ -134,11 +134,12 @@
         =f.submit '出品する', class: "submit"
         .back-btn
           =link_to 'もどる', root_path
-        
-    .listing__footer
-      .nav
-        %ul
-          %li プライバシーポリシー
-          %li フリマ利用規約
-          %li 特定商取引に関する表記
-    = render "products/footer"
+      .listing__footer
+        .nav
+          %ul
+            %li プライバシーポリシー
+            %li フリマ利用規約
+            %li 特定商取引に関する表記
+        .listing__footer__logo
+          = image_tag "logo_gray.svg", alt:"merukari"
+          %p © Furima, Inc.
