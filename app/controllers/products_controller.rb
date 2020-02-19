@@ -2,8 +2,6 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update]
   before_action :move_to_index, except: [:index, :show]
   def index 
-    # @products = Product.all
-    # @images = Image.all
     @products = Product.all.order('created_at DESC').limit(3).to_a
     @images = Image.all
   end
@@ -27,7 +25,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      render :new
+      redirect_to new_product_path
     end
   end
 
