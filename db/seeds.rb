@@ -173,4 +173,4 @@ Image.create!(src:File.open("./public/images/lion.jpg"))
 Image.create!(src:File.open("./public/images/product2.jpg"))
 
 #商品サンプル
-Product.create!(name: '恐竜',condition: '絶好調',description: '絶滅しているため希少価値が凄い',price: '120')
+Product.create!(name: '恐竜',condition: '絶好調',description: '絶滅しているため希少価値が凄い',price: '12000')

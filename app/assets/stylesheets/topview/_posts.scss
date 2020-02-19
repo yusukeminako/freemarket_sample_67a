@@ -114,6 +114,7 @@ img {
       font-size: 14px;
       display: flex;
       margin-bottom: 10px;
+      
       .listsLeft{
         position: relative;
         display: flex;
@@ -139,11 +140,13 @@ img {
       .listsRight{
         margin-left: auto;
         display: flex;
+        
         &__item{
           color: #333;
           line-height: 38px;
           padding: 0 0 0 16px;
           list-style: none;
+          
           a {
             display: flex;
             align-items: center;
