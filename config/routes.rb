@@ -42,14 +42,16 @@ Rails.application.routes.draw do
 
   resources "signup", only: [:index, :create]
 
-  resources :purchases, only: [:index, :show] do
-    collection do
+  resources :purchases, only: [:show] do
+    member do
+      get 'confirm'
       post 'pay', to: 'purchases#pay'
       get 'done', to: 'purchases#done'
     end
-    member do
-      get 'confirm'
-    end
+    # collection do
+    #   post 'pay', to: 'purchases#pay'
+    #   get 'done', to: 'purchases#done'
+    # end
   end
 
 end

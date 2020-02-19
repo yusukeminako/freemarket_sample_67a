@@ -15,7 +15,7 @@
               %span.shipping-fee （税込）送料込み
     %section.buycontent
       .buycontent__inner
-        %form.buy-form{action: "#", method: "POST", novalidate: "novalidate"}
+        .buy-form{action: "#", method: "POST", novalidate: "novalidate"}
           %ul.buy-price-table
             %li.buy-price-row.buy-you-pay.bold
               .buy-price-cell-label 支払い金額
@@ -44,12 +44,11 @@
                   %span.register 登録してください
 
             %input#user_info_is_not_complete{type: "hidden"}/
-  %section.buy-content.buy-user-info
-    = form_with(url: "/purchases/pay", method: :post, local: true) do
-      %button.payjp-button{type: "submit","data-key" => 'pk_test_860ad7005e25946e1fd66f93', src: "https://checkout.pay.jp"}
-        購入する
-  %section
+            %section.buy-content.buy-user-info
+              = form_with(url: "/purchases/1/pay", method: :post, local: true) do
+                %button.payjp-button{type: "submit","data-key" => 'pk_test_860ad7005e25946e1fd66f93', src: "https://checkout.pay.jp"}
+                  購入する
    
-.subfooter
-  = image_tag "logo_gray.svg", alt:"merukari"
-%p © Furima, Inc.
+  .subfooter
+    = image_tag "logo_gray.svg", alt:"merukari"
+  %p © Furima, Inc.

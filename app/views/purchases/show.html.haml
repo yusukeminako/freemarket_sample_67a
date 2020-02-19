@@ -70,8 +70,9 @@
       %span.product-detail__top__price-line--taxin (税込)
       - if @postage_burden == 0
         %span.product-detail__top__price-line--postage 送料込み
-      = link_to '/purchases/:id/confirm',class: 'product-detail__top__buy-btn',id: 'product-detail__top__buy-btn' do
+      = link_to "/purchases/1/confirm",class: 'product-detail__top__buy-btn',id: 'product-detail__top__buy-btn' do
         %p 購入画面へ進む
+        -# "/purchases/#{@item.id}/confirm"
     .product-detail__top__description
       %p
     .product-detail__top__foot.clearfix

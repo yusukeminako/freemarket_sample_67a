@@ -1,3 +1,9 @@
+%section.buy-content.buy-user-info
+  = form_with(url: "/purchases/pay", method: :post, local: true) do
+    %button.payjp-button{type: "submit","data-key" => 'pk_test_860ad7005e25946e1fd66f93', src: "https://checkout.pay.jp"}
+      購入する
+
+
 = render "shared/header"  
 .semiheader
 .product-detail
