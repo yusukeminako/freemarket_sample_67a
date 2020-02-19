@@ -22,6 +22,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def complete
   end
 
+  def address
+    @address = Address.new
+  end
+  
+  def address_create
+    @address = Address.new(address_params)
+    @address.save!
+    redirect_to root_path
+  end
+
   private
 
   def configure_sign_up_params
@@ -30,6 +40,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def configure_account_update_params
     devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
+  end
+
+  def address_params
+    params.require(:address).permit(
+    :zip_code,
+    :prefecture,
+    :city,
+    :address1,
+    :address2,
+    :landline
+    ).merge(user_id: current_user.id)
   end
 
   # GET /resource/sign_up

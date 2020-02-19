@@ -13,14 +13,16 @@
 ActiveRecord::Schema.define(version: 2020_02_12_081119) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.integer "zip_code", null: false
     t.string "prefecture", null: false
     t.string "city", null: false
     t.string "address1", null: false
-    t.string "address2", null: false
+    t.string "address2"
     t.integer "landline"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   }
   devise_scope :user do
     get 'complete', to: 'users/registrations#complete' 
+    get 'address', to: 'users/registrations#address'
+    post 'address_create', to: 'users/registrations#address_create'
   end
 
   resources "purchases", only:[:index,:new,:show] do
