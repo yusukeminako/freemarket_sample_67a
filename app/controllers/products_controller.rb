@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update]
-
+  before_action :move_to_index, except: [:index, :show]
   def index 
     # @products = Product.all
     # @images = Image.all
@@ -121,6 +121,10 @@ class ProductsController < ApplicationController
   def destroy
     product = Product.find(params[:id])
     product.destroy
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 
   # def set_product
