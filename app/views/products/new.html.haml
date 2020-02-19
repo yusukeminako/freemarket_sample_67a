@@ -67,7 +67,7 @@
             %label 配送料の負担
             %span.required 必須
             .select
-              =f.select :shipping_burden, ["送料込み（出品者負担)", "着払い（購入者負担)"], prompt: "---"
+              =f.select :shipping_burden, [["送料込み（出品者負担)","送料込み（出品者負担)"], ["着払い（購入者負担)","着払い（購入者負担)"]], prompt: "---"
               %br/
               - if @product.errors[:shipping_burden].any?
                 .error-message
@@ -82,7 +82,7 @@
             %label 発送までの日数
             %span.required 必須
             .select
-              =f.select :shipping_date, ["1~2日で発送", "2~3日で発送", "4~7日で発送"], prompt: "---"
+              =f.select :shipping_date, [["1~2日で発送","1~2日で発送"], ["2~3日で発送","2~3日で発送"], ["4~7日で発送","4~7日で発送"]], prompt: "---"
               - if @product.errors[:shipping_date].any?
                 .error-message
                   %p 選択してください
