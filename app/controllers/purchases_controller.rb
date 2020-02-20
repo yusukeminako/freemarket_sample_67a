@@ -19,7 +19,6 @@ class PurchasesController < ApplicationController
 
   end
   def confirm
-    
   end
  
 
@@ -39,6 +38,11 @@ class PurchasesController < ApplicationController
   end
   def done
     @parent = Category.where(ancestry: nil)
+  end
+
+  def show
+    @product = Product.all.order('created_at DESC').limit(1).to_a
+    @images = Image.all
   end
 
   private

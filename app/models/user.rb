@@ -10,5 +10,5 @@ class User < ApplicationRecord
   belongs_to_active_hash :day
   belongs_to_active_hash :month
   has_many :cards
-  
+  has_many :products
 end

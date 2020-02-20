@@ -110,34 +110,6 @@
                       0
                   %p (税込)
 
-          
-          
-          .productList
-            -# = link_to purchase_path(@product.id) do
-              %figure.productList--img
-                = image_tag @product.images[1].src.url
-              .productList--body
-                %h3.name product2
-                .details
-                  %ul
-                    %li 20000円
-                    %li
-                      = icon('fa', 'star', class: 'likeIcon')
-                      0
-                  %p (税込)
-          .productList
-            -# = link_to purchase_path(product.id) do
-              %figure.productList--img
-                = image_tag @product.images[2].src.url
-              .productList--body
-                %h3.name product1
-                .details
-                  %ul
-                    %li 10000円
-                    %li
-                      = icon('fa', 'star', class: 'likeIcon')
-                      0
-                  %p (税込)
     %section.pickupContent
       %h2.head ピックアップブランド
       .productBox

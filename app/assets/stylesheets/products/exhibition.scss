@@ -7,22 +7,10 @@
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 
   & a {
+    color: #0098E8;
     text-decoration: none;
-
-    // &:hover {
-    //   @include link_hover;
-    // }
   }
-  // .a-non {
-  //   @include a-no-change;
-  //   &:hover {
-  //     @include a-no-change-hover;
-  //   }
-  // }
-  // & .clearfix::after {
-  //   @include clearfix;
-  // }
-
+  
   &__top {
     background-color: white;
     width: 700px;
@@ -177,10 +165,8 @@
       text-align: center;
       font-size: 24px;
       font-weight: bold;
-      // &:hover {
-      //   @include a-no-change-hover;
-      // }
     }
+
     &__sold-out{
       display: block;
       height: 60px;
