@@ -21,7 +21,7 @@
                     %label.edit_btn 編集
                   .delete-box{:id => "delete_btn_#{idx}"}
                     %span 削除
-          .label-content{width: "366"}
+          .label-content2
             %label{for: "product_images_attributes_0_src", class: "label-box", id: "label-box--0"}
               %pre.labekal-box__text-visible クリックしてファイルをアップロード
           .hidden-content
@@ -140,7 +140,6 @@
         =f.submit '編集する', class: "submit"
         .back-btn
           =link_to 'もどる', root_path
-        
     .listing__footer
       .nav
         %ul
