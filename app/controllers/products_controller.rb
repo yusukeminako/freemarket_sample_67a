@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update]
-
+  before_action :move_to_index, except: [:index, :show]
   def index 
     # @products = Product.all
     # @images = Image.all
@@ -91,15 +91,6 @@ class ProductsController < ApplicationController
     end
   end
 
-
-  # def update 商品詳細の時に使います
-  #   if @product.update(product_params)
-  #     redirect_to root_path
-  #   else
-  #     render :edit
-  #   end
-  # end  
-
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
   end
@@ -134,8 +125,8 @@ class ProductsController < ApplicationController
   end
 
 
-  # def set_product
-  #   @product = Product.find(params[:id]) 詳細情報の時に使います
-  # end
- 
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
+
 end
