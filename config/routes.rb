@@ -32,17 +32,11 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'delete', to: 'products#delete'
     end
-  
-    # member do
-    #   get 'confirm'
-    #   post 'pay', to: 'purchases#pay'
-    #   get 'done', to: 'purchases#done'
-    # end
   end
 
   resources "categorys", only: [:index]
 
-  resources 'users', only: [:show]
+  resources "users", only: [:show]
 
   get '/logout', to: "users#logout"
 
