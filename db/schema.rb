@@ -58,8 +58,8 @@ ActiveRecord::Schema.define(version: 2020_02_12_081119) do
     t.bigint "buyer_id"
     t.integer "size"
     t.bigint "prefecture_id"
-    t.integer "shipping_burden"
-    t.integer "shipping_date"
+    t.string "shipping_burden"
+    t.string "shipping_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"

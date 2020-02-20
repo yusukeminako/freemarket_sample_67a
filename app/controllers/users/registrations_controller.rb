@@ -43,13 +43,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def address_params
-    params.require(:address).permit(
-    :zip_code,
-    :prefecture,
-    :city,
-    :address1,
-    :address2,
-    :landline
+      params.require(:address).permit(
+      :zip_code,
+      :prefecture,
+      :city,
+      :address1,
+      :address2,
+      :landline
     ).merge(user_id: current_user.id)
   end
 

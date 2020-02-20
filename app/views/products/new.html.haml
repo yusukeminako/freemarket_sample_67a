@@ -43,12 +43,12 @@
         %h3 商品の詳細
         .form-box
           .listing-product-detail__category
-            = f.label 'カテゴリー', class: 'listing-default__label'
+            = f.label :category_id, 'カテゴリー', class: 'listing-default__label'
             %span.required 必須
             .listing-select-wrapper
               .listing-select-wrapper__box
-                //親カテゴリーのセレクトボックスの生成
-                = select_tag(:category_id, options_for_select(@category_parent_array),class: 'listing-select-wrapper__box--select', id: 'parent_category')        
+                
+                = select_tag(:category_id, options_for_select(@category_parent_array),class: 'listing-select-wrapper__box--select', id: 'parent_category')
           .group
             %label 商品の状態
             %span.required 必須
@@ -67,7 +67,7 @@
             %label 配送料の負担
             %span.required 必須
             .select
-              =f.select :shipping_burden, ["送料込み（出品者負担)", "着払い（購入者負担)"], prompt: "---"
+              =f.select :shipping_burden, [["送料込み（出品者負担)","送料込み（出品者負担)"], ["着払い（購入者負担)","着払い（購入者負担)"]], prompt: "---"
               %br/
               - if @product.errors[:shipping_burden].any?
                 .error-message
@@ -82,7 +82,7 @@
             %label 発送までの日数
             %span.required 必須
             .select
-              =f.select :shipping_date, ["1~2日で発送", "2~3日で発送", "4~7日で発送"], prompt: "---"
+              =f.select :shipping_date, [["1~2日で発送","1~2日で発送"], ["2~3日で発送","2~3日で発送"], ["4~7日で発送","4~7日で発送"]], prompt: "---"
               - if @product.errors[:shipping_date].any?
                 .error-message
                   %p 選択してください

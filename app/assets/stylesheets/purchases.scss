@@ -179,18 +179,6 @@
       }
     }
   }
-  
-}
-// puchase.indexのカードで購入するのボタン
-button.payjp-button{
-  height: 62px;
-  width: 297px;
-  font-size: 20px;
-  margin-top: 28px;
-  color: white;
-  background-color: #0099e8;
-  margin-left: 8px;
-  margin-bottom: 21px;
 }
 
 .listing__footer{
@@ -200,28 +188,24 @@ button.payjp-button{
     margin: 0 auto;
     padding: 40px 0;
     background: rgb(245, 245, 245);
-    ul{
-      display: flex;
-      justify-content: center;
-      height: 12px;
-      font-size: 12px;
-      li{
-        margin-left: 16px;
-      }
-    }
-    &__logo{
-      width: 80px;
-      height: 65px;
-      margin: 40px auto 0;
-    }
-    p{
-      margin-top: 8px;
-      font-size: 13px;
-      text-align: center;
+  ul{
+    display: flex;
+    justify-content: center;
+    height: 12px;
+    font-size: 12px;
+    li{
+      margin-left: 16px;
     }
   }
-
-
-
-
+  &__logo{
+    width: 80px;
+    height: 65px;
+    margin: 40px auto 0;
+  }
+  p{
+    margin-top: 8px;
+    font-size: 13px;
+    text-align: center;
+  }
+}
 

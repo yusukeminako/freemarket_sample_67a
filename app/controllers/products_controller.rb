@@ -4,8 +4,9 @@ class ProductsController < ApplicationController
   def index 
     # @products = Product.all
     # @images = Image.all
-    @products = Product.all.order('created_at DESC').limit(3).to_a
+    @products = Product.where(buyer_id: nil).order('created_at DESC').to_a
     @images = Image.all
+
   end
 
   def new
@@ -27,7 +28,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      render :new
+      redirect_to new_product_path
     end
   end
 
@@ -70,24 +71,29 @@ class ProductsController < ApplicationController
   end  
   
   def show
-
+    @product = Product.find(params[:id])
+    @category = Category.find(@product.category_id)
+    @user = User.find_by(id: @product.user_id)
   end
+
+  def confirm
+    @product = Product.find(params[:id])
+    @category = Category.find(@product.category_id)
+    @user = User.find_by(id: @product.user_id)
+  end
+
+  def delete #削除完了後
+  end
+
 
   def destroy
     @product = Product.find(params[:id])
     if @product.destroy
-      redirect_to delete_product_path
+      redirect_to delete_products_path
     else
-      redirect_to product_path
+      redirect_to products_path
     end
   end
-  # def update 商品詳細の時に使います
-  #   if @product.update(product_params)
-  #     redirect_to root_path
-  #   else
-  #     render :edit
-  #   end
-  # end  
 
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
@@ -122,17 +128,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id]) 
   end
 
-  def destroy
-    product = Product.find(params[:id])
-    product.destroy
-  end
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
 
-  # def set_product
-  #   @product = Product.find(params[:id]) 詳細情報の時に使います
-  # end
- 
 end
