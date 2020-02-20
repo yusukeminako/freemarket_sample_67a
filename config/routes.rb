@@ -48,9 +48,5 @@ Rails.application.routes.draw do
       post 'pay', to: 'purchases#pay'
       get 'done', to: 'purchases#done'
     end
-    collection do
-      post 'pay', to: 'purchases#pay'
-      get 'done', to: 'purchases#done'
-    end
   end
 end
