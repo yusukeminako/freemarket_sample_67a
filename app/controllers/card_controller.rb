@@ -1,6 +1,5 @@
 class CardController < ApplicationController
   require "payjp"
-  before_action :set_card, only: [:show,:delete]
 
   def new
     card = Card.where(user_id: current_user.id)
@@ -35,7 +34,7 @@ class CardController < ApplicationController
       customer.delete
       @card.delete
     end
-      redirect_to action: "index"
+    redirect_to action: "index"
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
@@ -48,11 +47,5 @@ class CardController < ApplicationController
     end
   end
 
-  private
 
-  def set_card
-    if user_signed_in?
-      @card = current_user.cards.first
-    end
-  end
 end

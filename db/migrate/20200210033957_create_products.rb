@@ -11,8 +11,8 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.references :buyer
       t.integer :size
       t.references :prefecture
-      t.integer :shipping_burden
-      t.integer :shipping_date
+      t.string :shipping_burden  #integer → string
+      t.string :shipping_date  #integer → string
       t.timestamps
     end
   end

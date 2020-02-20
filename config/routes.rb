@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get 'confirm'
     end
   end
+
   
 
   
@@ -25,16 +26,18 @@ Rails.application.routes.draw do
     end
   end
 
-  resources "products", only: [:index, :new, :create, :edit, :update, :show, :destroy] do
-
+  resources :products do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'delete', to: 'products#delete'
     end
-
-    member do
-      get 'delete'
-    end
+  
+    # member do
+    #   get 'confirm'
+    #   post 'pay', to: 'purchases#pay'
+    #   get 'done', to: 'purchases#done'
+    # end
   end
 
   resources "categorys", only: [:index]
@@ -51,9 +54,9 @@ Rails.application.routes.draw do
       post 'pay', to: 'purchases#pay'
       get 'done', to: 'purchases#done'
     end
-    # collection do
-    #   post 'pay', to: 'purchases#pay'
-    #   get 'done', to: 'purchases#done'
-    # end
+    collection do
+      post 'pay', to: 'purchases#pay'
+      get 'done', to: 'purchases#done'
+    end
   end
 end
