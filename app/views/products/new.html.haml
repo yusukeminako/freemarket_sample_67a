@@ -43,12 +43,12 @@
         %h3 商品の詳細
         .form-box
           .listing-product-detail__category
-            = f.label 'カテゴリー', class: 'listing-default__label'
+            = f.label :category_id, 'カテゴリー', class: 'listing-default__label'
             %span.required 必須
             .listing-select-wrapper
               .listing-select-wrapper__box
-                //親カテゴリーのセレクトボックスの生成
-                = select_tag(:category_id, options_for_select(@category_parent_array),class: 'listing-select-wrapper__box--select', id: 'parent_category')        
+                
+                = select_tag(:category_id, options_for_select(@category_parent_array),class: 'listing-select-wrapper__box--select', id: 'parent_category')
           .group
             %label 商品の状態
             %span.required 必須
@@ -97,8 +97,8 @@
               .group__right
                 .en
                   ￥
-                =f.text_field :price_id, placeholder: "例）300", value: "", class: "price"
-                - if @product.errors[:price_id].any?
+                =f.text_field :price, placeholder: "例）300", value: "", class: "price"
+                - if @product.errors[:price].any?
                   .error-message
                   %p 300以上9999999以下で入力してください
             

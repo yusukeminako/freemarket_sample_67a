@@ -21,7 +21,7 @@
                     %label.edit_btn 編集
                   .delete-box{:id => "delete_btn_#{idx}"}
                     %span 削除
-          .label-content{width: "366"}
+          .label-content2
             %label{for: "product_images_attributes_0_src", class: "label-box", id: "label-box--0"}
               %pre.labekal-box__text-visible クリックしてファイルをアップロード
           .hidden-content
@@ -119,8 +119,8 @@
                 %span.required-2 必須
               .group__right
                 ￥
-                =f.text_field :price_id, placeholder: "例）300",value: @product.price_id, class: "price"
-                - if @product.errors[:price_id].any?
+                =f.text_field :price, placeholder: "例）300",value: @product.price, class: "price"
+                - if @product.errors[:price].any?
                   .error-message
                   %p 300以上9999999以下で入力してください
             
@@ -140,7 +140,6 @@
         =f.submit '編集する', class: "submit"
         .back-btn
           =link_to 'もどる', root_path
-        
     .listing__footer
       .nav
         %ul
