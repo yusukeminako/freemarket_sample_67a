@@ -5,20 +5,20 @@
   //ここから商品詳細
   %section.product-detail__top
     .product-detail__top__product-name
-      ダイナソー
+      = @product.name
       
     .product-detail__top__item
       .product-detail__top__item-image
         .product-detail__top__item-image-main
-          = image_tag "dino.jpg" , size: '300x300', class: "product-detail__top__item-image-main--photo"
+          = image_tag Image.find_by(product_id: @product.id).src.url, size: '300x300', class: "product-detail__top__item-image-main--photo"
         .product-detail__top__item-image-list
           .product-detail__top__item-image-list__inner
-            = image_tag "dino.jpg", size: '130x130'
+            = image_tag Image.find_by(product_id: @product.id).src.url
       %table.product-detail__top__item-table
         %tr.product-detail__top__item-table__seller
           %th.product-detail__top__item-table__seller-col.col 出品者
           %th.product-detail__top__item-table__seller-item.item 
-            = link_to "#", class: 'product-detail__top__item-table__seller-item__name'
+            = @user.nickname
             .face-icon
               .face-icon--block
                 %i.fas.fa-laugh
@@ -33,47 +33,67 @@
           %th.product-detail__top__item-table__cat-col.col カテゴリー
           %th.product-detail__top__item-table__cat-item.item
             .product-detail__top__item-table__cat-item__name1
-            あああ
+              = @category.root.name
             %br
             .product-detail__top__item-table__cat-item__name2
               %i.fas.fa-chevron-right
-            いい
+              = @category.parent.name
             %br
             .product-detail__top__item-table__cat-item__name3
               %i.fas.fa-chevron-right
-              うう
+              = @category.name
           %tr.product-detail__top__item-table__brand
             %th.product-detail__top__item-table__brand-col.col ブランド
             %th.product-detail__top__item-table__brand-item.item
+              = @product.brand_id
+              
             .product-detail__top__item-table__brand-item__name
           %tr.product-detail__top__item-table__size
             %th.product-detail__top__item-table__size-col.col サイズ
             %th.product-detail__top__item-table__size-item.item 
+              = @product.size
         %tr.product-detail__top__item-table__status
           %th.product-detail__top__item-table__status-col.col 商品の状態
           %th.product-detail__top__item-table__status-item.item
+            = @product.condition
+            
         %tr.product-detail__top__item-table__postage_burden
           %th.product-detail__top__item-table__postage_burden-col.col 配送料の負担
-          %th.product-detail__top__item-table__postage_burden-item.item #{@postage_burden}
+          %th.product-detail__top__item-table__postage_burden-item.item
+            = @product.shipping_burden
+            
         %tr.product-detail__top__item-table__sending_method
           %th.product-detail__top__item-table__sending_method-col.col 配送の方法
           %th.product-detail__top__item-table__sending_method-item.item
+            
         %tr.product-detail__top__item-table__area
           %th.product-detail__top__item-table__area-col.col 配送元地域
           %th.product-detail__top__item-table__area-item.item
-            = link_to "#", class: 'product-detail__top__item-table__area-item__name'
+            = Prefecture.find(@product.prefecture_id).name
+            
         %tr.product-detail__top__item-table__scheduled_sending_date
           %th.product-detail__top__item-table__scheduled_sending_date-col.col 発送日の目安
-          %th.product-detail__top__item-table__scheduled_sending_date-item.item #{@scheduled_sending_date}
+          %th.product-detail__top__item-table__scheduled_sending_date-item.item 
+            = @product.shipping_date
     .product-detail__top__price-line
       %span.product-detail__top__price-line--price
-      %span.product-detail__top__price-line--taxin (税込)
-      - if @postage_burden == 0
+        = "#{@product.price}"
+      %span.product-detail__top__price-line--taxin 
+        (税込)
+      - if @product.shipping_burden == "送料込み（出品者負担)"
         %span.product-detail__top__price-line--postage 送料込み
 
     .product-detail__top__description
-      = link_to product_path, method: :delete, class: "product-detail__change-box--delete-btn common-btn",id: "delete__modal--btn" do
-        この商品を削除する
+      -# = link_to product_path, method: :delete, class: "product-detail__change-box--delete-btn common-btn",id: "delete__modal--btn" do
+      -#   この商品を削除する
+      - if current_user.id == @product.user_id
+        .item_edition
+          = link_to "編集する",product_path, method: :delete, class: "product-detail__change-box--delete-btn common-btn",id: "delete__modal--btn" 
+          = link_to "削除する", product_path, method: :delete,class: "product-detail__change-box--delete-btn common-btn",id: "delete__modal--btn" 
+      - else
+        = form_with(url: "/purchases/1/pay", method: :post, local: true) do
+          %button.payjp-button{type: "submit","data-key" => 'pk_test_860ad7005e25946e1fd66f93', src: "https://checkout.pay.jp"}
+            購入する
     .product-detail__top__foot.clearfix
       .product-detail__top__foot__buttons
         .product-detail__top__foot__buttons--like
@@ -89,6 +109,5 @@
         = link_to '#' do
           %i.fas.fa-lock
           %span あんしん・あんぜんへの取り組み
-  
   .semifooter
     = render "shared/footer"

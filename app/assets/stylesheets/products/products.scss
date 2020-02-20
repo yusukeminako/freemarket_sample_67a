@@ -440,9 +440,29 @@
 .product-detail__top__description {
   margin-top: 56px;
   font-size: 18px;
-  background: aqua;
   text-align: center;
   line-height: 50px;
+  .item_edition{
+    display: flex;
+    justify-content: space-around;
+    a{
+    margin-top: 15px;
+    padding: 0 50px;
+    color: white;
+    font-weight: 600;
+    background: #3ae0e4;
+    }
+  }
+  button.payjp-button{
+    padding: 10px 120px;
+    font-size: 25px;
+    margin-top: 28px;
+    color: white;
+    background-color: #3ae0e4;
+    margin-left: 8px;
+    margin-bottom: 21px;
+    border: none;
+  }    
 }
 
 .en {
