@@ -40,6 +40,11 @@ class PurchasesController < ApplicationController
     @parent = Category.where(ancestry: nil)
   end
 
+  def show
+    @product = Product.all.order('created_at DESC').limit(1).to_a
+    @images = Image.all
+  end
+
   private
   def set_product
     @product = Product.find(params[:product_id])
