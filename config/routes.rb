@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   end
 
   get '/images/:id', to: "images#destroy"
-end
+
 
   get '/logout', to: "users#logout"
   resources "signup", only: [:index, :create]
