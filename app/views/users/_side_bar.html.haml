@@ -57,10 +57,7 @@
         = link_to "プロフィール"
         %i.fa.fa-chevron-right
       %li.l-side-bar-list-item
-        - if @address.blank?
-          = link_to "発送元・お届け先住所変更", address_path
-        - else
-          = link_to "発送元・お届け先住所変更", "/addresses/#{current_user.id}"
+        = link_to "発送元・お届け先住所変更", address_path
         %i.fa.fa-chevron-right
       %li.l-side-bar-list-item
         - if @card.blank?
