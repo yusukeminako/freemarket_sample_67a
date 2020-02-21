@@ -1,0 +1,66 @@
+= render "shared/header"
+
+.wrapper
+  .container-mypage
+    = render "users/side_bar"
+    .container-mypage__content
+      = form_for(@address,url: "/addresses/#{@address.user_id}", method: :patch) do |f|
+        .ad
+          .ad__ad
+            .ad__ad__add
+              住所情報登録
+            .ad__ad__add2
+              .ad__ad__add2__add3
+                .ad__ad__add2__add3__add4
+                  郵便番号
+                .ad__ad__add2__add3__add5
+                  必須
+                .ad__ad__add2__add3__add6
+                  = f.text_field :zip_code, placeholder: '例) 8120001', class: "ad1"
+              .ad__ad__add2__add3
+                .ad__ad__add2__add3__add4
+                  都道府県
+                .ad__ad__add2__add3__add5
+                  必須
+                .ad__ad__add2__add3__add6
+                  = f.text_field :prefecture, placeholder: '例) 福岡県', class: "ad1"
+              .ad__ad__add2__add3
+                .ad__ad__add2__add3__add4
+                  市区町村
+                .ad__ad__add2__add3__add5
+                  必須
+                .ad__ad__add2__add3__add6
+                  = f.text_field :city, placeholder: '例) 福岡市博多区志免町', class: "ad1"
+              .ad__ad__add2__add3
+                .ad__ad__add2__add3__add4
+                  番地
+                .ad__ad__add2__add3__add5
+                  必須
+                .ad__ad__add2__add3__add6
+                  = f.text_field :address1, placeholder: '例) 200番地20', class: "ad1"
+              .ad__ad__add2__add3
+                .ad__ad__add2__add3__add4
+                  マンション名、ビル名
+                .ad__ad__add2__add3__add5
+                  任意
+                .ad__ad__add2__add3__add6
+                  = f.text_field :address2, placeholder: '例) ビバリーヒルズ', class: "ad1"
+              .ad__ad__add2__add3
+                .ad__ad__add2__add3__add4
+                  固定電話番号
+                .ad__ad__add2__add3__add5
+                  任意
+                .ad__ad__add2__add3__add6
+                  = f.text_field :landline, placeholder: '例) 012099993333', class: "ad1"
+              .ad__ad__add2__add333
+                .ad__ad__add2__add333__330
+                  本人確認
+                .ad__ad__add2__add333__331
+                  安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+              .hon
+                ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+              .next-end
+                = f.submit "登録", class: "next-end__end-end"
+
+= render "shared/footer"
+= render "shared/purchasebtn"
