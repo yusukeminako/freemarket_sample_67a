@@ -2,8 +2,6 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update]
   before_action :move_to_index, except: [:index, :show]
   def index 
-    # @products = Product.all
-    # @images = Image.all
     @products = Product.where(buyer_id: nil).order('created_at DESC').to_a
     @images = Image.all
 
@@ -24,13 +22,17 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)    
+    @product = Product.new(product_params)
     if @product.save
       redirect_to root_path
     else
       redirect_to new_product_path
     end
   end
+
+  def show
+    @product = Product.find(params[:id])
+  end  
 
   def edit
     @images = Image.where(product_id: @product.id)

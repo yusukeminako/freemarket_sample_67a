@@ -7,22 +7,10 @@
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 
   & a {
+    color: #0098E8;
     text-decoration: none;
-
-    // &:hover {
-    //   @include link_hover;
-    // }
   }
-  // .a-non {
-  //   @include a-no-change;
-  //   &:hover {
-  //     @include a-no-change-hover;
-  //   }
-  // }
-  // & .clearfix::after {
-  //   @include clearfix;
-  // }
-
+  
   &__top {
     background-color: white;
     width: 700px;
@@ -32,7 +20,7 @@
 
     &__product-name {
       font-size: 24px;
-      text-align: center;
+      text-align: left;
       line-height: 1.4em;
       font-weight: bold;
       h1 {
@@ -172,15 +160,13 @@
       height: 60px;
       line-height: 60px;
       margin-top: 16px;
-       background-color: red;
-       color: white!important;
+      background-color: red;
+      color: white!important;
       text-align: center;
       font-size: 24px;
       font-weight: bold;
-      // &:hover {
-      //   @include a-no-change-hover;
-      // }
     }
+
     &__sold-out{
       display: block;
       height: 60px;

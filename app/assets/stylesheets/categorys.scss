@@ -112,7 +112,7 @@
     &-usericon {
       height:200px;
       position: relative;
-      background-image: image-url("../assets/kirakira.jpg");
+      background-image: image-url("kirakira.jpg");
       padding-top: 70px;
       background-repeat: no-repeat;
       img {
@@ -197,7 +197,6 @@
         display: none;
         height: 236px;
         width:700px;
-        background-image: image-url("mypage.yarukotolist.png");
         &-contents-image{
           height: 200px;
           width:600px;

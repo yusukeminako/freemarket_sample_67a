@@ -1,95 +1,65 @@
-= render "shared/header"  
-.semiheader
-.product-detail
+= render "products/header"  
+%main.main
+  %section.main__container
+    %h2.tema 購入内容の確認
+    %section.check
+      .check__content-inner
+        .check__item__box
+          %h3.check__item__image
+            -# -%img.lazyload
+            -# = image_tag "dino.jpg", size:"70x110"
+          .check__item__detail
+            .check__item__detail__name
+              .name-title
+                = "出品者名"
+              .name
+                = "#{@product.name}"
+    %section.buycontent
+      .buycontent__inner
+        .buy-form{action: "#", method: "POST", novalidate: "novalidate"}
+          %ul.buy-price-table
+            %li.buy-price-row.buy-you-pay.bold
+              .buy-price-cell-label 支払い金額
+            %li.check__price
+              .price
+                = "#{@product.price} "
+                .yen 　円
+              - if @product.shipping_burden == "送料込み（出品者負担)"
+                %span.shipping-fee (税込)送料込み
+          %ul.buyaccordion
+            %li.byaccordion__parent
+              .checkbox-default.buy-use-point
+                %input{disabled: "disabled", type: "checkbox"}/
+                %i.icon-check
+                %label.label ポイントを使用 (所持ポイント: P0)
+          %section.buycontentoo{"data-buy" => "pay-method"}
+            .buycontentoo__inner
+              %h3.paymethod 支払い方法
+              = link_to '#' do
+                %p.buy-user-info-text
+                  %i.fas.fa-plus-circle
+                  %span.register 登録してください
+                  
+          %section.buycontentoo
+            .buycontentoo__inner
+              %h3.adress 配送先
+              = link_to '#' do
+                %p.buy-user-info-text.a
+                  %i.fas.fa-plus-circle
+                  %span.register 登録してください
 
-  //ここから商品詳細
-  %section.product-detail__top
-    .product-detail__top__product-name
-      ダイナソー
-      
-    .product-detail__top__item
-      .product-detail__top__item-image
-        .product-detail__top__item-image-main
-          = image_tag "dino.jpg" , size: '300x300', class: "product-detail__top__item-image-main--photo"
-        .product-detail__top__item-image-list
-          .product-detail__top__item-image-list__inner
-            = image_tag "dino.jpg", size: '130x130'
-      %table.product-detail__top__item-table
-        %tr.product-detail__top__item-table__seller
-          %th.product-detail__top__item-table__seller-col.col 出品者
-          %th.product-detail__top__item-table__seller-item.item 
-            = link_to "#", class: 'product-detail__top__item-table__seller-item__name'
-            .face-icon
-              .face-icon--block
-                %i.fas.fa-laugh
-                %span 0
-              .face-icon--block
-                %i.fas.fa-meh
-                %span 0
-              .face-icon--block
-                %i.fas.fa-frown
-                %span 0
-        %tr.product-detail__top__item-table__cat
-          %th.product-detail__top__item-table__cat-col.col カテゴリー
-          %th.product-detail__top__item-table__cat-item.item
-            .product-detail__top__item-table__cat-item__name1
-            あああ
-            %br
-            .product-detail__top__item-table__cat-item__name2
-              %i.fas.fa-chevron-right
-            いい
-            %br
-            .product-detail__top__item-table__cat-item__name3
-              %i.fas.fa-chevron-right
-              うう
-          %tr.product-detail__top__item-table__brand
-            %th.product-detail__top__item-table__brand-col.col ブランド
-            %th.product-detail__top__item-table__brand-item.item
-            .product-detail__top__item-table__brand-item__name
-          %tr.product-detail__top__item-table__size
-            %th.product-detail__top__item-table__size-col.col サイズ
-            %th.product-detail__top__item-table__size-item.item 
-        %tr.product-detail__top__item-table__status
-          %th.product-detail__top__item-table__status-col.col 商品の状態
-          %th.product-detail__top__item-table__status-item.item
-        %tr.product-detail__top__item-table__postage_burden
-          %th.product-detail__top__item-table__postage_burden-col.col 配送料の負担
-          %th.product-detail__top__item-table__postage_burden-item.item #{@postage_burden}
-        %tr.product-detail__top__item-table__sending_method
-          %th.product-detail__top__item-table__sending_method-col.col 配送の方法
-          %th.product-detail__top__item-table__sending_method-item.item
-        %tr.product-detail__top__item-table__area
-          %th.product-detail__top__item-table__area-col.col 配送元地域
-          %th.product-detail__top__item-table__area-item.item
-            = link_to "#", class: 'product-detail__top__item-table__area-item__name'
-        %tr.product-detail__top__item-table__scheduled_sending_date
-          %th.product-detail__top__item-table__scheduled_sending_date-col.col 発送日の目安
-          %th.product-detail__top__item-table__scheduled_sending_date-item.item #{@scheduled_sending_date}
-    .product-detail__top__price-line
-      %span.product-detail__top__price-line--price
-      %span.product-detail__top__price-line--taxin (税込)
-      - if @postage_burden == 0
-        %span.product-detail__top__price-line--postage 送料込み
-      = link_to "/purchases/1/confirm",class: 'product-detail__top__buy-btn',id: 'product-detail__top__buy-btn' do
-        %p 購入画面へ進む
-        -# "/purchases/#{@item.id}/confirm"
-    .product-detail__top__description
-      %p
-    .product-detail__top__foot.clearfix
-      .product-detail__top__foot__buttons
-        .product-detail__top__foot__buttons--like
-          = link_to '#', class: 'a-non' do
-            %i.far.fa-heart
-            %span いいね!
-            %span --
-        .product-detail__top__foot__buttons--report
-          = link_to '#', class: 'a-non' do
-            %i.far.fa-flag
-            %span 不適切な商品の報告
-      .product-detail__top__foot--safety
-        = link_to '#' do
-          %i.fas.fa-lock
-          %span あんしん・あんぜんへの取り組み
-  
-  .semifooter
-    = render "shared/footer"
+            %input#user_info_is_not_complete{type: "hidden"}/
+            %section.buy-content.buy-user-info
+              = form_with(url: buy_purchases_path(@product.id), method: :post, local: true) do
+                %button.payjp-button{type: "submit","data-key" => 'pk_test_860ad7005e25946e1fd66f93', src: "https://checkout.pay.jp"}
+                  購入する
+
+  .listing__footer
+    .nav
+      %ul
+        %li プライバシーポリシー
+        %li フリマ利用規約
+        %li 特定商取引に関する表記
+    .listing__footer__logo
+      = image_tag "logo_gray.svg", alt:"merukari"
+      %p © Furima, Inc.
