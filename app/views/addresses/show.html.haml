@@ -1,0 +1,14 @@
+= render "shared/header"
+.wrapper
+  .container-mypage
+    = render "users/side_bar"
+    .container-mypage__content
+      = @address.zip_code
+      = @address.prefecture
+      = @address.city
+      = @address.address1
+      = @address.address2
+      = @address.landline
+      = link_to "編集", "/addresses/#{current_user.id}/edit"
+= render "shared/footer"
+= render "shared/purchasebtn"

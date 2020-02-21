@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
   protect_from_forgery with: :exception
   before_action :set_card
+  before_action :set_address
+
   
 
   protected
@@ -13,12 +15,18 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  def set_address
+    if user_signed_in?
+      @address = Address.find_by(user_id: current_user.id)
+    end
+  end
 
   def set_card
     if user_signed_in?
       @card = current_user.cards.first
     end
   end
+
   def production?
     Rails.env.production?
   end
