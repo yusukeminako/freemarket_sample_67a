@@ -34,14 +34,12 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/images/:id', to: "images#destroy"
+end
+
   get '/logout', to: "users#logout"
   resources "signup", only: [:index, :create]
   resources "categorys", only: [:index]
 
   resources "users", only: [:show]
 end
-# member do
-    #   get 'confirm'
-    # post 'pay', to: 'purchases#pay'
-    #   get 'done', to: 'purchases#done'
-    # end

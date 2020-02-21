@@ -12,8 +12,9 @@
         .product-detail__top__item-image-main
           = image_tag Image.find_by(product_id: @product.id).src.url, size: '300x300', class: "product-detail__top__item-image-main--photo"
         .product-detail__top__item-image-list
+          -# - images = Image.where(product_id: @product.id)
           .product-detail__top__item-image-list__inner
-            = image_tag Image.find_by(product_id: @product.id).src.url
+            = image_tag Image.find_by(product_id: @product.id).src.url          
       %table.product-detail__top__item-table
         %tr.product-detail__top__item-table__seller
           %th.product-detail__top__item-table__seller-col.col 出品者
