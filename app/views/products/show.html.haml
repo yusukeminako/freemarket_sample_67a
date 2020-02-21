@@ -89,7 +89,7 @@
       -#   この商品を削除する
       - if current_user.id == @product.user_id
         .item_edition
-          = link_to "編集する",product_path, method: :delete, class: "product-detail__change-box--delete-btn common-btn",id: "delete__modal--btn" 
+          = link_to "編集する",edit_product_path(@product.id), class: "product-detail__change-box--delete-btn common-btn",id: "delete__modal--btn" 
           = link_to "削除する", product_path, method: :delete,class: "product-detail__change-box--delete-btn common-btn",id: "delete__modal--btn" 
       - else
         = link_to "購入画面の進む",purchase_path(@product), class: "product-detail__change-box--delete-btn common-btn",id: "delete__modal--btn" 
