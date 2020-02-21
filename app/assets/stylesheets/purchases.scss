@@ -32,34 +32,33 @@
   
     &__content-inner {
       width:500px;
-      height:100px;
+      height:40px;
       margin: 0 auto;
     }
     &__item__box {
-      display: flex;
-
+      display: block;
+      padding: 0 0 0 80px;
       &__item__image {
         min-width: 80px;
       }
       .check__item__detail {
-        margin-left: 16px;
-
+        display: flex;
+        justify-content: space-between;
         .check__item__detail__name{
-          font-size: 14px;
-          margin: 0;
+          font-size: 16px;
           padding: 0 0 8px;
-          line-height: 1.5;
           text-align: left;
-          font-weight: lighter
-        }
-        .check__price {
-          margin: 0;
-          text-align: left;
-          font-size: 15px;
           font-weight: 600;
-        }
-        .shipping-fee {
-          font-size: 12px;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          .name-title{
+            width: 100px;
+          }
+          .name{
+            font-size: 35px;
+            width: 100px;
+          }
         }
       }
     }
@@ -76,22 +75,41 @@
         padding-top:40px;
         margin: 0;
         border-collapse: collapse;
-        width: 100%;
+        width: 400px;
         display: flex;
-        
-
+        justify-content: space-between;
+        .check__price {
+          margin: 0;
+          text-align: left;
+          font-size: 18px;
+          font-weight: 600;
+          display: block;
+          .price{
+            font-size: 40px;
+            display: flex;
+            .yen{
+              font-size: 16px;
+              margin-top: 18px;
+            }
+          }
+          .buy-price-row{
+            line-height: 60px;
+          }
+        }
         li{
-          width: 100%;
           display: flex;
           justify-content: space-between;
-
           .buy-price-cell-label {
             font-weight: 600;
-            font-size: 18px;
+            font-size: 15px;
+            line-height: 60px;
           }
           .span {
             font-weight: 600;
             font-size: 30px;
+          }
+          .shipping-fee{
+            font-size: 15px;
           }
         }
       }
@@ -162,17 +180,15 @@
         }
       }
       .buy-content.buy-user-info {
-        padding-bottom: 0;
-
-        .buybtn {
-          border: 1px solid #888;
-          background: #888;
+        text-align: center;
+        .payjp-button {
+          border: none;
+          outline: none;
+          background: #3CCAEC;
           color: #fff;
-          display: block;
           width: 100%;
           line-height: 48px;
-          font-size: 14px;
-          border-bottom : solid 1px #f5f5f5;
+          font-size: 18px;
           margin-top: 30px;
           font-weight: 600;
         }

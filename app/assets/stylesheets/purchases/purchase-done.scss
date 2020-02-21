@@ -1,0 +1,31 @@
+.buy__model{
+  height: 500px;
+  text-align: center;
+  padding: 50px 0;
+  background-color: whitesmoke;
+  .buy__model__content{
+    width: 500px;
+    margin: 0 auto;
+    padding: 35px 100px 25px;
+    background-color: white;
+    h2{
+      padding: 10px;
+      font-size: 25px;
+      background-color: #70e9ef;
+      color: white;
+    }
+    .margin-top{
+      margin-top: 40px;
+    }
+    .gray-btn{
+      margin-bottom: 20px;
+      a{
+        padding: 20px 0;
+        font-size: 20px;
+        color: #333;
+        text-decoration: none;
+      }
+    }
+  
+  }
+}

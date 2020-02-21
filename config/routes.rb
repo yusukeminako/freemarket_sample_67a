@@ -9,15 +9,7 @@ Rails.application.routes.draw do
     post 'address_create', to: 'users/registrations#address_create'
   end
   root "products#index"
-  resources "purchases", only:[:index,:new,:show] do
-    member do
-      get 'confirm'
-    end
-  end
 
-  
-
-  
   resources :card, only: [:new, :show,:index] do
     collection do
       get 'show', to: 'card#show'
@@ -34,23 +26,23 @@ Rails.application.routes.draw do
     end
   end
 
+
+  resources :purchases, only: [:show] do
+    collection do
+      post 'buy/:id', to: 'purchases#buy', as: 'buy'
+      get 'done', to: 'purchases#done'
+    end
+
+  end
+
+  get '/logout', to: "users#logout"
+  resources "signup", only: [:index, :create]
   resources "categorys", only: [:index]
 
   resources "users", only: [:show]
-
-  get '/logout', to: "users#logout"
-
-  resources "signup", only: [:index, :create]
-
-  resources :purchases, only: [:show] do
-    member do
-      get 'confirm'
-      post 'pay', to: 'purchases#pay'
-      get 'done', to: 'purchases#done'
-    end
-    collection do
-      post 'pay', to: 'purchases#pay'
-      get 'done', to: 'purchases#done'
-    end
-  end
 end
+# member do
+    #   get 'confirm'
+    # post 'pay', to: 'purchases#pay'
+    #   get 'done', to: 'purchases#done'
+    # end

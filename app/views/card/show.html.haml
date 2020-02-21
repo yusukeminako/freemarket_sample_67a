@@ -1,16 +1,23 @@
+//インスタンス定義
+- exp_month = @default_card_information.exp_month.to_s
+- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+
 = render "shared/header"
 .wrapper
   .container-mypage
     = render "users/side_bar"
-    %label 登録クレジットカード情報
-    %br
-    = "**** **** **** " + @default_card_information.last4
-    %br
-    - exp_month = @default_card_information.exp_month.to_s
-    - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-    = exp_month + " / " + exp_year
-    = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
-      %input{ type: "hidden", name: "card_id", value: "" }
-      %button 削除する
+    .card-info-box
+      .info_title 登録クレジットカード情報
+      .card_info
+        .num_box.m-bottom
+          = "**** **** **** " + @default_card_information.last4
+
+        .exp_box.m-bottom
+          = exp_month + " / " + exp_year
+        
+        = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm",class: "m-bottom") do
+          %input{ type: "hidden", name: "card_id", value: "" }
+          %button 削除する
+
 = render "shared/footer"
 = render "shared/purchasebtn"
