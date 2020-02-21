@@ -10,6 +10,7 @@
     .left-content {
       width: 700px;
       background-color: white;
+
       float: right;
       // ここからサイドバーの各要素CSSを入れる
       .log-out {
@@ -27,4 +28,23 @@
       }
     }  
   }
+}
+
+.left-content2 {
+  height: 50px;
+  background: aqua;
+  width: 700px;
+  float: right;
+}
+
+.listsRight__item {
+  margin-top: 10px;
+  list-style: none;
+  text-align: center;
+}
+
+.ggg {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
 }

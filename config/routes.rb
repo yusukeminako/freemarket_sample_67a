@@ -32,7 +32,6 @@ Rails.application.routes.draw do
       post 'buy/:id', to: 'purchases#buy', as: 'buy'
       get 'done', to: 'purchases#done'
     end
-
   end
 
   get '/logout', to: "users#logout"

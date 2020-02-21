@@ -1,6 +1,6 @@
 .mypate_container
   .left-container
-    .left-content
+    .left-content2
       %li.listsRight__item.listsRight__item--new
-        = link_to 'ログアウト', destroy_user_session_path,method: :delete
+        = link_to 'ログアウト', destroy_user_session_path,method: :delete, class:'ggg'
     = render "users/side_bar"
