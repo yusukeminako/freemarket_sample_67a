@@ -16,4 +16,5 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
 
   belongs_to :user
+  has_many :images
 end
