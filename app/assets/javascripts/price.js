@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+$(document).ready(function(){
   $(function(){
     $(".price").on("keyup", function(){   //リアルタイムで表示したいのでinputを使う｡入力の度にイベントが発火するようになる｡
       var data = $(".price").val(); 
