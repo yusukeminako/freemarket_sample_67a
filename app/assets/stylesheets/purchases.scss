@@ -183,7 +183,6 @@
 
 .listing__footer{
     box-sizing: border-box;
-    width: 700px;
     height: 220px;
     margin: 0 auto;
     padding: 40px 0;
@@ -203,7 +202,7 @@
     margin: 40px auto 0;
   }
   p{
-    margin-top: 8px;
+    width: max-content;
     font-size: 13px;
     text-align: center;
   }
