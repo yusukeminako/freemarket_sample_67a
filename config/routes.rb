@@ -53,4 +53,6 @@ Rails.application.routes.draw do
       get 'done', to: 'purchases#done'
     end
   end
+
+  get '/images/:id', to: "images#destroy"
 end

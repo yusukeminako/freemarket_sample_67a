@@ -34,7 +34,8 @@ class ProductsController < ApplicationController
 
   def edit
     @images = Image.where(product_id: @product.id)
-
+    @product.images.build
+    # @images = @product.images.build
     @grandchild = Category.find(@product.category_id)
     @child = @grandchild.parent
     @parent = @grandchild.parent.parent
