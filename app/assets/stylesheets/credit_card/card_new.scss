@@ -16,7 +16,7 @@
       border-radius: 2px;
       color: #fff;
       font-size: 12px;
-      background: red;
+      background: #3CCACE;
     }
     &--number {
       .number {
@@ -114,8 +114,7 @@
     }
     &--btn {
       .btn-red {
-        //@include btn-default;
-        background: red;
+        background: #3CCACE;
         color: white;
         font-size: 14px;
         margin: 32px 0px 0px;
