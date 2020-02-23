@@ -8,12 +8,15 @@ class Product < ApplicationRecord
   validates :user_id,           presence: true
   validates :category_id,       presence: true
   validates :prefecture_id,     presence: true
-  validates :images,            presence: true
+  # validates :images,            presence: true
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
+
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
+  validates :images, length: { minimum: 1, maximum: 5}
 
-  belongs_to :user
+  # belongs_to :user
+  # has_many :images
 end

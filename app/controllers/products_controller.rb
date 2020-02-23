@@ -1,18 +1,16 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update]
   before_action :move_to_index, except: [:index, :show]
+
   def index 
-    # @products = Product.all
-    # @images = Image.all
     @products = Product.where(buyer_id: nil).order('created_at DESC').to_a
     @images = Image.all
-
   end
 
   def new
     @product = Product.new
     @product.images.new
-    @images = @product.images.build
+    # @images = @product.images.build
     @category_parent_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
@@ -24,7 +22,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)    
+    @product = Product.new(product_params)
     if @product.save
       redirect_to root_path
     else
@@ -33,12 +31,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-    product = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end  
 
   def edit
-    @images = Image.where(product_id: @product.id)
-
+    # @images = Image.where(product_id: @product.id)
+    # @product.images.build
+    # @images = @product.images.build
     @grandchild = Category.find(@product.category_id)
     @child = @grandchild.parent
     @parent = @grandchild.parent.parent

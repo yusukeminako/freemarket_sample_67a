@@ -10,18 +10,36 @@
           %span.required-1
             必須
         %p 最大5枚までアップロードできます
-        .drop__box__container
-          .prev-content
-          .label-content
-            %label{for: "product_images_attributes_0_src", class: "label-box", id: "label-box--0"}
-              %pre.labekal-box__text-visible クリックしてファイルをアップロード
-          .hidden-content
-            = f.fields_for :images do |i|
-              = i.file_field :src, class: "hidden-field"
-              %input{class:"hidden-field", type: "file", name: "product[images_attributes][1][src]", id: "product_images_attributes_1_src" }
-              %input{class:"hidden-field", type: "file", name: "product[images_attributes][2][src]", id: "product_images_attributes_2_src" }
-              %input{class:"hidden-field", type: "file", name: "product[images_attributes][3][src]", id: "product_images_attributes_3_src" }
-              %input{class:"hidden-field", type: "file", name: "product[images_attributes][4][src]", id: "product_images_attributes_4_src" }
+        #image-box
+          #previews
+            - if @product.persisted?
+              - @product.images.each_with_index do |image, i|
+                = image_tag image.src.url, data: { index: i }, width: "100px", height: '100px'
+          = f.fields_for :images do |image|
+            %label.js-file_group{"data-index": "#{image.index}", id: 'dropArea'}
+              = image.file_field :src, class: 'js-file'
+              %br/
+              %pre.visible-pc
+                :preserve
+                  クリックしてファイルをアップロード
+                %i.icon-camera.fas.fa-camera
+            - if @product.persisted?
+              = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+          - if @product.persisted?
+            .js-file_group{"data-index": "#{@product.images.count}", style: 'display: none'}
+              = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
+        -# .drop__box__container
+        -#   .prev-content
+        -#   .label-content
+        -#     %label{for: "product_images_attributes_0_src", class: "label-box", id: "label-box--0"}
+        -#       %pre.labekal-box__text-visible クリックしてファイルをアップロード
+        -#   .hidden-content
+        -#     = f.fields_for :images do |i|
+        -#       = i.file_field :src, class: "hidden-field"
+        -#       %input{class:"hidden-field", type: "file", name: "product[images_attributes][1][src]", id: "product_images_attributes_1_src" }
+        -#       %input{class:"hidden-field", type: "file", name: "product[images_attributes][2][src]", id: "product_images_attributes_2_src" }
+        -#       %input{class:"hidden-field", type: "file", name: "product[images_attributes][3][src]", id: "product_images_attributes_3_src" }
+        -#       %input{class:"hidden-field", type: "file", name: "product[images_attributes][4][src]", id: "product_images_attributes_4_src" }
       .listing__contents__name
         .group
           %label 商品名 
@@ -47,7 +65,6 @@
             %span.required 必須
             .listing-select-wrapper
               .listing-select-wrapper__box
-                
                 = select_tag(:category_id, options_for_select(@category_parent_array),class: 'listing-select-wrapper__box--select', id: 'parent_category')
           .group
             %label 商品の状態

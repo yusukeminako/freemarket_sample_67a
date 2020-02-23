@@ -4,33 +4,44 @@
     = form_for @product do |f|
       %h2.listing__contents__info
         商品の情報を入力
-      .listing__contents__image
-        %h3.listing__contents__image__head
-          編集画像
-          %span.required-1
-            必須
-        %p 最大5枚までアップロードできます
-        .drop__box__container
-          .prev-content
-            - @images.each_with_index do |img, idx|
-              .preview-box{:id => "preview-box__#{idx}"}
-                .upper-box
-                  %img{:alt => "preview", src: img.src.url}
-                .lower-box
-                  .update-box
-                    %label.edit_btn 編集
-                  .delete-box{:id => "delete_btn_#{idx}"}
-                    %span 削除
-          .label-content2
-            %label{for: "product_images_attributes_0_src", class: "label-box", id: "label-box--0"}
-              %pre.labekal-box__text-visible クリックしてファイルをアップロード
-          .hidden-content
-            = f.fields_for :images do |i|
-              = i.file_field :src, class: "hidden-field"
-              %input{class:"hidden-field", type: "file", name: "product[images_attributes][1][src]", id: "product_images_attributes_1_src" }
-              %input{class:"hidden-field", type: "file", name: "product[images_attributes][2][src]", id: "product_images_attributes_2_src" }
-              %input{class:"hidden-field", type: "file", name: "product[images_attributes][3][src]", id: "product_images_attributes_3_src" }
-              %input{class:"hidden-field", type: "file", name: "product[images_attributes][4][src]", id: "product_images_attributes_4_src" }
+      .new_item__image
+        .new_item__image__upload
+          %h3.exhibition__main__container__inner__form__image__upload__head
+            出品画像
+            %span.new_item__image__upload__head__require 必須
+          %p 最大5枚までアップロードできます
+          #image-box2
+            #previews2
+              - if @product.persisted?
+                - @product.images.each_with_index do |image, i|
+                  %li.adsaf
+                    = image_tag image.src.url, data: { index: i }, class: "edit_img_#{i}"
+                    .js-remove{data: { index: i }, name: "[edit_remove][#{i}]"} 削除
+            = f.fields_for :images do |image|
+              %label.js-file_group3{"data-index": "#{image.index}", id: "dropArea2"}
+                = image.file_field :src, class: 'js-file2'
+                %pre.visible-pc
+                  :preserve
+                    クリックしてファイルをアップロード
+                  %i.icon-camera.fas.fa-camera
+                = image.hidden_field :_destroy, data:{ index: image.index }, value: 0, class: "delete_img_#{image.index}"
+            - if @product.persisted?
+              .js-file_group3{"data-index": "#{@product.images.count}", style: 'display: none'}
+                = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file2'
+          -# .image-box#image-box-1
+          -#   - @images.each do |img|
+          -#     .item-image{"data-image" => img.src}
+          -#       .item-image__content
+          -#         .item-image__content--icon
+          -#           = image_tag img.src.url, "height": "114", "width": "116"
+          -#       .item-image__operetion
+          -#         = link_to "削除","/images/#{img.id}",method: :get
+          -#   .image-box__item-num-0#image-box__container
+          -#     = f.fields_for :image do |i|
+          -#       .image-box__item-num-0__input-area#image-box__container__input-area
+          -#         = i.file_field :src, type: 'file', name: "product[images_attributes][][src]", value:"", style: "display:none", id:"img-file"
+          -#         %label{for: "img-file"}
+          -#           %i.fas.fa-camera  
       .listing__contents__name
         .group
           %label 商品名 
@@ -64,11 +75,6 @@
                 = select_tag(:category_id, options_for_select(@category_child_array, selected: @child.name),class: 'listing-select-wrapper__box--select', id: 'child_category')   
             .listing-select-wrapper#grandchildren_wrapper     
               .listing-select-wrapper__box
-                //親カテゴリーのセレクトボックスの生成
-                -# = f.select(:category_id, options_for_select(@category_grandchild_array, selected: @grandchild.name), class: 'listing-select-wrapper__box--select', id: 'grandchild_category')
-                -# %select{class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
-                -#   - @grandchild.siblings.each do |grand|
-                -#     %option{value: "#{grand.id}"} #{grand.name}
                 #grandchildren_wrapper.listing-select-wrapper__added
                   .listing-select-wrapper__box
                     = f.collection_select(:category_id, @grand_child, :id, :name, {prompt: "---"}, {id: "grand_child"})

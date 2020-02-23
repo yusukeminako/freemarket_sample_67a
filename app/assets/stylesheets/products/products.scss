@@ -1,5 +1,5 @@
 .required{
-  background: #ea352d;
+  background-color: #3CCACE;
   border-radius: 2px;
   color: #fff;
   font-size: 12px;
@@ -43,7 +43,7 @@
         font-size: 16px;
         font-weight: bold;
         .required-1{
-          background: #ea352d;
+          background-color: #3CCACE;
           border-radius: 2px;
           color: #fff;
           font-size: 12px;
@@ -270,7 +270,7 @@
               font-weight: 600;
               line-height: 50px;
               .required-2{
-                background: #ea352d;
+                background-color: #3CCACE;
                 border-radius: 2px;
                 color: #fff;
                 font-size: 12px;
@@ -329,7 +329,7 @@
     }
     .submit{
       margin: 40px 0 0;
-      background: #ea352d;
+      background-color: #3CCACE;
       border: 1px solid;
       color: #fff;
       width: 100%;
@@ -438,7 +438,7 @@
 }
 
 .product-detail__top__description {
-  margin-top: 56px;
+  margin-top: 90px;
   font-size: 18px;
   text-align: center;
   line-height: 50px;
@@ -458,14 +458,84 @@
     font-size: 25px;
     margin-top: 28px;
     color: white;
-    background-color: #3ae0e4;
+    background-color: #3CCEAC;
     margin-left: 8px;
     margin-bottom: 21px;
     border: none;
-  }   
-
+  }
+  #delete__modal--btn{
+    padding: 10px 100px;
+    font-size: 25px;
+    color: white;
+  }
 }
 
 .en {
   align-self: center;
+}
+
+.new_item__image {
+  height:300px;
+  padding: 0px 40px;
+
+  &__upload {
+    margin-top: 30px;
+
+    &__head {
+      font-weight: 600;
+      font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+      display: inline-block;
+      font-size: 14px;
+
+      &__require {
+        margin: 0 0 0 8px;
+        padding: 2px 4px;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+        vertical-align: top;
+        font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
+      }
+    }
+    .image-box{
+      height: 160px;
+      margin-top: 30px;
+      display: flex;
+      
+      &__container {
+        background: #f5f5f5;
+        border: 1px dashed #ccc;
+      }
+      
+      &__item-num-0 {
+        height: 160px;
+        width: 620px;
+
+        &__input-area {
+          height: 10px;
+          margin: auto;
+          text-align: center;
+          background: #f5f5f5;
+          border: 1px dashed #ccc;
+          margin-left: 5px;
+          align-items: center;
+
+          label {
+            display:block;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+
+            i {
+              margin-top: 70px;
+            }
+          }
+        }
+      }
+    }  
+  }
+}
+
+.item-image {
+  width: 350px;
 }

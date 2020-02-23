@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   before_action :set_card
   
 
+  
+
   protected
 
   def configure_permitted_parameters
@@ -19,6 +21,7 @@ class ApplicationController < ActionController::Base
       @card = current_user.cards.first
     end
   end
+
   def production?
     Rails.env.production?
   end

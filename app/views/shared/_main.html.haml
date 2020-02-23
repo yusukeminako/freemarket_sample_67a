@@ -93,7 +93,7 @@
         - @products.each do |product| 
           .productList
             -# 式展開を使用するには""で囲む
-            = link_to "/products/#{product.id}" do
+            = link_to product_path(product)  do
               %figure.productList--img
                 - @images.each do |image|
                   - if product.id == image.product_id
