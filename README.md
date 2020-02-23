@@ -34,12 +34,12 @@ has_many :items
 has_ancestry
 
 
-## card
+## cards
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false,foreign_key: true|
-|customer_id|references|null: false,foreign_key: true|
-|card_id|references|foreign_key: true|                 
+|user_id|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 
 ### Association
 belongs_to :user
@@ -49,10 +49,10 @@ belongs_to :user
 |Column|Type|Options|
 |------|----|-------|
 |zip_code|integer|null: false|
-|user_id|references|null: false,foreign_key: true| 
+|user|references|null: false,foreign_key: true| 
 |prefecture|string|null: false|        
 |city|string|null: false|
-|address1|string|
+|address1|string|null: false|
 |address2|string|
 |landline|integer|
 
@@ -64,18 +64,17 @@ belongs_to :user
 ## Products
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false,foreign_key: true|
+|user|references|null: false,foreign_key: true|
 |name|string|null: false|
-|description|text||
-|category_id|references|null: false,foreign_key: true|   
-|condition|integer|null: false|
+|category|references|null: false,foreign_key: true|
+|brand|references|null: false,foreign_key: true|  
+|condition|text|null: false|
 |size|integer|null: false|
-|delivery_charge|integer|null:false|
-|delivery_way|string|null:false|
-|prefecture|integer|null: false|
-|delivery_days|integer|null: false|
+|shipping_burden|string|null:false|
+|shipping_date|string|null:false|
+|prefecture|references|null: false,foreign_key: true|
 |price|integer|null:false|
-|status|integer|null:false|   
+|buyer|references|null: false,foreign_key: true|   
 
 ### Association
 belongs_to :user
@@ -84,11 +83,6 @@ belongs_to :brand
 has_many :images
 
 
-## Brand
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|list|integer||
 
 ### Association
 has_many :items
@@ -97,8 +91,9 @@ has_many :items
 
 ## Images
 |Column|Type|Options|
-|products|references|null: false|
-|image|text|null: false|
+|product|references|null: false,foreign_key:true|
+|src|text|null: false|
+<!-- srcはimgのこと -->
 
 ### Association
 belongs_to :product
