@@ -1,0 +1,125 @@
+.preview-files {
+  width: 18%;
+  display: inline-block;
+  margin: 0 0 2% 2%;
+}
+
+.preview-file-img {
+  width: 100%;
+  height: 100px;
+}
+
+.js-remove {
+  background: #f5f5f5;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.js-file_group {
+  position: relative;
+  min-height: 162px;
+  background: #f5f5f5;
+  border: 1px dashed #ccc;
+  font-size: 0;
+  text-align: center;
+  cursor: pointer;
+  float: right;
+  width: 100%;
+}
+
+.js-file {
+  display: none;
+}
+
+
+.js-file_group pre {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  right: 16px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  pointer-events: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.js-file_group3 {
+  position: relative;
+  min-height: 162px;
+  background: #f5f5f5;
+  border: 1px dashed #ccc;
+  font-size: 0;
+  text-align: center;
+  -webkit-transition: -webkit-box-shadow ease-out .3s;
+  transition: -webkit-box-shadow ease-out .3s;
+  transition: box-shadow ease-out .3s;
+  transition: box-shadow ease-out .3s, -webkit-box-shadow ease-out .3s;
+  cursor: pointer;
+  float: right;
+  margin-left: 2%;
+  width: 100%;
+  margin-left: 0;
+}
+
+.js-file_group2.data-index {
+  width: 100%;
+  margin-left: 0;
+}
+
+.js-file2 {
+  display: none;
+}
+
+.adsaf {
+  margin: 0 0 2% 1.42%;
+  list-style: none;
+  width: 18%;
+  display: inline-block;
+}
+
+.adsaf > img {
+  height: 100px;
+}
+
+.preview-file2-img {
+  width: 100%;
+}
+
+.js-remove2 {
+  background: #f5f5f5;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}
+
+#product2_images_attributes_0_image-error {
+  font-weight: 700;
+}
+
+.js-file_group3:nth-of-type(n+2) {
+  display: none;
+}
+
+.js-file_group3 pre {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  right: 16px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  pointer-events: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
