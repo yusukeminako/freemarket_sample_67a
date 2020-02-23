@@ -10,20 +10,38 @@
             出品画像
             %span.new_item__image__upload__head__require 必須
           %p 最大5枚までアップロードできます
-          .image-box#image-box-1
-            - @images.each do |img|
-              .item-image{"data-image" => img.src}
-                .item-image__content
-                  .item-image__content--icon
-                    = image_tag img.src.url, "height": "114", "width": "116"
-                .item-image__operetion
-                  = link_to "削除","/images/#{img.id}",method: :get
-            .image-box__item-num-0#image-box__container
-              = f.fields_for :image do |i|
-                .image-box__item-num-0__input-area#image-box__container__input-area
-                  = i.file_field :src, type: 'file', name: "product[images_attributes][][src]", value:"", style: "display:none", id:"img-file"
-                  %label{for: "img-file"}
-                    %i.fas.fa-camera  
+          #image-box2
+            #previews2
+              - if @product.persisted?
+                - @product.images.each_with_index do |image, i|
+                  %li.adsaf
+                    = image_tag image.src.url, data: { index: i }, class: "edit_img_#{i}"
+                    .js-remove{data: { index: i }, name: "[edit_remove][#{i}]"} 削除
+            = f.fields_for :images do |image|
+              %label.js-file_group3{"data-index": "#{image.index}", id: "dropArea2"}
+                = image.file_field :src, class: 'js-file2'
+                %pre.visible-pc
+                  :preserve
+                    クリックしてファイルをアップロード
+                  %i.icon-camera.fas.fa-camera
+                = image.hidden_field :_destroy, data:{ index: image.index }, value: 0, class: "delete_img_#{image.index}"
+            - if @product.persisted?
+              .js-file_group3{"data-index": "#{@product.images.count}", style: 'display: none'}
+                = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file2'
+          -# .image-box#image-box-1
+          -#   - @images.each do |img|
+          -#     .item-image{"data-image" => img.src}
+          -#       .item-image__content
+          -#         .item-image__content--icon
+          -#           = image_tag img.src.url, "height": "114", "width": "116"
+          -#       .item-image__operetion
+          -#         = link_to "削除","/images/#{img.id}",method: :get
+          -#   .image-box__item-num-0#image-box__container
+          -#     = f.fields_for :image do |i|
+          -#       .image-box__item-num-0__input-area#image-box__container__input-area
+          -#         = i.file_field :src, type: 'file', name: "product[images_attributes][][src]", value:"", style: "display:none", id:"img-file"
+          -#         %label{for: "img-file"}
+          -#           %i.fas.fa-camera  
       .listing__contents__name
         .group
           %label 商品名 
