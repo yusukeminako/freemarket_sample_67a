@@ -118,22 +118,21 @@
           = link_to '#' do
             %h3.title アーカイバ
         .productLists
-          - @products.each do |product| 
-            .productList
-              = link_to product_path(product)  do
-                %figure.productList--img
-                  = image_tag src='https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png'
-                .productList--body
-                  %h3.name product3
-                  .details
-                    %ul
-                      %li 30000円
-                      %li
-                        = icon('fa', 'star', class: 'likeIcon')
-                        0
-                    %p (税込)
-            .productList
-              
+          .productList
+            = link_to purchase_path(2)  do
+              %figure.productList--img
+                = image_tag src='https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png'
+              .productList--body
+                %h3.name product3
+                .details
+                  %ul
+                    %li 30000円
+                    %li
+                      = icon('fa', 'star', class: 'likeIcon')
+                      0
+                  %p (税込)
+          .productList
+            = link_to purchase_path(2)  do
               %figure.productList--img
                 = image_tag src='https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png'
               .productList--body
@@ -145,8 +144,8 @@
                       = icon('fa', 'star', class: 'likeIcon')
                       0
                   %p (税込)
-            .productList
-              
+          .productList
+            = link_to purchase_path(2) do
               %figure.productList--img
                 = image_tag src='https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png'
               .productList--body
