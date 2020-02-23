@@ -1,4 +1,4 @@
-
+= render "shared/header"
 .category-index
   .category
     .category__title
@@ -33,3 +33,5 @@
                       - children.children.each do |grandchild|
                         = link_to categorys_path(grandchild), class: "child_box__list" do
                           = grandchild.name
+= render "shared/footer"
+= render "shared/purchasebtn"
