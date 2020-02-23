@@ -242,4 +242,41 @@
       }
     }
   }
+  .comment-box {
+    background-color: white;
+    width: 700px;
+    margin: 0 auto 0;
+    padding: 24px 40px 40px;
+    margin-bottom: 50px;
+    padding: 24px;
+    background-color: #fff;
+    text-align: center;
+    height:300px;
+    margin-top: -30px;
+    
+    
+    
+    .comment_body {
+      width: 100%;
+      min-height: 104px;
+      padding: 10px;
+    }
+    .noticeMsg {
+      padding: 8px;
+      font-size: 14px;
+      background-color: #f8f8f8;
+      margin: 10px 0;
+      text-align: left;
+    }
+  }
+  .commentspace {
+    font-size: 18px;
+    line-height: 48px;
+    background: aqua;
+    border: 1px solid aqua;
+    color: #fff;
+    width: 60%;
+    font-size: 18px;
+    margin:0 auto
+  }
 }
