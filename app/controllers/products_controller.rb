@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index 
-    @products = Product.where(buyer_id: nil).order('created_at DESC').to_a
+    @products = Product.where(buyer_id: nil).order('created_at DESC').limit(5)
     @images = Image.all
   end
 

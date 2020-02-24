@@ -75,11 +75,13 @@
           height: 120px;
           float: left;
           &__inner {
-            width: 20%;
             height: 60px;
-            float: left;
+            list-style: none;
+            display: -webkit-inline-box;
+            width: 33%;
             & img {
               object-fit: cover;
+              height: 60px;
             }
             &:hover {
               opacity: 1;

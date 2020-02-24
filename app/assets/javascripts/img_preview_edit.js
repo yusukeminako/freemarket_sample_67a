@@ -45,8 +45,10 @@ $(document).ready(function(){
     }
     var count = $('.adsaf').length;
     var abcde = $('#dropArea2')
+    var bbcde = $('pre')
     if (count == 5) {
       abcde.fadeOut();
+      bbcde.fadeOut();
     }
   });
 
@@ -73,8 +75,10 @@ $(document).ready(function(){
     
     var count = $('.adsaf').length;
     var abcde = $('#dropArea2')
+    var bbcde = $('pre')
     if (count == 4) {
       abcde.show();
+      bbcde.show();
     }
     
     // 画像入力欄が0個にならないようにしておく
@@ -85,10 +89,13 @@ $(document).ready(function(){
 $(document).ready(function() {
   var count = $('.adsaf').length;
   var abcde = $('#dropArea2')
+  var bbcde = $('pre')
   if (count == 5) {
     abcde.hide();
+    bbcde.hide();
   }
   if (count < 5) {
     abcde.show();
+    bbcde.show();
   }
 });

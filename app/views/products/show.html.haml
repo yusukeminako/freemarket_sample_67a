@@ -10,11 +10,7 @@
     .product-detail__top__item
       .product-detail__top__item-image
         .product-detail__top__item-image-main
-          = image_tag Image.find_by(product_id: @product.id).src.url, size: '300x300', class: "product-detail__top__item-image-main--photo"
-        .product-detail__top__item-image-list
-          -# - images = Image.where(product_id: @product.id)
-          .product-detail__top__item-image-list__inner
-            = image_tag Image.find_by(product_id: @product.id).src.url          
+          = render "shared/swiper"  
       %table.product-detail__top__item-table
         %tr.product-detail__top__item-table__seller
           %th.product-detail__top__item-table__seller-col.col 出品者
@@ -79,6 +75,7 @@
     .product-detail__top__price-line
       %span.product-detail__top__price-line--price
         = "#{@product.price}"
+        円
       %span.product-detail__top__price-line--taxin 
         (税込)
       - if @product.shipping_burden == "送料込み（出品者負担)"
