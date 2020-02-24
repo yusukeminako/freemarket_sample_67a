@@ -15,10 +15,11 @@
               - if @product.persisted?
                 - @product.images.each_with_index do |image, i|
                   %li.adsaf
-                    = image_tag image.src.url, data: { index: i }, class: "edit_img_#{i}"
+                    = image_tag image.src.url, data: { index: i }, class: "edit_img_#{i}",id: :pre_img
                     .js-remove{data: { index: i }, name: "[edit_remove][#{i}]"} 削除
             = f.fields_for :images do |image|
               %label.js-file_group3{"data-index": "#{image.index}", id: "dropArea2"}
+              #img_error
                 = image.file_field :src, class: 'js-file2'
                 %pre.visible-pc
                   :preserve
@@ -27,44 +28,31 @@
                 = image.hidden_field :_destroy, data:{ index: image.index }, value: 0, class: "delete_img_#{image.index}"
             - if @product.persisted?
               .js-file_group3{"data-index": "#{@product.images.count}", style: 'display: none'}
-                = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file2'
-          -# .image-box#image-box-1
-          -#   - @images.each do |img|
-          -#     .item-image{"data-image" => img.src}
-          -#       .item-image__content
-          -#         .item-image__content--icon
-          -#           = image_tag img.src.url, "height": "114", "width": "116"
-          -#       .item-image__operetion
-          -#         = link_to "削除","/images/#{img.id}",method: :get
-          -#   .image-box__item-num-0#image-box__container
-          -#     = f.fields_for :image do |i|
-          -#       .image-box__item-num-0__input-area#image-box__container__input-area
-          -#         = i.file_field :src, type: 'file', name: "product[images_attributes][][src]", value:"", style: "display:none", id:"img-file"
-          -#         %label{for: "img-file"}
-          -#           %i.fas.fa-camera  
+                = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file2', id: "img-file"
       .listing__contents__name
         .group
           %label 商品名 
           %span.required 必須
+          #item_name_error
           %br/
-          =f.text_field :name, class: "name", placeholder: "商品名(必須40文字まで）"
+          =f.text_field :name, class: "name", placeholder: "商品名(必須40文字まで）", id: :item_name
           - if @product.errors[:name].any?
-            .error-message
-              %p 入力してください
+            %p 入力してください
         .group
           %label 商品の説明
           %span.required 必須
+          #item_detail_error
           %br/
-          =f.text_area :description, class: "text", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+          =f.text_area :description, class: "text", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。",id: :item_detail
           -if @product.errors[:description].any?
-            .error-message
-              %p 入力してください
+            %p 入力してください
       .listing__contents__detail
         %h3 商品の詳細
         .form-box
           .listing-product-detail__category
             = f.label 'カテゴリー', class: 'listing-default__label'
             %span.required 必須
+            #category_error
             .listing-select-wrapper
               .listing-select-wrapper__box
                 //親カテゴリーのセレクトボックスの生成
@@ -72,18 +60,22 @@
             .listing-select-wrapper#children_wrapper   
               .listing-select-wrapper__box
                 //親カテゴリーのセレクトボックスの生成
-                = select_tag(:category_id, options_for_select(@category_child_array, selected: @child.name),class: 'listing-select-wrapper__box--select', id: 'child_category')   
+                %select{class: 'listing-select-wrapper__box--select', id: 'child_category'}
+                  %option{value: "---","data-category": "---"} ---
+                  %option{value: "#{@child.id}","data-category": "#{@child.id}", selected: true} #{@child.name}
+                  - @child.siblings.each do |child|
+                    %option{value: "#{child.id}","data-category": "#{child.id}"} #{child.name}
             .listing-select-wrapper#grandchildren_wrapper     
               .listing-select-wrapper__box
                 #grandchildren_wrapper.listing-select-wrapper__added
                   .listing-select-wrapper__box
-                    = f.collection_select(:category_id, @grand_child, :id, :name, {prompt: "---"}, {id: "grand_child"})
+                    = f.collection_select(:category_id, @grand_child, :id, :name, {prompt: "---"}, {id: "grandchild_category"})
           .group
             %label 商品の状態
             %span.required 必須
             %br/
             .select
-              =f.select :condition, ["新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], prompt: "---"
+              =f.select :condition, ["新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], prompt: "---", id: :status
               - if @product.errors[:condition].any?
                 .error-message
                   %p 選択してください    
@@ -96,7 +88,7 @@
             %label 配送料の負担
             %span.required 必須
             .select
-              =f.select :shipping_burden, ["送料込み（出品者負担)", "着払い（購入者負担)"], prompt: "---"
+              =f.select :shipping_burden, ["送料込み（出品者負担)", "着払い（購入者負担)"], prompt: "---",id: :item_mail
               %br/
               - if @product.errors[:shipping_burden].any?
                 .error-message
@@ -105,13 +97,13 @@
             %label 発送元の地域
             %span.required 必須
             .select-1
-              =f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: "prefecture"
+              =f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: "prefecture",id: :item_prefecture_id
               %br/
           .group
             %label 発送までの日数
             %span.required 必須
             .select
-              =f.select :shipping_date, ["1~2日で発送", "2~3日で発送", "4~7日で発送"], prompt: "---"
+              =f.select :shipping_date, ["1~2日で発送", "2~3日で発送", "4~7日で発送"], prompt: "---",id: :item_arrival_date_id
               - if @product.errors[:shipping_date].any?
                 .error-message
                   %p 選択してください
@@ -125,9 +117,8 @@
                 %span.required-2 必須
               .group__right
                 ￥
-                =f.text_field :price, placeholder: "例）300",value: @product.price, class: "price"
+                =f.text_field :price, placeholder: "例）300",value: @product.price, class: "price", id: :item_price
                 - if @product.errors[:price].any?
-                  .error-message
                   %p 300以上9999999以下で入力してください
             
             .product_price-fee-box
@@ -141,9 +132,10 @@
                 .product_profit__left
                   販売利益
                 .right_bar_2
+            #price_error
 
       .listing__contents__confirms
-        =f.submit '編集する', class: "submit"
+        =f.submit '編集する', class: "submit",id: :edit_submit
         .back-btn
           =link_to 'もどる', root_path
     .listing__footer

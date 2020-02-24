@@ -47,11 +47,6 @@ class ProductsController < ApplicationController
       @category_grandchild_array << grandchild.name
     end
 
-    @category_child_array = ["---"]
-    Category.where(ancestry: @child.ancestry).each do |child|
-      @category_child_array << child.name
-    end
-
     @category_parent_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
