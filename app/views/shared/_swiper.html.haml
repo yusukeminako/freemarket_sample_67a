@@ -1,0 +1,14 @@
+.swiper-container.swiper1
+  .swiper-wrapper
+    - @product.images.each do |image|
+      .swiper-slide
+        = image_tag "#{image.src}", class: 'product_images'
+  .swiper-button-prev.prev1
+  .swiper-button-next.next1
+.swiper-container.swiper2
+  .swiper-wrapper
+    - @product.images.each do |image|
+      .swiper-slide
+        = image_tag "#{image.src}", class: 'product_images'
+    .swiper-slide
+    .swiper-slide

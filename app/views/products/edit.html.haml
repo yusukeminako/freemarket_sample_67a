@@ -21,14 +21,14 @@
               %label.js-file_group3{"data-index": "#{image.index}", id: "dropArea2"}
               #img_error
                 = image.file_field :src, class: 'js-file2'
-                %pre.visible-pc
-                  :preserve
-                    クリックしてファイルをアップロード
-                  %i.icon-camera.fas.fa-camera
                 = image.hidden_field :_destroy, data:{ index: image.index }, value: 0, class: "delete_img_#{image.index}"
             - if @product.persisted?
               .js-file_group3{"data-index": "#{@product.images.count}", style: 'display: none'}
                 = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file2', id: "img-file"
+            %pre.visible-pc
+              :preserve
+                クリックしてファイルをアップロード
+              %i.icon-camera.fas.fa-camera
       .listing__contents__name
         .group
           %label 商品名 
