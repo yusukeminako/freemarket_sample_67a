@@ -45,7 +45,7 @@
           %label 商品名 
           %span.required 必須
           %br/
-          =f.text_field :name, class: "name", placeholder: "商品名(必須40文字まで）"
+          =f.text_field :name, class: "name", placeholder: "商品名(必須40文字まで）", id: :item_name
           - if @product.errors[:name].any?
             .error-message
               %p 入力してください
