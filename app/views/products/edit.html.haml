@@ -116,7 +116,8 @@
                 価格
                 %span.required-2 必須
               .group__right
-                ￥
+                .en
+                  ￥
                 =f.text_field :price, placeholder: "例）300",value: @product.price, class: "price", id: :item_price
                 - if @product.errors[:price].any?
                   %p 300以上9999999以下で入力してください
