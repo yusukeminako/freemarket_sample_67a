@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index]
 
   def index 
     @products = Product.where(buyer_id: nil).order('created_at DESC').limit(5)
@@ -77,6 +77,7 @@ class ProductsController < ApplicationController
   end
 
   def delete #削除完了後
+    redirect_to root_path
   end
 
 
