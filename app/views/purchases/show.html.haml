@@ -47,7 +47,7 @@
                 %p.buy-user-info-text.a
                   %i.fas.fa-plus-circle
                   %span.register 登録してください
-
+                  
             %input#user_info_is_not_complete{type: "hidden"}/
             %section.buy-content.buy-user-info
               = form_with(url: buy_purchases_path(@product.id), method: :post, local: true) do

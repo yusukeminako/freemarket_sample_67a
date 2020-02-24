@@ -92,7 +92,7 @@
           = link_to "編集する",edit_product_path(@product.id), class: "product-detail__change-box--delete-btn common-btn",id: "delete__modal--btn" 
           = link_to "削除する", product_path, method: :delete,class: "product-detail__change-box--delete-btn common-btn",id: "delete__modal--btn" 
       - else
-        = link_to "購入画面の進む",purchase_path(@product), class: "product-detail__change-box--delete-btn common-btn",id: "delete__modal--btn" 
+        = link_to "購入画面へ進む",purchase_path(@product), class: "product-detail__change-box--delete-btn common-btn",id: "delete__modal--btn" 
         
     .product-detail__top__foot.clearfix
       .product-detail__top__foot__buttons
@@ -109,5 +109,19 @@
         = link_to '#' do
           %i.fas.fa-lock
           %span あんしん・あんぜんへの取り組み
+  .comment-box
+    %ul.comment-contents
+      %form#new_comment.new_comment{"accept-charset" => "UTF-8", :action => "#", :method => "post"}
+        %input{name: "utf8", :type => "hidden", value: "✓"}/
+        %input{name: "authenticity_token", type: "hidden", value: "fgXoY2+wRqz9I9K4zfRRka779AvatztaAuSoCdx6GPgyPI68fa03XdThZ/oTMVhYcBUQxGROrReDhAPtkIiSpQ=="}/
+        %textarea.comment_body{name: "comment[body]", required: "required"}
+        %p.noticeMsg
+          相手のことを考え丁寧なコメントを心がけましょう。
+          %br/
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %br/
+        .commentspace
+          %i.fa.fa-comment
+          コメントする 
   .semifooter
     = render "shared/footer"
