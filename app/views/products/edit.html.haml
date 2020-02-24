@@ -19,7 +19,6 @@
                     .js-remove{data: { index: i }, name: "[edit_remove][#{i}]"} 削除
             = f.fields_for :images do |image|
               %label.js-file_group3{"data-index": "#{image.index}", id: "dropArea2"}
-              #img_error
                 = image.file_field :src, class: 'js-file2'
                 = image.hidden_field :_destroy, data:{ index: image.index }, value: 0, class: "delete_img_#{image.index}"
             - if @product.persisted?
@@ -29,6 +28,7 @@
               :preserve
                 クリックしてファイルをアップロード
               %i.icon-camera.fas.fa-camera
+          #img_error
       .listing__contents__name
         .group
           %label 商品名 
