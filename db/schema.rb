@@ -13,16 +13,14 @@
 ActiveRecord::Schema.define(version: 2020_02_23_113033) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.integer "zip_code", null: false
     t.string "prefecture", null: false
     t.string "city", null: false
     t.string "address1", null: false
-    t.string "address2"
+    t.string "address2", null: false
     t.integer "landline"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,10 +56,10 @@ ActiveRecord::Schema.define(version: 2020_02_23_113033) do
     t.bigint "buyer_id"
     t.integer "size"
     t.bigint "prefecture_id"
-    t.string "shipping_burden"
-    t.string "shipping_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "shipping_burden"
+    t.string "shipping_date"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["buyer_id"], name: "index_products_on_buyer_id"
     t.index ["category_id"], name: "index_products_on_category_id"
