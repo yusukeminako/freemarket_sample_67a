@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index 
-    @products = Product.where(buyer_id: nil).order('created_at DESC').to_a
+    @products = Product.where(buyer_id: nil).order('created_at DESC').limit(5)
     @images = Image.all
   end
 
@@ -47,11 +47,6 @@ class ProductsController < ApplicationController
       @category_grandchild_array << grandchild.name
     end
 
-    @category_child_array = ["---"]
-    Category.where(ancestry: @child.ancestry).each do |child|
-      @category_child_array << child.name
-    end
-
     @category_parent_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
@@ -82,6 +77,7 @@ class ProductsController < ApplicationController
   end
 
   def delete #削除完了後
+    redirect_to root_path
   end
 
 
