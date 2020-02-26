@@ -44,6 +44,7 @@
       .check__item__detail {
         display: flex;
         justify-content: space-between;
+
         .check__item__detail__name{
           font-size: 16px;
           padding: 0 0 8px;
@@ -52,12 +53,13 @@
           width: 100%;
           display: flex;
           justify-content: space-between;
+
           .name-title{
             width: 100px;
           }
           .name{
             font-size: 35px;
-            width: 100px;
+            float: left;
           }
         }
       }
